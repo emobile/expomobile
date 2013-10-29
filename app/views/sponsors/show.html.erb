@@ -1,0 +1,59 @@
+<%= render "layouts/first_tab" %>
+
+<div class="CSSTableGenerator" >
+  <table >
+    <tr>
+      <td>
+        <b><%= @sponsor.name %>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">
+        <%= image_tag @sponsor.logo.url(:thumb) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.job' %>:<%= @sponsor.job %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.social_reason' %>:<%= @sponsor.social_reason %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.work_address' %>:<%= @sponsor.work_address %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.web_page' %>:<%= @sponsor.web_page %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.phone' %>:<%= @sponsor.phone %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.email' %>:<%= @sponsor.email %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.facebook' %>:<%= @sponsor.facebook %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'sponsor.twitter' %>:<%= @sponsor.twitter %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<%= render "layouts/action_links" %>

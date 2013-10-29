@@ -1,0 +1,54 @@
+<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+  <table>
+    <thead>
+      <tr>
+        <%#*<th><input class="check-all" type="checkbox" /></th>%>
+        <th>ID</th>
+        <th><%= t'stand.name' %></th>
+        <th><%= t'stand.stand_key' %></th>
+        <th><%= t'stand.exhibitor' %></th>
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <%#*<div class="bulk-actions align-left">%>
+            <%#= render "layouts/select_action" %>
+          <%#*</div>%>
+          <%= render "layouts/pagination" %>
+          <div class="clear"></div>
+        </td>
+      </tr>
+    </tfoot>
+
+    <tbody>
+      <% @stands.each do |stand| %>
+        <tr>
+          <%#*<td><input type="checkbox" /></td>%>
+          <%#if can? :show, Stand %>
+            <%#*<td><%=link_to stand.id, stand, :class => 'button'</td>%>
+          <%#else%>
+            <td><%= label stand.id, stand.id %></td>
+          <%#end%>
+
+          <% @model = stand %>
+
+          <td><%= stand.name %></td>
+
+          <td><%= stand.stand_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:key => stand.stand_key), :class => "qr_code" %></td>
+
+          <td><%= stand.exhibitor.name %></td>
+
+          <%= render "layouts/index_links" %>
+        <% end %>
+    </tbody>
+  </table>
+  <%= form_tag stands_set_tolerance_path, :id => "tolerance_form", method: :post do %>
+    <%= label_tag t(:set_tolerance) %>
+    <%= text_field_tag "tolerance", SystemConfigurations.first.exposition_tolerance, :class=>"text-input small-input", :style => "width: 10% !important;" %>
+    <%= submit_tag t(:accept), :class => 'button' %>
+  <% end %>
+  <%= render "layouts/action_links" %>
+</div> 
+<%= render "layouts/second_tab" %>

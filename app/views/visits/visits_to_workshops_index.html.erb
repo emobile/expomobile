@@ -1,0 +1,66 @@
+<script type="text/javascript">
+  $(function() {
+<% Group.all.each do |g| %>
+    $('#container_<%= g.id %>').highcharts({
+    chart: {
+    type: 'bar'
+    },
+            title: {
+    text: "<%= t("visit.visits_workshops_by_workshop") %>"
+    },
+            subtitle: {
+    text: "<%= g.name %>"
+    },
+            xAxis: {
+    categories: [
+  <%= Workshop.all.map{ |w| "'#{w.name}'" }.join(",").html_safe %>
+    ],
+            allowDecimals: false
+    },
+            yAxis: {
+    allowDecimals: false,
+            title: {
+    text: "<%= t(:visits) %>"
+    }
+    },
+            tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+    },
+            plotOptions: {
+    column: {
+    pointPadding: 0.2,
+            borderWidth: 0
+    },
+    },
+  <% series = [] %>
+  <% Subgroup.where(:group_id => g.id).order(:name).each do |s| %>
+    <% data = [] %>
+    <% Workshop.all.each do |w| %>
+      <% attendances = AttendeeWorkshop.joins("INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id")
+      .joins("INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id")
+      .joins("INNER JOIN subgroups s ON a.subgroup_id = s.id")
+      .where("s.id = ? AND w.id = ?", s.id, w.id).count %>
+      <% attendances = nil if attendances == 0 %>
+      <% data << attendances %>
+    <% end %>
+    <% series << { name: s.name, data: data } %>
+  <% end %>
+    series: <%= series.to_json.html_safe %>,
+    });
+<% end %>
+  });
+</script>
+
+<div class="menu-links">
+  <%= link_to t("visit.visits_workshops_by_subgroup"), visits_visits_to_workshops_by_subgroup_path, :class => "menu-link" %>
+  <%= link_to t("visit.visits_workshops_by_workshop"), visits_visits_to_workshops_by_workshop_path, :class => "menu-link" %>
+</div>
+
+<% Group.all.each do |g| %>
+  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; height: 800px; margin: 50px auto;"><%= g.name %></div>
+<% end %>

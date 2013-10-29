@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1><%= t(:welcome) %>, <%= @attendee.a_name %></h1>
+    <p>
+      <%= t("atten.id_ok") %>,
+    </p>
+    <p>
+      <%= t("atten.type_nip") %>&nbsp;<span style="font-size: 16px; font-weight: bold;"><%= @nip %></span>.
+    </p>
+    <p><%= t("atten.thanks_for_joining") %></p>
+  </body>
+</html>

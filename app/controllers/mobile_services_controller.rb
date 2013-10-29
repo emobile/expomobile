@@ -1,0 +1,534 @@
+class MobileServicesController < ApplicationController
+  before_filter :detect_platform
+  skip_before_filter :verify_authenticity_token, :only => [:register_visit_to_workshop, :register_visit_to_stand]
+  respond_to :json
+  layout false
+
+  #"/branches/" + Ti.App.current_user.branch_id + ".json
+  #"/mobile_services/get_driver_branch.json?branch_id=" + Ti.App.current_user.branch_id  
+  #  def get_driver_branch#done
+  #    @branch = Branch.find_by_id(params[:branch_id])
+  #    render json: @branch.blank? ?  {'status' => t('branch_not_found')} : @branch
+  #  end
+
+  #"/tasks/" + task.id + "?mobile_request=true"
+  #"/mobile_services/update_driver_task.json/" + task.id
+  #  def update_driver_task#done
+  #    @task = Task.find(params[:id])
+  #    if @task.update_attributes(params[:task])
+  #      render json: @task.blank? ?  {'status' => t('task_was_successfully_updated')} : @task
+  #    else
+  #      render json: @task.blank? ?  {'status' => t('an_error_has_ocurred')} : @task
+  #    end
+  #  end
+
+  def get_attendee_id
+
+    if params[:attendee_id] =~ /\A[A-Z]\d{3}\z/
+      @attendee = Attendee.find_by_attendee_id(params[:attendee_id])
+      
+      if !@attendee.nil?
+        @attendee_id = @attendee.id
+        @nip = Nip.find_by_attendee_id(@attendee_id)
+      
+        while @nip.nil?
+          random_value = Array.new(4) {[*'0'..'9', *'a'..'z'].sample}.join
+          @exists = Nip.find_by_nip(random_value)
+        
+          if @exists.nil?
+            @nip = Nip.create(:nip => random_value, :attendee_id => @attendee_id)
+          end
+        end
+      
+        @times_sent = (@nip.times_sent.nil?) ? 0: @nip.times_sent
+      
+        if @times_sent < 10
+          @can_send_email = false
+          @can_send_email = ((Time.now - @nip.sent) >= 0) unless @nip.sent.nil?
+      
+          if @nip.sent.nil? || @can_send_email
+            @name = @attendee.a_name
+            @email = @attendee.a_email
+            @subgroup_name = @attendee.subgroup.name
+            @subgroup_leader = @attendee.subgroup.leader
+            @domain = @email.gsub(/@.*$/, "")
+            @enterprise = @attendee.e_name
+            @phone = @attendee.e_phone
+            @address = "#{@attendee.e_street} #{@attendee.e_ext_number} #{@attendee.e_colony}"
+    
+            if AttendeeMailer.send_nip(@attendee, @nip).deliver!
+              @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+            else
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+            end
+      
+          else
+            @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "no" }
+          end
+        
+        else
+          @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_maximum_sends"), sent: "no" }
+        end
+    
+      else
+        @msg = { name: nil, email: nil, subgroup_name: nil, subgroup_leader: nil, domain: nil, enterprise: nil, phone: nil, address: nil, msg: t("errors.atten_not_exists"), sent: "no" }
+      end
+      
+    else
+      @msg = { name: nil, email: nil, subgroup_name: nil, subgroup_leader: nil, enterprise: nil, phone: nil, address: nil, domain: nil, msg: t("errors.atten_invalid_id"), sent: "no" }
+    end
+    
+    render json: @msg
+  end
+  
+  def get_attendee_nip
+    
+    if params[:attendee_id] =~ /\A[A-Z]\d{3}\z/
+      @attendee = Attendee.find_by_attendee_id(params[:attendee_id])
+      
+      if !@attendee.nil?
+        @attendee_id = @attendee.id
+        if params[:nip] =~ /\A[0-9a-z]{4}\z/
+          @nip = @attendee.nip
+      
+          if params[:nip] == @nip.nip
+            @msg = { access: "ok", msg: t("atten.access_ok") }
+            session[:attendee_id] = @attendee_id
+          else
+            @msg = { access: "no", msg: t("errors.atten_nips_dont_match") }
+          end
+      
+        else
+          @msg = { access: "no", msg: t("errors.atten_invalid_nip") }
+        end
+      
+      else
+        @msg = { access: "no", msg: t("errors.atten_not_exists"), sent: "no" }
+      end
+      
+    else
+      @msg = { access: "no", msg: t("errors.atten_invalid_id") }
+    end
+    
+    render json: @msg
+  end
+  
+  def index_offerts
+    
+    if !session[:attendee_id].blank?
+      
+      if params[:exhibitor_id] =~ /\A\d+\z/
+        @offerts = Offert.where(:exhibitor_id => params[:exhibitor_id])
+      else
+        @offerts = Offert.all
+      end
+      
+      @offerts.map { |o| o[:exhibitor_name] = o.exhibitor.name }
+      @offerts.sort_by! { |o| o[:exhibitor_name] }
+      render json: @offerts
+    end
+    
+  end
+  
+  def show_offert
+    
+    if !session[:attendee_id].blank?
+      @offert = Offert.find(params[:offert_id])
+      @offert[:exhibitor_name] = @offert.exhibitor.name
+      render json: @offert
+    end
+
+  end
+  
+  def index_sponsors
+    
+    if !session[:attendee_id].blank?
+      @sponsors = Sponsor.order(:name)
+      @sponsors.each {|s| s[:mobile_logo_url] = s.logo.url(:mobile)}
+      render json: @sponsors
+    end
+    
+  end
+  
+  def show_sponsor
+    
+    if !session[:attendee_id].blank?
+      @sponsor = Sponsor.find(params[:sponsor_id])
+      @sponsor[:mobile_logo_url] = !@sponsor.logo.url(:mobile) if !@sponsor.nil?
+      render json: @sponsor
+    end
+
+  end
+  
+  def index_conferences
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @conferences = Conference.order(:start_date).select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
+        render json: @conferences
+      end
+      
+    end
+    
+  end
+  
+  def show_conference
+    
+    if !session[:attendee_id].blank?
+      @conference = Conference.find(params[:conference_id])
+      render json: @conference
+    end
+
+  end
+  
+  def index_activities
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @activities = Activity.order(:start_date).select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
+        render json: @activities
+      end
+      
+    end
+    
+  end
+  
+  def show_activity
+    
+    if !session[:attendee_id].blank?
+      @activity = Activity.find(params[:activity_id])
+      render json: @activity
+    end
+
+  end
+  
+  def index_diaries
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @diaries = Diary.order(:event_date).select {|d| d.event_date.strftime('%d/%m/%Y') == params[:day]}
+        render json: @diaries
+      end
+      
+    end
+    
+  end
+  
+  def show_diary
+    
+    if !session[:attendee_id].blank?
+      @diary = Diary.find(params[:diary_id])
+      render json: @diary
+    end
+
+  end
+  
+  def index_face_to_faces
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @face_to_faces = FaceToFace.where(:attendee_id => session[:attendee_id]).order(:start_date).select {|f| f.start_date.strftime('%d/%m/%Y') == params[:day]}
+        @face_to_faces.each do |f|
+          f[:attendee_name] = f.attendee.a_name
+          f[:attendee_enterprise_name] = f.attendee.e_name
+          f[:attendee_email] = f.attendee.a_email
+          f[:attendee_phone] = f.attendee.e_phone
+        end
+        render json: @face_to_faces
+      end
+      
+    end
+    
+  end
+  
+  def show_face_to_face
+    
+    if !session[:attendee_id].blank?
+      @face_to_face = FaceToFace.find_by_id_and_attendee_id(params[:face_to_face_id], session[:attendee_id])
+      @face_to_face[:attendee_name] = @face_to_face.attendee.a_name
+      @face_to_face[:attendee_enterprise_name] = @face_to_face.attendee.e_name
+      @face_to_face[:attendee_email] = @face_to_face.attendee.a_email
+      @face_to_face[:attendee_phone] = @face_to_face.attendee.e_phone
+      render json: @face_to_face
+    end
+
+  end
+  
+  def index_exhibitors
+    
+    if !session[:attendee_id].blank?
+
+      if params[:with_offerts] == "1"
+        @exhibitors = Exhibitor.joins("RIGHT OUTER JOIN offerts o ON exhibitors.id = o.exhibitor_id").uniq
+        @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
+      else
+        @exhibitors = Exhibitor.order('id DESC').paginate(:per_page => 10, :page => params[:page])
+      end
+      
+      render json: @exhibitors
+    end
+    
+  end
+  
+  def index_workshop_days
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @days = @attendee.hours.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq
+        render json: @days
+      end
+      
+    end
+    
+  end
+  
+  def index_exposition_days
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @days = Exposition.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq
+        render json: @days
+      end
+      
+    end
+    
+  end
+  
+  def index_conference_days
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @days = Conference.pluck(:start_date).map{ |c| c.strftime("%d/%m/%Y") }.uniq
+        render json: @days
+      end
+      
+    end
+    
+  end
+  
+  def index_activity_days
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @days = Activity.pluck(:start_date).map{ |a| a.strftime("%d/%m/%Y") }.uniq
+        render json: @days
+      end
+      
+    end
+    
+  end
+  
+  def index_diary_days
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @days = Diary.pluck(:event_date).map{ |d| d.strftime("%d/%m/%Y") }.uniq
+        render json: @days
+      end
+      
+    end
+    
+  end
+  
+  def index_face_to_face_days
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      unless @attendee.nil?
+        @days = FaceToFace.where(:attendee_id => session[:attendee_id]).pluck(:start_date).map{ |f| f.strftime("%d/%m/%Y") }.uniq
+        render json: @days
+      end
+      
+    end
+    
+  end
+  
+  def index_workshops
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @workshops = @attendee.workshops
+        .joins("INNER JOIN schedules s ON workshops.id = s.workshop_id")
+        .joins("INNER JOIN hours h ON s.hour_id = h.id")
+        @workshops.each do |w|
+          @hour = Hour
+          .joins("INNER JOIN schedules s ON hours.id = s.hour_id")
+          .joins("INNER JOIN workshops w ON s.workshop_id = w.id")
+          .where("w.id = #{w.id}")
+          .select { |h| h.start_date.strftime('%d/%m/%Y') == params[:day] }.first
+          if !@hour.nil?
+            w[:start_date] = @hour.start_date
+            w[:start_hour] = @hour.start_hour
+            w[:end_date] = @hour.start_date
+            w[:end_hour] = @hour.end_hour
+            w[:room_name] = w.room.name
+            w[:room_key] = w.room.room_key
+          end
+        end
+        @workshops.reject! { |w| w[:start_date].nil? }
+        @workshops.sort_by! { |w| w[:start_date].to_i }
+        render json: @workshops
+      end
+      
+    end
+    
+  end
+  
+  def index_expositions
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @expositions = Exposition.order(:start_date).select {|e| e.start_date.strftime('%d/%m/%Y') == params[:day]}
+        @expositions.each do |e|
+          e[:start_day] = e.start_date.strftime('%d/%m/%Y')
+          e[:end_day] = e.end_date.strftime('%d/%m/%Y')
+          e[:start_hour] = e.start_date.strftime('%I:%M%p')
+          e[:end_hour] = e.end_date.strftime('%I:%M%p')
+        end
+        render json: @expositions
+      end
+      
+    end
+    
+  end
+  
+  def index_expositions_names
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find(session[:attendee_id])
+      
+      unless @attendee.nil?
+        @expositions = Exposition.select(:name)
+        render json: @expositions
+      end
+      
+    end
+    
+  end
+  
+  def register_visit_to_workshop
+    
+    if !session[:attendee_id].blank?
+
+      if params[:key] =~ /\A[a-z0-9]{3}\z/
+        @workshop = Hour.joins("INNER JOIN schedules s ON hours.id = s.hour_id")
+        .joins("INNER JOIN workshops w ON s.workshop_id = w.id")
+        .joins("INNER JOIN subgroups su ON s.subgroup_id = su.id")
+        .joins("INNER JOIN attendees a ON su.id = a.subgroup_id")
+        .where("w.workshop_key = ? AND a.id = ?", params[:key], session[:attendee_id]).first
+        
+        if !@workshop.nil?
+          @visit_registered = AttendeeWorkshop.find_by_attendee_id_and_workshop_id(session[:attendee_id], @workshop.id)
+          
+          if @visit_registered.nil?
+          
+            #if Time.now >= @workshop.start_date && Time.now <= @workshop.end_date + SystemConfiguration.first.workshop_tolerance.minutes
+              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: params[:key])
+              @msg = { success: "yes", msg: t(:visit_registered) }
+            #else
+              #@msg = { success: "no", msg: t(:visit_not_registered) }
+            #end
+          
+          else
+            @msg = { success: "no", msg: t(:visit_already_registered) }
+          end
+          
+        else
+          @msg = { success: "no", msg: t("errors.workshop_not_assigned") }
+        end
+        
+      else
+        @msg = { success: "no", msg: t("errors.invalid_workshop_key") }
+      end
+
+    end
+    
+    render json: @msg
+  end
+  
+  def register_visit_to_exposition
+    
+    if !session[:attendee_id].blank?
+
+      if params[:key] =~ /\A[a-z0-9]{3}\z/
+        @exposition = Exposition.joins("INNER JOIN stands s ON expositions.stand_id = s.id")
+        .where("stand_key = ?", params[:key]).first
+        
+        if !@exposition.nil?
+          @visit_registered = AttendeeExposition.find_by_attendee_id_and_exposition_id(session[:attendee_id], @exposition.id)
+          
+          if @visit_registered.nil?
+            
+            #if Time.now >= @exposition.start_date && Time.now <= @exposition.end_date + SystemConfiguration.first.exposition_tolerance.minutes
+              AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: params[:exposition_id])
+              @msg = { success: "yes", msg: t(:visit_registered) }
+            #else
+              #@msg = { success: "no", msg: t(:visit_not_registered) }
+            #end
+          else
+            @msg = { success: "no", msg: t(:visit_already_registered) }
+          end
+          
+        else
+          @msg = { success: "no", msg: t("errors.exposition_not_assigned") }
+        end
+          
+      else
+        @msg = { success: "no", msg: t("errors.invalid_stand_key") }
+      end
+
+    end
+    
+    render json: @msg
+  end
+
+  def rate
+    
+    if !session[:attendee_id].blank?
+
+      if params[:value] =~ /\A[1-3]\z/
+        Rating.create(value: params[:value], comment: params[:comment])
+        @msg = { success: "yes", msg: t(:rate_thank_you) }
+      end
+      
+    end
+  
+    render json: @msg
+  end
+  
+  def detect_platform
+    #    if request.env['HTTP_USER_AGENT'] == ""
+    #      access = true
+    #    else
+    #      access = false
+    #    end
+    #    unless access
+    #      flash[:alert] = t('no_access')
+    #      redirect_to root_path
+    #    end
+  end
+  
+end

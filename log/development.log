@@ -1,0 +1,421 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-28 14:47:37 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 16ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-10-28 14:47:37 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (6.3ms)
+  Rendered devise/shared/_links.erb (2.3ms)
+Completed 200 OK in 600ms (Views: 113.4ms | ActiveRecord: 410.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-10-28 14:47:38 -0700
+Compiled reset.css  (0ms)  (pid 25849)
+Compiled style.css  (0ms)  (pid 25849)
+Compiled table.css  (0ms)  (pid 25849)
+Compiled invalid.css  (0ms)  (pid 25849)
+Compiled blue.css  (0ms)  (pid 25849)
+Compiled jquery.datetimeentry.css  (0ms)  (pid 25849)
+Compiled redmond/jquery-ui-1.9.2.custom.css  (0ms)  (pid 25849)
+Compiled application.css  (46ms)  (pid 25849)
+Served asset /application.css - 200 OK (590ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-10-28 14:47:38 -0700
+Compiled jquery-1.9.0.js  (7ms)  (pid 25849)
+Compiled jquery_ujs.js  (1ms)  (pid 25849)
+Compiled jquery-ui-1.9.2.custom.js  (8ms)  (pid 25849)
+Compiled jquery.datetimeentry.js  (2ms)  (pid 25849)
+Compiled simpla.jquery.configuration.js  (0ms)  (pid 25849)
+Compiled facebox.js  (0ms)  (pid 25849)
+Compiled application.js  (2344ms)  (pid 25849)
+Served asset /application.js - 200 OK (27186ms)
+
+
+Started GET "/assets/expomobile.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /expomobile.png - 200 OK (107ms)
+
+
+Started GET "/assets/icons/cross_grey_small.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /icons/cross_grey_small.png - 200 OK (160ms)
+
+
+Started GET "/assets/icons/information.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /icons/information.png - 200 OK (16ms)
+
+
+Started GET "/assets/bg-login.gif" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /bg-login.gif - 200 OK (24ms)
+
+
+Started GET "/assets/bg-login-top.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /bg-login-top.png - 200 OK (6ms)
+
+
+Started GET "/assets/bg-button-blue.gif" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /bg-button-blue.gif - 200 OK (4ms)
+
+
+Started GET "/users/resources/images/loading.gif" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/resources/images/closelabel.gif" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/tl.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /tl.png - 200 OK (25ms)
+
+
+Started GET "/assets/b.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /b.png - 200 OK (3ms)
+
+
+Started GET "/assets/tr.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /tr.png - 200 OK (3ms)
+
+
+Started GET "/assets/bl.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /bl.png - 200 OK (2ms)
+
+
+Started GET "/assets/br.png" for 127.0.0.1 at 2013-10-28 14:48:06 -0700
+Served asset /br.png - 200 OK (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-28 15:06:41 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-10-28 15:06:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (3.8ms)
+  Rendered devise/shared/_links.erb (1.7ms)
+Completed 200 OK in 92ms (Views: 91.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-10-28 15:06:42 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-10-28 15:06:42 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/expomobile.png" for 127.0.0.1 at 2013-10-28 15:06:42 -0700
+Served asset /expomobile.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/resources/images/closelabel.gif" for 127.0.0.1 at 2013-10-28 15:06:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/resources/images/loading.gif" for 127.0.0.1 at 2013-10-28 15:06:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-10-28 15:08:43 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V5xKumJZ5KJCcSFgCfU6avOI1PT0t6XhKTl0mTQ1hW8=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (167.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (lower(username) = 'administrator' OR lower(email) = 'administrator') LIMIT 1[0m
+  [1m[35m (54.9ms)[0m  BEGIN
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (116.8ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2013-10-28 22:08:43.787515', "sign_in_count" = 2, "updated_at" = '2013-10-28 22:08:43.836521' WHERE "users"."id" = 1[0m
+  [1m[35m (78.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 652ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-28 15:08:44 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Exhibitor class
+  Rendered layouts/_sidebar.erb (210.7ms)
+Completed 500 Internal Server Error in 284ms
+
+ActionView::Template::Error (undefined method `is_super_admin' for nil:NilClass):
+    36:               <% else %>
+    37:                 <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+    38:               <% end %>
+    39:               <% if current_user.role.is_super_admin || !current_user.role.is_super_admin && model != "User" %>
+    40:                 <li><%= link_to new_text, eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+    41:               <% end %>
+    42:             </ul>
+  app/views/layouts/_sidebar.erb:39:in `block in _app_views_layouts__sidebar_erb___2601078974007669744_70096353808140'
+  app/views/layouts/_sidebar.erb:26:in `each'
+  app/views/layouts/_sidebar.erb:26:in `_app_views_layouts__sidebar_erb___2601078974007669744_70096353808140'
+  app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb___465181289823842524_70096353591780'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-29 16:39:19 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 17ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-10-29 16:39:20 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (6.5ms)
+  Rendered devise/shared/_links.erb (2.1ms)
+Completed 200 OK in 995ms (Views: 58.1ms | ActiveRecord: 863.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Compiled style.css  (0ms)  (pid 2719)
+Compiled application.css  (7ms)  (pid 2719)
+Served asset /application.css - 200 OK (496ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /application.js - 200 OK (47ms)
+
+
+Started GET "/assets/icons/cross_grey_small.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /icons/cross_grey_small.png - 200 OK (1ms)
+
+
+Started GET "/assets/expomobile.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /expomobile.png - 200 OK (2ms)
+
+
+Started GET "/assets/bg-login.gif" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /bg-login.gif - 200 OK (7ms)
+
+
+Started GET "/assets/icons/information.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /icons/information.png - 200 OK (2ms)
+
+
+Started GET "/assets/bg-login-top.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /bg-login-top.png - 200 OK (1ms)
+
+
+Started GET "/users/resources/images/loading.gif" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/bg-button-blue.gif" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /bg-button-blue.gif - 200 OK (2ms)
+
+
+Started GET "/users/resources/images/closelabel.gif" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/tl.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /tl.png - 200 OK (1ms)
+
+
+Started GET "/assets/b.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /b.png - 200 OK (1ms)
+
+
+Started GET "/assets/tr.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /tr.png - 200 OK (1ms)
+
+
+Started GET "/assets/bl.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /bl.png - 200 OK (2ms)
+
+
+Started GET "/assets/br.png" for 127.0.0.1 at 2013-10-29 16:39:21 -0700
+Served asset /br.png - 200 OK (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-10-29 16:39:27 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ChGKpRF49fqXEurqT54OVOw41G6zpo+1tjl5fHvQSJw=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (213.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (lower(username) = 'administrator' OR lower(email) = 'administrator') LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (19.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (107.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-10-28 22:08:43.000000', "current_sign_in_at" = '2013-10-29 23:39:27.865476', "sign_in_count" = 3, "updated_at" = '2013-10-29 23:39:27.913496' WHERE "users"."id" = 1[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3001/
+Completed 302 Found in 552ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-29 16:39:28 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Exhibitor class
+  Rendered layouts/_sidebar.erb (197.1ms)
+Completed 500 Internal Server Error in 235ms
+
+ActionView::Template::Error (undefined method `is_super_admin' for nil:NilClass):
+    36:               <% else %>
+    37:                 <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+    38:               <% end %>
+    39:               <% if current_user.role.is_super_admin || !current_user.role.is_super_admin && model != "User" %>
+    40:                 <li><%= link_to new_text, eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+    41:               <% end %>
+    42:             </ul>
+  app/views/layouts/_sidebar.erb:39:in `block in _app_views_layouts__sidebar_erb__3953486077121052821_70269535300020'
+  app/views/layouts/_sidebar.erb:26:in `each'
+  app/views/layouts/_sidebar.erb:26:in `_app_views_layouts__sidebar_erb__3953486077121052821_70269535300020'
+  app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb__413083620073598420_70269535088620'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.8ms)

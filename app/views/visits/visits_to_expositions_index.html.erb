@@ -1,0 +1,66 @@
+<script type="text/javascript">
+  $(function() {
+<% Group.all.each do |g| %>
+    $('#container_<%= g.id %>').highcharts({
+    chart: {
+    type: 'bar'
+    },
+            title: {
+    text: "<%= t("visit.visits_expositions_by_exposition") %>"
+    },
+            subtitle: {
+    text: "<%= g.name %>"
+    },
+            xAxis: {
+    categories: [
+  <%= Exposition.all.map{ |e| "'#{e.name}'" }.join(",").html_safe %>
+    ],
+            allowDecimals: false
+    },
+            yAxis: {
+    allowDecimals: false,
+            title: {
+    text: "<%= t(:visits) %>"
+    }
+    },
+            tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+    },
+            plotOptions: {
+    column: {
+    pointPadding: 0.2,
+            borderWidth: 0
+    }
+    },
+  <% series = [] %>
+  <% Subgroup.where(:group_id => g.id).order(:name).each do |s| %>
+    <% data = [] %>
+    <% Exposition.all.each do |e| %>
+      <% attendances = AttendeeExposition.joins("INNER JOIN expositions e ON attendee_expositions.exposition_id = e.id")
+      .joins("INNER JOIN attendees a ON attendee_expositions.attendee_id = a.id")
+      .joins("INNER JOIN subgroups s ON a.subgroup_id = s.id")
+      .where("s.id = ? AND e.id = ?", s.id, e.id).count %>
+      <% attendances = nil if attendances == 0 %>
+      <% data << attendances %>
+    <% end %>
+    <% series << { name: s.name, data: data } %>
+  <% end %>
+    series: <%= series.to_json.html_safe %>
+    });
+<% end %>
+  });
+</script>
+
+<div class="menu-links">
+  <%= link_to t("visit.visits_expositions_by_subgroup"), visits_visits_to_expositions_by_subgroup_path, :class => "menu-link" %>
+  <%= link_to t("visit.visits_expositions_by_exposition"), visits_visits_to_expositions_by_exposition_path, :class => "menu-link" %>
+</div>
+
+<% Group.all.each do |g| %>
+  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; margin: 50px auto;"><%= g.name %></div>
+<% end %>

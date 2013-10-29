@@ -1,0 +1,24 @@
+<%= render "layouts/first_tab" %>
+
+<div class="CSSTableGenerator" >
+  <table >
+    <tr>
+      <td>
+        <b><%= @stand.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'stand.stand_key' %>:<%= @stand.stand_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:type => "stand", :key => @stand.stand_key), :class => "qr_code" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'stand.exhibitor' %>:<%= @stand.exhibitor.name %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<%= render "layouts/action_links" %>

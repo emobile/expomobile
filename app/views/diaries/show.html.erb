@@ -1,0 +1,29 @@
+<%= render "layouts/first_tab" %>
+
+<div class="CSSTableGenerator" >
+  <table >
+          <tr>
+        <td>
+          <b><%= @diary.event_date %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= @diary.event_type %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= @diary.description %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= @diary.place %>
+        </td>
+      </tr>
+      </table>
+</div>
+
+
+<%= render "layouts/action_links" %>

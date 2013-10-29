@@ -1,0 +1,465 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  about_enter: "ACERCA DE LA EMPRESA"
+  accept: "Aceptar"
+  
+  activerecord:
+    attributes:
+      activity:
+        end_date: "Fecha final"
+        name: "Nombre"
+        place: "Lugar"
+        start_date: "Fecha inicial"
+      attendee:
+        a_cellphone: "TEL. CELULAR (A 10 DIGITOS)"
+        a_email: "CORREO ELECTRÓNICO"
+        a_market_segment: "SEGMENTO DEL MERCADO QUE ATIENDEN"
+        a_name: "NOMBRE DEL ASISTENTE"
+        a_num_employees: "NÚMERO DE EMPLEADOS"
+        a_other_line: "OTRO GIRO"
+        a_platform: "PLATAFORMA"
+        a_sec_line: "GIRO SECUNDARIO"
+        e_city: "CIUDAD"
+        e_colony: "COLONIA"
+        e_ext_number: "NO. EXT"
+        e_lada: "LADA"
+        e_main_line: "GIRO PRINCIPAL"
+        e_municipality: "DELEGACIÓN / MUNICIPIO"
+        e_name: "RAZÓN SOCIAL DE LA EMPRESA / PERSONA FÍSICA CON ACTIVIDADES EMPRESARIALES"
+        e_phone: "TELÉFONO"
+        e_rfc: "RFC"
+        e_state: "ESTADO"
+        e_street: "CALLE"
+        e_tradename: "NOMBRE COMERCIAL"
+        e_zip_code: "C. P."
+      conference:
+        conferencist: "Conferencista"
+        end_date: "Fecha final"
+        name: "Nombre"
+        place: "Lugar"
+        start_date: "Fecha inicial"
+      diary:
+        description: "Descripción"
+        event_date: "Día del evento"
+        event_type: "Tipo de evento"
+        place: "Lugar"
+      exhibitor:
+        job: "Puesto"
+        name: "Nombre"
+        social_reason: "Razón social"
+      exposition:
+        end_date: "Fecha final"
+        name: "Nombre"
+        start_date: "Fecha inicial"
+      face_to_face:
+        attendee_id: "ID del solicitante"
+        end_date: "Fecha final"
+        int_name: "Nombre del entrevistado"
+        int_social_reason: "Razón social del entrevistado"
+        start_date: "Fecha inicial"
+        subject: "Asunto"
+      group:
+        name: "Nombre"
+      hour:
+        end_date: "Fecha final"
+        start_date: "Fecha inicial"
+      offert:
+        description: "Descripción"
+        end_date: "Fecha final"
+        location: "Ubicación"
+        price: "Precio"
+        start_date: "Fecha inicial"
+      room:
+        name: "Nombre"
+        room_key: "Clave"
+      sponsor:
+        email: "Correo electrónico"
+        job: "Puesto"
+        name: "Nombre"
+        phone: "Teléfono"
+        social_reason: "Razón social"
+      stand:
+        name: "Nombre"
+      subgroup:
+        leader: "Líder"
+        name: "Nombre"
+        subgroup_key: "Clave del subgrupo"
+      user:
+        address: "Dirección"
+        city: "Ciudad"
+        country: "País"
+        email: "Correo electrónico"
+        first_name: "Primer nombre"
+        last_name: "Apellido"
+        phone: "Teléfono"
+        state: "Estado"
+        zip: "Código postal"
+      workshop:
+        name: "Nombre"
+        room_id: "Salón"
+        teacher_name: "Instructor"
+    errors:
+      template:
+        header:
+          one: "1 error evitó que este elemento (%{model}) fuera registrado:"
+          other: "%{count} errores evitaron que este elemento (%{model}) fuera registrado:"
+        body: "Se encontraron problemas con los siguientes campos:"
+      messages:
+        invalid_attachment_size: " sobrepasa el límite de tamaño permitido, elija un archivo diferente."
+        invalid_attachment_content_type: " inválido, elija un archivo diferente con la extension correspondiente."
+        invalid_datetime: "campo de fecha y hora inválido."
+        taken: "registro ya existente."
+        invalid: "campo inválido."
+        blank: "no puede ser un campo vacío."
+        too_short: "valor demasiado corto."
+        too_long: "valor demasiado largo."
+        not_a_number: "no es un valor numérico."
+        not_less_than_end_date: "no es menor que la final."
+        overlaps: "las fechas se empalman con otras ya existentes."
+    models:
+      activity: "actividad"
+      attendee: "asistente"
+      conference: "conferencia"
+      diary: "agenda"
+      exhibitor: "expositor"
+      exposition: "exposición"
+      face_to_face: "cara a cara"
+      group: "grupo"
+      hour: "horario"
+      offert: "oferta"
+      room: "salón"
+      sponsor: "patrocinador"
+      stand: "stand"
+      subgroup: "subgrupo"
+      user: "usuario"
+      workshop: "taller"
+  
+  activity:
+    end_date: "Fecha final"
+    name: "Nombre"
+    observations: "Observaciones"
+    place: "Lugar"
+    start_date: "Fecha inicial"
+    
+  activities: "Actividades"
+  applicant: "Solicitante"
+  assisted: "asistidos"
+  assisted_female: "asistidas"
+  associate_workshop_to_group: "Asignar taller con grupo"
+
+  atten:
+    access_ok: "Tu NIP fue validado exitosamente"
+    atten:
+      cellphone: "TEL. CELULAR (A 10 DIGITOS)"
+      chat: "MENSAJERÍA INSTANTÁNEA"
+      email: "CORREO ELECTRÓNICO"
+      id_for_access: "ID PARA ACCESO"
+      is_director: "¿ES EL DIRECTOR?"
+      main_line: "GIRO PRINCIPAL"
+      market_segment: "SEGMENTO DEL MERCADO QUE ATIENDEN"
+      name: "NOMBRE DEL ASISTENTE"
+      nip: "NIP"
+      num_employees: "NÚMERO DE EMPLEADOS"
+      other_line: "OTRO GIRO"
+      platform: "PLATAFORMA"
+      radio_nextel: "NO. RADIO NEXTEL"
+      register_id: "ID de registro"
+      sec_line: "GIRO SECUNDARIO"
+      subgroup: "SUBGRUPO"
+      tel_nextel: "TEL. NEXTEL (A 10 DIGITOS)"
+      web: "WEB"
+    enter:
+      city: "CIUDAD"
+      colony: "COLONIA"
+      ext_number: "NO. EXT"
+      int_number: "NO. INT"
+      lada: "LADA"
+      municipality: "DELEGACIÓN / MUNICIPIO"
+      name: "RAZÓN SOCIAL DE LA EMPRESA / PERSONA FÍSICA CON ACTIVIDADES EMPRESARIALES"
+      phone: "TELÉFONO"
+      rfc: "RFC"
+      state: "ESTADO"
+      street: "CALLE"
+      tradename: "NOMBRE COMERCIAL"
+      zip_code: "C. P."
+    id_ok: "Haz proporcionado tu ID correctamente"
+    mail:
+      nip_subject: "NIP para ingresar a la aplicación de ANADIC"
+    nip_sended: "Tu NIP fue enviado a %{email}, Por favor verifica tu email"
+    thanks_for_joining: "¡Gracias por unirte, disfruta de un excelente día!"
+    type_nip: "Ahora puedes ingresar a la aplicación, solo escribe este NIP:"
+    
+  attendees: "Asistentes"
+  apply_to_selected: "Aplicar a seleccionados"
+  back: "Volver"
+  bad_total: "Total de malas"
+  catalogs: "Menú de catálogos"
+  choose_action: "Elige una acción"
+  comments: "Comentarios"
+  
+  conference:
+    conferencist: "Conferencista"
+    end_date: "Fecha final"
+    name: "Nombre"
+    observations: "Observaciones"
+    place: "Lugar"
+    start_date: "Fecha inicial"
+  
+  conferences: "Conferencias"
+  confirm_instructions: "¿No haz recibido las instrucciones de confirmación?"
+  contact_info: "INFORMACIÓN DE CONTACTO"
+  corporate: "Corporativo"
+  create_attendee: "Crear asistente"
+  currently_waiting_confirmation: "Confirmación pendiente para: "
+  
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  
+  destroy: "Eliminar"
+  
+  devise:
+    change_my_password: "Cambiar mi contraseña"
+    change_your_password: "Cambia tu contraseña"
+    confirm_my_account: "Confirmar mi cuenta"
+    forgot_your_password: "¿Olvidaste tu contraseña?"
+    resend_confirmation_instructions: "Reenviar instrucciones de confirmación"
+    resend_unlock_instructions: "Reenviar instrucciones de desbloqueo"
+    send_me_reset_password_instructions: "Enviar instrucciones de desbloqueo"
+    you_can_confirm_your_account_email: "Puedes confirmar tu correo electrónico a través de este link: "
+  
+  diary:
+    description: "Descripción"
+    event_date: "Día del evento"
+    event_type: "Tipo de evento"
+    place: "Lugar"
+  
+  diaries: "Agendas"
+  edit_record: "Editar %{record}"
+  education: "Educación"
+  
+  exhibitor:
+    job: "Puesto"
+    logo: "Logotipo"
+    name: "Nombre"
+    social_reason: "Razón social"
+    
+  exposition:
+    end_date: "Fecha final"
+    exhibitor: "Expositor"
+    name: "Nombre"
+    stand: "Stand"
+    start_date: "Fecha inicial"
+  
+  exhibitors: "Expositores"
+  expositions: "Exposiciones"
+  
+  errors:
+    atten_email_already_sended: "Tu NIP ya fue enviado a tu email, porfavor espera al menos 5 minutos para solicitarlo de nuevo"
+    atten_email_dont_sended: "Tu NIP no pudo ser enviado a tu email"
+    atten_email_maximum_sends: "Se ha excedido el máximo de solicitudes del NIP"
+    atten_invalid_id: "No proporcionaste tu ID correctamente"
+    atten_invalid_nip: "No proporcionaste tu NIP correctamente"
+    atten_nips_dont_match: "El NIP que proporcionaste no coincide con el que te fue enviado"
+    atten_not_exists: "El asistente no existe"
+    exposition_not_assigned: "Exposición no asignada"
+    invalid_stand_key: "Clave de stand inválida"
+    invalid_workshop_key: "Clave de taller inválida"
+    workshop_not_assigned: "Taller no asignado"
+  
+  face_to_face:
+    app_email: "S. Email"
+    app_enterprise: "S. Empresa"
+    app_name: "S. Nombre"
+    app_phone: "S. Teléfono"
+    end_date: "Fecha final"
+    int_name: "E. Nombre"
+    int_social_reason: "E. Razón social"
+    int_job: "E. Puesto"
+    subject: "Asunto"
+    start_date: "Fecha inicial"
+    
+  face_to_faces: "Cara a cara"
+  fair_total: "Total de regulares"
+  false_value: "No"
+    
+  general_info: "INFORMACIÓN GENERAL"
+  generate_diary: "Generar agenda"
+  good_total: "Total de buenas"
+  government: "Gobierno"
+  
+  group:
+    name: "Nombre"
+    key: "Clave"
+  
+  groups: "Grupos"
+  health: "Salud"
+  
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
+  
+  home: "Inicio"
+  
+  hour:
+    associate_workshop_group: "Asociar taller con grupo"
+    create_hour: "Crear horario"
+    end_date: "Hora final"
+    hour: "Hora"
+    new_hour: "Nuevo horario"
+    start_date: "Hora inicial"
+    subgroup_name: "Nombre del grupo"
+    workshop_name: "Nombre del taller"
+    
+  hours: "Horarios"
+  interviewee: "Entrevistado"
+  login: "Usuario"
+  logout: "Salir"
+  map: "Mapa"
+  new_record_female: "Nueva %{record}"
+  new_record_male: "Nuevo %{record}"
+  no_visits: "No hay ninguna visita registrada."
+  not_registered: "No registrad@"
+  of: de
+  
+  offert:
+    description: "Descripción"
+    end_date: "Fecha final"
+    exhibitor_name: "Nombre del expositor"
+    location: "Ubicación"
+    price: "Precio"
+    start_date: "Fecha inicial"
+    
+  offerts: "Ofertas"
+  other: "Otro"
+  participants: "Participantes"
+  password: "Contraseña"
+  passwords: "Contraseñas"
+  percent: "Porcentaje"
+  please_select: "Selecciona uno"
+  pymes: "PyMEs"
+  qr_code: "Código QR"
+  rate_thank_you: "Gracias por tu opinión."
+  rating: "Rating"
+  register_date: "HORA DE REGISTRO"
+  registrations: "Registro"
+  remember_me: "Recordar"
+  required: "Campos requeridos"
+  retail: "Retail"
+  return_to_index: "Regresar a %{model}"
+  role_name: "Nombre del rol"
+  
+  room:
+    name: "Nombre"
+    room_key: "Clave"
+  
+  rooms: "Salones"
+  
+  schedule:
+    created: "El horario fue exitosamente creado."
+    deallocate: "Desasignar"
+    deallocation_done: "Desasignación realizada"
+    not_created: "El horario no pudo ser creado."
+    updated: "El horario fue exitosamente actualizado."
+    not_updated: "El horario no pudo ser actualizado."
+  
+  schedules: "Horarios"
+  search_by_name: "Buscar por nombre"
+  sessions: "Sesiones"
+  set_tolerance: "Establecer tolerancia"
+  show_record: "Mostrar %{record}"
+  sign_in: "Iniciar sesión"
+  sign_in_with: "Iniciar sesión con %{provider}"
+  sign_up: "Registrarse"
+  signed_in: "En línea"
+  
+  sponsor:
+    email: "Correo electrónico"
+    facebook: "Facebook"
+    job: "Puesto"
+    name: "Nombre"
+    phone: "Teléfono"
+    social_reason: "Razón social"
+    twitter: "Twitter"
+    web_page: "Página web"
+    work_address: "Dirección de trabajo"
+    
+  sponsors: "Patrocinadores"
+  
+  stand:
+    exhibitor: "Expositor"
+    name: "Nombre"
+    stand_key: "Clave"
+  
+  stands: "Stands"
+  statistics: "Estadísticas"
+  
+  subgroup:
+    group_name: "Nombre del grupo"
+    leader: "Líder"
+    name: "Nombre"
+    subgroup_key: "Clave del subgrupo"
+  
+  subgroups: "Subgrupos"
+  tolerance_not_set: "Error, tolerance could not set"
+  tolerance_set_successfully: "Tolerance was set successfully"
+  true_value: "Si"
+  unlock_instructions: "¿No haz recibido las instrucciones de desbloqueo?"
+  users: "Usuarios"
+  
+  user:
+    address: "Dirección"
+    city: "Ciudad"
+    country: "País"
+    email: "Correo electrónico"
+    first_name: "Primer nombre"
+    fullname: "Nombre completo"
+    last_name: "Apellido"
+    password: "Contraseña"
+    password_confirmation: "Confirmación de la contraseña"
+    phone: "Teléfono"
+    role_name: "Nombre del rol"
+    state: "Estado"
+    zip: "Código postal"
+  
+  visit:
+    visits_to_workshops: "Visitas a talleres"
+    visits_to_expositions: "Visitas a exposiciones"
+    visits_expositions_by_exposition: "Visitas a exposiciones por exposición"
+    visits_expositions_by_subgroup: "Visitas a exposiciones por subgrupo"
+    visits_workshops_by_subgroup: "Visitas a talleres por subgrupo"
+    visits_workshops_by_workshop: "Visitas a talleres por taller"
+  
+  visit_already_registered: "Tu visita ya ha sido registrada"
+  visit_not_registered: "No pudiste registrar tu visita, no es la hora apropiada"
+  visit_registered: "Haz registrado tu visita con éxito"
+  visits: "Visitas"
+  web: "Web"
+  welcome: "Bienvenid@"
+        
+  will_paginate:
+    previous_label: "&#8592; Anteriores"
+    next_label: "Siguientes &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "Ninguno encontrado"
+        one:   "Mostrando 1 %{model}"
+        other: "Mostrando todos (%{count})"
+      single_page_html:
+        zero:  "Ninguno encontrado"
+        one:   "Mostrando <b>1</b> %{model}"
+        other: "Mostrando todos <b>(%{count})</b>"
+      multi_page: "Mostrando %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrando <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b> %{count}</b> en total"
+  
+  workshop:
+    name: "Nombre"
+    room: "Salón"
+    teacher_name: "Instructor"
+    workshop_key: "Clave"
+  
+  workshops: "Talleres"
