@@ -1,4 +1,0 @@
-expomobile
-==========
-
-App para conferencias.
