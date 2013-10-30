@@ -4,8 +4,7 @@ class Exhibitor < ActiveRecord::Base
     :styles => {:medium => "300x300>",
     :thumb => "100x100>",
     :mobile => "32x32>" },
-    :default_url => "/assets/missing.jpg",
-    :path        => "pictures/:id/:filename"
+    :default_url => "/assets/missing.jpg"
   has_many :offerts, :dependent => :destroy
   has_one :exposition, :dependent => :destroy
   
