@@ -1,7 +1,0 @@
-#!/bin/bash
-
-find . -type d -regex ".*@asech_gob_mx" | while read matched_dir; do 
-    echo ${matched_dir}
-    rm -f ${matched_dir}/new/*
-    rm -f ${matched_dir}/cur/*
-done
