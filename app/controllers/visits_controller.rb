@@ -1,11 +1,5 @@
 class VisitsController < ApplicationController
   before_filter :authenticate_user!
-  
-  def visits_to_workshops_index
-  end
-  
-  def visits_to_workshops_by_subgroup
-  end
 
   def visits_to_workshops_by_workshop
     if params[:subgroup_id] =~ /\A\d+\z/
@@ -34,11 +28,20 @@ class VisitsController < ApplicationController
       end
     end
   end
-
-  def visits_to_expositions_index
-  end
-
-  def visits_to_expositions_by_subgroup
+  
+  def visits_to_workshops_generate_report
+    @workshop = Workshop.find_by_id(params[:workshop_id])
+    
+    if !@workshop.nil?
+      @subgroups = Subgroup.all.each do |s|
+        s.attendees.each do |a|
+          a[:assisted] = AttendeeWorkshop.where("attendee_id = ? AND workshop_id = ?", a.id, params[:workshop_id]).any?
+        end
+      end
+      render layout: false
+    else
+      render nothing: true
+    end
   end
 
   def visits_to_expositions_by_exposition
@@ -66,6 +69,21 @@ class VisitsController < ApplicationController
       else
         @subgroups[subgroup_name] = [a]
       end
+    end
+  end
+  
+  def visits_to_expositions_generate_report
+    @exposition = Exposition.find_by_id(params[:exposition_id])
+    
+    if !@exposition.nil?
+      @subgroups = Subgroup.all.each do |s|
+        s.attendees.each do |a|
+          a[:assisted] = AttendeeExposition.where("attendee_id = ? AND exposition_id = ?", a.id, params[:exposition_id]).any?
+        end
+      end
+      render layout: false
+    else
+      render nothing: true
     end
   end
 end

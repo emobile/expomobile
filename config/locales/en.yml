@@ -151,6 +151,7 @@ en:
   
   atten:
     access_ok: "Your NIP was validated successfully"
+    assisted: "Assisted?"
     atten:
       cellphone: "CELLPHONE (10 NUMBERS)"
       chat: "INSTANT MESSAGING"
@@ -191,11 +192,15 @@ en:
     thanks_for_joining: "Thanks for joining and have a great day!"
     type_nip: "Now you can login to the application, just type this PIN:"
     
+  attendance: "Attendance"
   attendees: "Attendees"
   apply_to_selected: "Apply to selected"
   back: "Back"
   bad_total: "Bad total"
+  boolean_false: "No"
+  boolean_true: "Yes"
   catalogs: "Catalogue menu"
+  cellphone: "Cellphone"
   choose_action: "Choose action"
   comments: "Comments"
   
@@ -287,6 +292,7 @@ en:
   forgot_password: "Forgot your password?"
   general_info: "GENERAL INFORMATION"
   generate_diary: "Generate diary"
+  generate_report: "Generate report"
   good_total: "Good total"
   government: "Government"
   

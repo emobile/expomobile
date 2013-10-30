@@ -134,7 +134,7 @@ class MobileServicesController < ApplicationController
   def show_offert
     
     if !session[:attendee_id].blank?
-      @offert = Offert.find(params[:offert_id])
+      @offert = Offert.find_by_id(params[:offert_id])
       @offert[:exhibitor_name] = @offert.exhibitor.name
       render json: @offert
     end
@@ -154,8 +154,8 @@ class MobileServicesController < ApplicationController
   def show_sponsor
     
     if !session[:attendee_id].blank?
-      @sponsor = Sponsor.find(params[:sponsor_id])
-      @sponsor[:mobile_logo_url] = !@sponsor.logo.url(:mobile) if !@sponsor.nil?
+      @sponsor = Sponsor.find_by_id(params[:sponsor_id])
+      @sponsor[:mobile_logo_url] = @sponsor.logo.url(:mobile) if !@sponsor.nil?
       render json: @sponsor
     end
 
@@ -164,7 +164,7 @@ class MobileServicesController < ApplicationController
   def index_conferences
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @conferences = Conference.order(:start_date).select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
@@ -178,7 +178,7 @@ class MobileServicesController < ApplicationController
   def show_conference
     
     if !session[:attendee_id].blank?
-      @conference = Conference.find(params[:conference_id])
+      @conference = Conference.find_by_id(params[:conference_id])
       render json: @conference
     end
 
@@ -187,7 +187,7 @@ class MobileServicesController < ApplicationController
   def index_activities
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @activities = Activity.order(:start_date).select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
@@ -201,7 +201,7 @@ class MobileServicesController < ApplicationController
   def show_activity
     
     if !session[:attendee_id].blank?
-      @activity = Activity.find(params[:activity_id])
+      @activity = Activity.find_by_id(params[:activity_id])
       render json: @activity
     end
 
@@ -210,7 +210,7 @@ class MobileServicesController < ApplicationController
   def index_diaries
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @diaries = Diary.order(:event_date).select {|d| d.event_date.strftime('%d/%m/%Y') == params[:day]}
@@ -224,7 +224,7 @@ class MobileServicesController < ApplicationController
   def show_diary
     
     if !session[:attendee_id].blank?
-      @diary = Diary.find(params[:diary_id])
+      @diary = Diary.find_by_id(params[:diary_id])
       render json: @diary
     end
 
@@ -233,7 +233,7 @@ class MobileServicesController < ApplicationController
   def index_face_to_faces
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @face_to_faces = FaceToFace.where(:attendee_id => session[:attendee_id]).order(:start_date).select {|f| f.start_date.strftime('%d/%m/%Y') == params[:day]}
@@ -282,7 +282,7 @@ class MobileServicesController < ApplicationController
   def index_workshop_days
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @days = @attendee.hours.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq
@@ -296,7 +296,7 @@ class MobileServicesController < ApplicationController
   def index_exposition_days
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @days = Exposition.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq
@@ -310,7 +310,7 @@ class MobileServicesController < ApplicationController
   def index_conference_days
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @days = Conference.pluck(:start_date).map{ |c| c.strftime("%d/%m/%Y") }.uniq
@@ -324,7 +324,7 @@ class MobileServicesController < ApplicationController
   def index_activity_days
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @days = Activity.pluck(:start_date).map{ |a| a.strftime("%d/%m/%Y") }.uniq
@@ -338,7 +338,7 @@ class MobileServicesController < ApplicationController
   def index_diary_days
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @days = Diary.pluck(:event_date).map{ |d| d.strftime("%d/%m/%Y") }.uniq
@@ -352,7 +352,7 @@ class MobileServicesController < ApplicationController
   def index_face_to_face_days
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       unless @attendee.nil?
         @days = FaceToFace.where(:attendee_id => session[:attendee_id]).pluck(:start_date).map{ |f| f.strftime("%d/%m/%Y") }.uniq
         render json: @days
@@ -365,7 +365,7 @@ class MobileServicesController < ApplicationController
   def index_workshops
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @workshops = @attendee.workshops
@@ -398,7 +398,7 @@ class MobileServicesController < ApplicationController
   def index_expositions
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @expositions = Exposition.order(:start_date).select {|e| e.start_date.strftime('%d/%m/%Y') == params[:day]}
@@ -418,7 +418,7 @@ class MobileServicesController < ApplicationController
   def index_expositions_names
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find(session[:attendee_id])
+      @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
         @expositions = Exposition.select(:name)

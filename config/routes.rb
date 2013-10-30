@@ -26,14 +26,10 @@ Expomobile::Application.routes.draw do
   get "visits/visits_to_expositions_by_exposition"
   get "visits/visits_to_workshops"
   get "visits/visits_to_expositions"
-  get "visit/visits_to_workshops_index"
-  get "visit/visits_to_expositions_index"
-  get "visit/visits_to_workshops_by_subgroup"
-  get "visit/visits_to_workshops_by_workshop"
-  get "visit/visits_to_expositions_by_subgroup"
-  get "visit/visits_to_expositions_by_exposition"
-  get "visit/visits_to_workshops"
-  get "visit/visits_to_expositions"
+  get "visits/visits_to_workshops_generate_report"
+  get "visits/visits_to_expositions_generate_report"
+  get "visits/visits_to_workshops_generate_report_by_workshop"
+  get "visits/visits_to_expositions_generate_report_by_exposition"
 
   resources :expositions
 
