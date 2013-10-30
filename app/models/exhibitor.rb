@@ -1,9 +1,9 @@
 class Exhibitor < ActiveRecord::Base
   attr_accessible :name, :logo, :social_reason, :job
   has_attached_file :logo,
-    :styles => {:medium => "300x300>",
-    :thumb => "100x100>",
-    :mobile => "32x32>" },
+    :styles => {:medium => "x300",
+    :thumb => "x100",
+    :mobile => "x64" },
     :default_url => "/assets/missing.jpg"
   has_many :offerts, :dependent => :destroy
   has_one :exposition, :dependent => :destroy
