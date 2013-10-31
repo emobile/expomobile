@@ -430,7 +430,7 @@ class MobileServicesController < ApplicationController
   end
   
   def register_visit_to_workshop
-    
+    current_time = Time.now - 7.hour
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
@@ -445,7 +445,7 @@ class MobileServicesController < ApplicationController
           
           if @visit_registered.nil?
             
-            if Time.now >= @workshop.start_date.to_utc && Time.now < (@workshop.end_date + SystemConfigurations.first.workshop_tolerance.minutes + 1.minutes)
+            if current_time >= @workshop.start_date.to_utc && current_time < (@workshop.end_date + SystemConfigurations.first.workshop_tolerance.minutes + 1.minutes)
               AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: params[:key])
               @msg = { success: "yes", msg: t(:visit_registered) }
             else
@@ -470,7 +470,7 @@ class MobileServicesController < ApplicationController
   end
   
   def register_visit_to_exposition
-    
+    current_time = Time.now - 7.hour
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
@@ -482,7 +482,7 @@ class MobileServicesController < ApplicationController
           
           if @visit_registered.nil?
             
-            if Time.now >= @exposition.start_date && Time.now <= @exposition.end_date + SystemConfigurations.first.exposition_tolerance.minutes
+            if current_time >= @exposition.start_date && current_time <= @exposition.end_date + SystemConfigurations.first.exposition_tolerance.minutes
               AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: params[:exposition_id])
               @msg = { success: "yes", msg: t(:visit_registered) }
             else
