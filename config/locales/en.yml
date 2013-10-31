@@ -119,6 +119,7 @@ en:
         not_a_number: " is not a numeric value."
         not_less_than_end_date: "is not less than end date."
         overlaps: "Dates overlap with other existing."
+        overlaps: "Dates overlap with other existing in stand."
     models:
       activity: "activity"
       attendee: "attendee"

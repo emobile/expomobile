@@ -24,9 +24,9 @@ class Hour < ActiveRecord::Base
   def date_not_overlaps
     overlaps = []
     if action == "update"
-      overlaps = FaceToFace.where("? < end_date AND start_date < ? AND id != ?", start_date, end_date, id)
+      overlaps = Hour.where("? < end_date AND start_date < ? AND id != ?", start_date, end_date, id)
     else
-      overlaps = FaceToFace.where("? < end_date AND start_date < ?", start_date, end_date)
+      overlaps = Hour.where("? < end_date AND start_date < ?", start_date, end_date)
     end
     if overlaps.any?
       errors.add(:base, :overlaps)

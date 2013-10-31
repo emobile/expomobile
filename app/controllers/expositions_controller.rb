@@ -50,6 +50,15 @@ class ExpositionsController < ApplicationController
     end
     
     @exposition = Exposition.new(params[:exposition])
+    
+    while @exposition.stand_key.nil?
+      random_value = Array.new(3) {[*'0'..'9', *'a'..'z'].sample}.join
+      @exposition = Exposition.find_by_exposition_key(random_value) || Workshop.find_by_workshop_key(random_value)
+        
+      if @exists.nil?
+        @exposition.stand_key = random_value
+      end
+    end
 
     respond_to do |format|
       if @exposition.save
@@ -65,6 +74,7 @@ class ExpositionsController < ApplicationController
   # PUT /expositions/1
   # PUT /expositions/1.json
   def update
+    Exposition.action = "update"
     @exposition = Exposition.find(params[:id])
 
     respond_to do |format|

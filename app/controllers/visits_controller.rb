@@ -8,7 +8,7 @@ class VisitsController < ApplicationController
   end
   
   def visits_to_workshops
-    @attendees = nil
+    @attendees = []
     @subgroups = {}
     if params[:workshop_id] =~ /\A\d+\z/ && params[:subgroup_id].blank?
       @attendees = Attendee.joins("INNER JOIN attendee_workshops a ON attendees.id = a.attendee_id")
@@ -21,7 +21,7 @@ class VisitsController < ApplicationController
     @attendees.each do |a|
       a[:register_date] = AttendeeWorkshop.find_by_attendee_id(a.id).created_at
       subgroup_name = a.subgroup.name
-      if @subgroups.has_key?([subgroup_name])
+      if @subgroups.has_key?(subgroup_name)
         @subgroups[subgroup_name] << a
       else
         @subgroups[subgroup_name] = [a]
@@ -51,7 +51,7 @@ class VisitsController < ApplicationController
   end
 
   def visits_to_expositions
-    @attendees = nil
+    @attendees = []
     @subgroups = {}
     if params[:exposition_id] =~ /\A\d+\z/
       @attendees = Attendee.joins("INNER JOIN attendee_expositions a ON attendees.id = a.attendee_id")
@@ -64,7 +64,7 @@ class VisitsController < ApplicationController
     @attendees.each do |a|
       a[:register_date] = AttendeeExposition.find_by_attendee_id(a.id).created_at
       subgroup_name = a.subgroup.name
-      if @subgroups.has_key?([subgroup_name])
+      if @subgroups.has_key?(subgroup_name)
         @subgroups[subgroup_name] << a
       else
         @subgroups[subgroup_name] = [a]

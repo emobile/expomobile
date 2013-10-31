@@ -41,15 +41,6 @@ class StandsController < ApplicationController
   # POST /stands.json
   def create
     @stand = Stand.new(params[:stand]) 
-    
-    while @stand.stand_key.nil?
-      random_value = Array.new(3) {[*'0'..'9', *'a'..'z'].sample}.join
-      @exists = Stand.find_by_stand_key(random_value) || Workshop.find_by_workshop_key(random_value)
-        
-      if @exists.nil?
-        @stand.stand_key = random_value
-      end
-    end
 
     respond_to do |format|
       if @stand.save

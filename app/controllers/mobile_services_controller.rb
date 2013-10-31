@@ -434,19 +434,18 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
-        @workshop = Hour.joins("INNER JOIN schedules s ON hours.id = s.hour_id")
-        .joins("INNER JOIN workshops w ON s.workshop_id = w.id")
+        @workshop = Workshop.find_by_workshop_key(params[:key])
+        @hour = Hour.joins("INNER JOIN schedules s ON hours.id = s.hour_id")
         .joins("INNER JOIN subgroups su ON s.subgroup_id = su.id")
         .joins("INNER JOIN attendees a ON su.id = a.subgroup_id")
-        .where("w.workshop_key = ? AND a.id = ?", params[:key], session[:attendee_id]).first
+        .where("s.workshop_id = ? AND a.id = ?", @workshop.id, session[:attendee_id]).first
         
-        if !@workshop.nil?
+        if !@hour.nil?
           @visit_registered = AttendeeWorkshop.find_by_attendee_id_and_workshop_id(session[:attendee_id], @workshop.id)
           
           if @visit_registered.nil?
-            
-            if Time.now >= @workshop.start_date.to_utc && Time.now < (@workshop.end_date + SystemConfigurations.first.workshop_tolerance.minutes + 1.minutes)
-              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: params[:key])
+            if Time.now - 7.hours >= @hour.start_date && Time.now - 7.hours < (@hour.end_date + SystemConfigurations.first.workshop_tolerance.minutes + 1.minutes)
+              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: @workshop.id)
               @msg = { success: "yes", msg: t(:visit_registered) }
             else
               @msg = { success: "no", msg: t(:visit_not_registered) }
@@ -474,16 +473,15 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
-        @exposition = Exposition.joins("INNER JOIN stands s ON expositions.stand_id = s.id")
-        .where("stand_key = ?", params[:key]).first
+        @exposition = Exposition.find_by_exposition_key(params[:key])
         
         if !@exposition.nil?
           @visit_registered = AttendeeExposition.find_by_attendee_id_and_exposition_id(session[:attendee_id], @exposition.id)
           
           if @visit_registered.nil?
             
-            if Time.now >= @exposition.start_date && Time.now <= @exposition.end_date + SystemConfigurations.first.exposition_tolerance.minutes
-              AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: params[:exposition_id])
+            if Time.now - 7.hours >= @exposition.start_date && Time.now - 7.hours <= @exposition.end_date + SystemConfigurations.first.exposition_tolerance.minutes
+              AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: @exposition.id)
               @msg = { success: "yes", msg: t(:visit_registered) }
             else
               @msg = { success: "no", msg: t(:visit_not_registered) }

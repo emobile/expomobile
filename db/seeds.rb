@@ -94,12 +94,12 @@ Hour.create(start_date: 'Tue, 26 Nov 2013 10:40:00 UTC +00:00', end_date: 'Tue, 
 Hour.create(start_date: 'Tue, 26 Nov 2013 11:20:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 11:50:00 UTC +00:00')
 Hour.create(start_date: 'Tue, 26 Nov 2013 12:00:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 12:30:00 UTC +00:00')
 
-Stand.create(name: "Stand 1", stand_key: "s11", exhibitor_id: 1)
-Stand.create(name: "Stand 2", stand_key: "s22", exhibitor_id: 1)
-Stand.create(name: "Stand 3", stand_key: "s33", exhibitor_id: 1) 
+Stand.create(name: "Stand 1", exhibitor_id: 1)
+Stand.create(name: "Stand 2", exhibitor_id: 1)
+Stand.create(name: "Stand 3", exhibitor_id: 1) 
 
-Exposition.create(name: "Exposition 1", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 1, exhibitor_id: 1)
-Exposition.create(name: "Exposition 2", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 2, exhibitor_id: 2)
+Exposition.create(name: "Exposition 1", exposition_key: "e11", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 1, exhibitor_id: 1)
+Exposition.create(name: "Exposition 2", exposition_key: "e22", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 2, exhibitor_id: 2)
 
 AttendeeExposition.create(attendee_id: 1, exposition_id: 1)
 AttendeeExposition.create(attendee_id: 2, exposition_id: 2)

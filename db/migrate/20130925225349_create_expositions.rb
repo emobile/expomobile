@@ -2,6 +2,7 @@ class CreateExpositions < ActiveRecord::Migration
   def change
     create_table :expositions do |t|
       t.string :name,                        :null => false
+      t.string :exposition_key,              :null => false
       t.references :stand,                   :null => false
       t.references :exhibitor,               :null => false
       t.datetime :start_date,                :null => false

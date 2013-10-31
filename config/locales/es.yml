@@ -119,6 +119,7 @@ es:
         not_a_number: "no es un valor numérico."
         not_less_than_end_date: "no es menor que la final."
         overlaps: "las fechas se empalman con otras ya existentes."
+        overlaps_in_stand: "Las fechas se empalman con otras ya existentes en el stand."
     models:
       activity: "actividad"
       attendee: "asistente"
