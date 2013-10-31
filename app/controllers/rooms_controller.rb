@@ -74,7 +74,9 @@ class RoomsController < ApplicationController
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
-
+    @deleted = @room.destroy
+    flash[:error] = t("room.room_cant_be_destroyed") if !@deleted.nil?
+    
     respond_to do |format|
       format.html { redirect_to rooms_url }
       format.json { head :no_content }

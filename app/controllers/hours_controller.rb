@@ -2,7 +2,7 @@ class HoursController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @hours = Hour.order('id').paginate(:per_page => 10, :page => params[:page])
+    @hours = Hour.order('start_date DESC').paginate(:per_page => 10, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,6 +68,7 @@ class HoursController < ApplicationController
   # PUT /hours/1
   # PUT /hours/1.json
   def update
+    Hour.action = "update"
     @hour = Hour.find(params[:id])
 
     respond_to do |format|

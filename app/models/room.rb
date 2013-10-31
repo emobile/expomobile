@@ -3,4 +3,11 @@ class Room < ActiveRecord::Base
   has_one :workshop, :dependent => :destroy
   
   validates :name, :room_key, :presence => true
+  before_destroy :room_with_workshop?
+
+  private
+
+  def room_with_workshop?
+    return workshop.nil?
+  end
 end

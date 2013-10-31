@@ -81,6 +81,7 @@ es:
         phone: "Teléfono"
         social_reason: "Razón social"
       stand:
+        exhibitor_id: "Expositor"
         name: "Nombre"
       subgroup:
         leader: "Líder"
@@ -360,6 +361,7 @@ es:
   
   room:
     name: "Nombre"
+    room_cant_be_destroyed: "El salón no puede ser destruído, tiene talleres dependientes"
     room_key: "Clave"
   
   rooms: "Salones"
@@ -398,6 +400,7 @@ es:
   stand:
     exhibitor: "Expositor"
     name: "Nombre"
+    stand_cant_be_destroyed: "El stand no puede ser destruido, tiene exposiciones dependientes"
     stand_key: "Clave"
   
   stands: "Stands"
