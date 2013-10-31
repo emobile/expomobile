@@ -81,6 +81,7 @@ en:
         phone: "Phone"
         social_reason: "Social reason"
       stand:
+        exhibitor_id: "Exhibitor"
         name: "Name"
       subgroup:
         leader: "Leader"
@@ -151,6 +152,7 @@ en:
   
   atten:
     access_ok: "Your NIP was validated successfully"
+    assisted: "Assisted?"
     atten:
       cellphone: "CELLPHONE (10 NUMBERS)"
       chat: "INSTANT MESSAGING"
@@ -191,11 +193,15 @@ en:
     thanks_for_joining: "Thanks for joining and have a great day!"
     type_nip: "Now you can login to the application, just type this PIN:"
     
+  attendance: "Attendance"
   attendees: "Attendees"
   apply_to_selected: "Apply to selected"
   back: "Back"
   bad_total: "Bad total"
+  boolean_false: "No"
+  boolean_true: "Yes"
   catalogs: "Catalogue menu"
+  cellphone: "Cellphone"
   choose_action: "Choose action"
   comments: "Comments"
   
@@ -287,6 +293,7 @@ en:
   forgot_password: "Forgot your password?"
   general_info: "GENERAL INFORMATION"
   generate_diary: "Generate diary"
+  generate_report: "Generate report"
   good_total: "Good total"
   government: "Government"
   
@@ -354,6 +361,7 @@ en:
   
   room:
     name: "Name"
+    room_cant_be_destroyed: "Room can't be destroyed, has dependent workshops"
     room_key: "Key"
   
   rooms: "Rooms"
@@ -392,6 +400,7 @@ en:
   stand:
     exhibitor: "Exhibitor"
     name: "Name"
+    stand_cant_be_destroyed: "Stand can't be destroyed, has dependent expositions"
     stand_key: "Key"
   
   stands: "Stands"
@@ -403,7 +412,7 @@ en:
     name: "Name"
     subgroup_key: "Subgroup key"
   
-  subgroups: "Subgrups"
+  subgroups: "Subgroups"
   tolerance_not_set: "Error, tolerance could not set"
   tolerance_set_successfully: "Tolerance was set successfully"
   true_value: "Yes"

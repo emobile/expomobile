@@ -82,8 +82,9 @@ class StandsController < ApplicationController
   # DELETE /stands/1.json
   def destroy
     @stand = Stand.find(params[:id])
-    @stand.destroy
-
+    @deleted = @stand.destroy
+    flash[:error] = t("stand.stand_cant_be_destroyed") if !@deleted.nil?
+    
     respond_to do |format|
       format.html { redirect_to stands_url }
       format.json { head :no_content }

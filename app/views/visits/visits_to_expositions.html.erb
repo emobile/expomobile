@@ -2,7 +2,7 @@
   <h4><%= t(:no_visits) %></h4>
 <% else %>
   <% @subgroups.keys.each do |k| %>
-    <h3><%= k %></h3>
+  <h3 style="margin-top: 50px;"><%= k %></h3>
     <div class="tab-content default-tab"> <!-- This is the target div. id must match the href of this div's tab -->
       <table>
         <thead>
@@ -11,7 +11,7 @@
             <th><%= t'atten.atten.name' %></th>
             <th><%= (t'exhibitor.social_reason').mb_chars.upcase %></th>
             <th><%= t'atten.atten.email' %></th>
-            <th><%= t'atten.atten.cellphone' %></th>
+            <th><%= t(:cellphone).upcase %></th>
             <th><%= t'atten.atten.main_line' %></th>
             <th><%= t(:register_date) %></th>
           </tr>

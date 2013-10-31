@@ -19,7 +19,7 @@
       <li>     
         <%= link_to t(:home), root_path, :class=> "nav-top-item no-submenu" + (controller_name == "welcome" ? " current": "") %>
       </li>
-      <% if signed_in? %>
+      <%# if signed_in? %>
         <% @models = Dir['app/models/*.rb'].map { |f| File.basename(f, '.*').camelize.constantize.name } %>
         <% @models -= %w{Ability Nip Schedule Hour AttendeeWorkshop AttendeeExposition SystemConfigurations Rating Role} %>
         <% id = 1 %>
@@ -65,7 +65,7 @@
         <li>     
           <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": "") %>
         </li>
-      <% end %>
+      <%# end %>
     </ul> <!-- End #main-nav -->
 
   </div></div> <!-- End #sidebar -->

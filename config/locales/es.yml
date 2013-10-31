@@ -81,6 +81,7 @@ es:
         phone: "Teléfono"
         social_reason: "Razón social"
       stand:
+        exhibitor_id: "Expositor"
         name: "Nombre"
       subgroup:
         leader: "Líder"
@@ -151,6 +152,7 @@ es:
 
   atten:
     access_ok: "Tu NIP fue validado exitosamente"
+    assisted: "¿Asistió?"
     atten:
       cellphone: "TEL. CELULAR (A 10 DIGITOS)"
       chat: "MENSAJERÍA INSTANTÁNEA"
@@ -191,11 +193,15 @@ es:
     thanks_for_joining: "¡Gracias por unirte, disfruta de un excelente día!"
     type_nip: "Ahora puedes ingresar a la aplicación, solo escribe este NIP:"
     
+  attendance: "Lista de asistencia"    
   attendees: "Asistentes"
   apply_to_selected: "Aplicar a seleccionados"
   back: "Volver"
   bad_total: "Total de malas"
+  boolean_false: "No"
+  boolean_true: "Si"
   catalogs: "Menú de catálogos"
+  cellphone: "Celular"
   choose_action: "Elige una acción"
   comments: "Comentarios"
   
@@ -287,6 +293,7 @@ es:
     
   general_info: "INFORMACIÓN GENERAL"
   generate_diary: "Generar agenda"
+  generate_report: "Generar reporte"
   good_total: "Total de buenas"
   government: "Gobierno"
   
@@ -354,6 +361,7 @@ es:
   
   room:
     name: "Nombre"
+    room_cant_be_destroyed: "El salón no puede ser destruído, tiene talleres dependientes"
     room_key: "Clave"
   
   rooms: "Salones"
@@ -392,6 +400,7 @@ es:
   stand:
     exhibitor: "Expositor"
     name: "Nombre"
+    stand_cant_be_destroyed: "El stand no puede ser destruido, tiene exposiciones dependientes"
     stand_key: "Clave"
   
   stands: "Stands"

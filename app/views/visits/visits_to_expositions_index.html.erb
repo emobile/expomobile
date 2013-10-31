@@ -59,6 +59,7 @@
 <div class="menu-links">
   <%= link_to t("visit.visits_expositions_by_subgroup"), visits_visits_to_expositions_by_subgroup_path, :class => "menu-link" %>
   <%= link_to t("visit.visits_expositions_by_exposition"), visits_visits_to_expositions_by_exposition_path, :class => "menu-link" %>
+  <%= link_to t(:generate_report), visits_visits_to_expositions_generate_report_by_exposition_path, :class => "menu-link" %>
 </div>
 
 <% Group.all.each do |g| %>
