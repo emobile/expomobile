@@ -17,55 +17,110 @@
     </div>
     <ul id="main-nav">  <!-- Accordion Menu -->
       <li>     
-        <%= link_to t(:home), root_path, :class=> "nav-top-item no-submenu" + (controller_name == "welcome" ? " current": "") %>
+        <%= link_to t(:home), root_path, :class=> "nav-top-item no-submenu" + (controller_name == "welcome" ? " current": ""), :id => "1main" %>
       </li>
-      <%# if signed_in? %>
-        <% @models = Dir['app/models/*.rb'].map { |f| File.basename(f, '.*').camelize.constantize.name } %>
-        <% @models -= %w{Ability Nip Schedule Hour AttendeeWorkshop AttendeeExposition SystemConfigurations Rating Role} %>
-        <% id = 1 %>
-        <% @models.each do |model| %>
-          <% model = "Face_To_Face" if model == "FaceToFace" %>
-          <li> 
-            <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == model.pluralize.downcase %>" id="<%= id %>main"> <!-- Add the class "current" to current menu item -->
-              <%= eval("t(:#{model.pluralize.downcase})") %>
-            </a>
-            <ul>
-              <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
-              <% if %w{Activity Conference Diary Exposition Offert}.include?(model) %>
-                <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
-              <% else %>
-                <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
-              <% end %>
-              <% if current_user.role.is_super_admin || !current_user.role.is_super_admin && model != "User" %>
-                <li><%= link_to new_text, eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
-              <% end %>
-            </ul>
-          </li>
-        <% end %>
-        <% id = id + 1 %>
+      <% if signed_in? %>
         <li>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "hours" || controller_name == "schedules" %>" id="schedules-menu"> <!-- Add the class "current" to current menu item -->
-            <%= t(:hours) %>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups}.include?(controller_name) %>" id="2main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:attendees) %>
           </a>
           <ul>
-            <li><%= link_to t(:hours), hours_path, :class => controller_name == "hours" && controller.action_name == "index" ? "current": "" %></li>
-            <li><%= link_to t("hour.new_hour"), new_hour_path, :class => controller_name == "hours" && controller.action_name == "new" ? "current": "" %></li>
+            <% @models = %w{Attendee Group Subgroup} %>
+            <% @models.each do |model| %>
+              <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
+              <li><%= link_to t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")), eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{workshops rooms hours schedules}.include?(controller_name) %>" id="3main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:workshops) %>
+          </a>
+          <ul>
+            <% @models = %w{Workshop Room Hour} %>
+            <% @models.each do |model| %>
+              <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
+              <li><%= link_to t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")), eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+            <% end %>
             <li><%= link_to t("hour.associate_workshop_group"), schedules_associate_workshop_group_path, :class => controller_name == "schedules" && controller.action_name == "associate_workshop_group" ? "current": "" %></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "visits" %>"> <!-- Add the class "current" to current menu item -->
-            <%= t(:visits) %>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{expositions stands exhibitors offerts}.include?(controller_name) %>" id="4main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:expositions) %>
           </a>
           <ul>
-            <li><%= link_to t("visit.visits_to_workshops"), visits_visits_to_workshops_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_workshops_index" || controller.action_name == "visits_to_workshops" || controller.action_name == "visits_to_workshops_by_subgroup" || controller.action_name == "visits_to_workshops_by_workshop") ? "current": "" %></li>
-            <li><%= link_to t("visit.visits_to_expositions"), visits_visits_to_expositions_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_expositions_index" || controller.action_name == "visits_to_expositions" || controller.action_name == "visits_to_expositions_by_subgroup" || controller.action_name == "visits_to_expositions_by_exposition") ? "current": "" %></li>
+            <% @models = %w{Exposition Stand Exhibitor Offert} %>
+            <% @models.each do |model| %>
+              <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
+              <% if %w{Exposition Offert}.include?(model) %>
+                <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% else %>
+                <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% end %>
+              <li><%= link_to new_text, eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{face_to_faces sponsors}.include?(controller_name) %>" id="5main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:face_to_faces) %>
+          </a>
+          <ul>
+            <% @models = %w{Face_To_Face Sponsor} %>
+            <% @models.each do |model| %>
+              <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
+              <% if %w{Exposition Offert}.include?(model) %>
+                <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% else %>
+                <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% end %>
+              <li><%= link_to new_text, eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{diaries conferences activities}.include?(controller_name) %>" id="6main"> <!-- Add the class "current" to current menu item -->
+            <%= (t"activerecord.models.diary").capitalize %>
+          </a>
+          <ul>
+            <% @models = %w{Diary Conference Activity} %>
+            <% @models.each do |model| %>
+              <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
+              <% if %w{Conference Activity}.include?(model) %>
+                <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% else %>
+                <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% end %>
+              <li><%= link_to new_text, eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "visits" %>" id="7main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:attendances) %>
+          </a>
+          <ul>
+            <li><%= link_to t("visit.attendances_to_workshops"), visits_visits_to_workshops_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_workshops_index" || controller.action_name == "visits_to_workshops" || controller.action_name == "visits_to_workshops_by_subgroup" || controller.action_name == "visits_to_workshops_by_workshop") ? "current": "" %></li>
+            <li><%= link_to t("visit.attendances_to_expositions"), visits_visits_to_expositions_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_expositions_index" || controller.action_name == "visits_to_expositions" || controller.action_name == "visits_to_expositions_by_subgroup" || controller.action_name == "visits_to_expositions_by_exposition") ? "current": "" %></li>
           </ul>
         </li>
         <li>     
-          <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": "") %>
+          <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": ""), :id => "8main" %>
         </li>
-      <%# end %>
+
+        <li>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "users" %>" id="9main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:users) %>
+          </a>
+          <ul>
+            <li><%= link_to t(:users), users_path, :class => controller_name == "users" && controller.action_name == "index" ? "current": "" %></li>
+            <% if current_user.role.is_super_admin %>
+              <li><%= link_to t(:new_record_male, :record => t('activerecord.models.user')), new_user_path, :class => controller_name == "users" && controller.action_name == "new" ? "current": "" %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
     </ul> <!-- End #main-nav -->
 
   </div></div> <!-- End #sidebar -->

@@ -195,6 +195,7 @@ en:
     type_nip: "Now you can login to the application, just type this PIN:"
     
   attendance: "Attendance"
+  attendances: "Attendances"
   attendees: "Attendees"
   apply_to_selected: "Apply to selected"
   back: "Back"
@@ -435,6 +436,8 @@ en:
     zip: "Zip"
   
   visit:
+    attendances_to_expositions: "Attendances to expositions"
+    attendances_to_workshops: "Attendances to workshops"
     visits_to_workshops: "Visits to workshops"
     visits_to_expositions: "Visits to expositions"
     visits_expositions_by_exposition: "Expositions visits by exposition"

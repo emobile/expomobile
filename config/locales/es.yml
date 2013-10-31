@@ -194,7 +194,8 @@ es:
     thanks_for_joining: "¡Gracias por unirte, disfruta de un excelente día!"
     type_nip: "Ahora puedes ingresar a la aplicación, solo escribe este NIP:"
     
-  attendance: "Lista de asistencia"    
+  attendance: "Lista de asistencia"
+  attendances: "Asistencias"
   attendees: "Asistentes"
   apply_to_selected: "Aplicar a seleccionados"
   back: "Volver"
@@ -435,6 +436,8 @@ es:
     zip: "Código postal"
   
   visit:
+    attendances_to_expositions: "Asistencias a exposiciones"
+    attendances_to_workshops: "Asistencias a talleres"
     visits_to_workshops: "Visitas a talleres"
     visits_to_expositions: "Visitas a exposiciones"
     visits_expositions_by_exposition: "Visitas a exposiciones por exposición"
