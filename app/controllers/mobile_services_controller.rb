@@ -430,7 +430,7 @@ class MobileServicesController < ApplicationController
   end
   
   def register_visit_to_workshop
-    
+    current_time = Time.now - 7.hour
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
@@ -444,8 +444,9 @@ class MobileServicesController < ApplicationController
           @visit_registered = AttendeeWorkshop.find_by_attendee_id_and_workshop_id(session[:attendee_id], @workshop.id)
           
           if @visit_registered.nil?
-            if Time.now - 7.hours >= @hour.start_date && Time.now - 7.hours < (@hour.end_date + SystemConfigurations.first.workshop_tolerance.minutes + 1.minutes)
-              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: @workshop.id)
+            
+            if current_time >= @workshop.start_date && current_time < (@workshop.end_date + SystemConfigurations.first.workshop_tolerance.minutes + 1.minutes)
+              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: params[:key])
               @msg = { success: "yes", msg: t(:visit_registered) }
             else
               @msg = { success: "no", msg: t(:visit_not_registered) }
@@ -469,7 +470,7 @@ class MobileServicesController < ApplicationController
   end
   
   def register_visit_to_exposition
-    
+    current_time = Time.now - 7.hour
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
@@ -480,53 +481,53 @@ class MobileServicesController < ApplicationController
           
           if @visit_registered.nil?
             
-            if Time.now - 7.hours >= @exposition.start_date && Time.now - 7.hours <= @exposition.end_date + SystemConfigurations.first.exposition_tolerance.minutes
-              AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: @exposition.id)
-              @msg = { success: "yes", msg: t(:visit_registered) }
+                if current_time >= @exposition.start_date && current_time <= @exposition.end_date + SystemConfigurations.first.exposition_tolerance.minutes
+                AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: params[:exposition_id])
+                @msg = { success: "yes", msg: t(:visit_registered) }
+              else
+                @msg = { success: "no", msg: t(:visit_not_registered) }
+              end
             else
-              @msg = { success: "no", msg: t(:visit_not_registered) }
+              @msg = { success: "no", msg: t(:visit_already_registered) }
             end
+          
           else
-            @msg = { success: "no", msg: t(:visit_already_registered) }
+            @msg = { success: "no", msg: t("errors.exposition_not_assigned") }
           end
           
         else
-          @msg = { success: "no", msg: t("errors.exposition_not_assigned") }
+          @msg = { success: "no", msg: t("errors.invalid_stand_key") }
         end
-          
-      else
-        @msg = { success: "no", msg: t("errors.invalid_stand_key") }
-      end
 
+      end
+    
+      render json: @msg
     end
-    
-    render json: @msg
-  end
 
-  def rate
+    def rate
     
-    if !session[:attendee_id].blank?
+      if !session[:attendee_id].blank?
 
-      if params[:value] =~ /\A[1-3]\z/
-        Rating.create(value: params[:value], comment: params[:comment])
-        @msg = { success: "yes", msg: t(:rate_thank_you) }
-      end
+        if params[:value] =~ /\A[1-3]\z/
+          Rating.create(value: params[:value], comment: params[:comment])
+          @msg = { success: "yes", msg: t(:rate_thank_you) }
+        end
       
+      end
+  
+      render json: @msg
     end
   
-    render json: @msg
-  end
+    def detect_platform
+      #    if request.env['HTTP_USER_AGENT'] == ""
+      #      access = true
+      #    else
+      #      access = false
+      #    end
+      #    unless access
+      #      flash[:alert] = t('no_access')
+      #      redirect_to root_path
+      #    end
+    end
   
-  def detect_platform
-    #    if request.env['HTTP_USER_AGENT'] == ""
-    #      access = true
-    #    else
-    #      access = false
-    #    end
-    #    unless access
-    #      flash[:alert] = t('no_access')
-    #      redirect_to root_path
-    #    end
   end
-  
-end
