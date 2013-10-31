@@ -28,10 +28,6 @@
     <h4><%= @stand.stand_key %></h4>
     </p>
   <% end %>
-  <p class="field">
-    <%= f.label t("stand.exhibitor") %>
-    <%= f.collection_select :exhibitor_id, Exhibitor.order(:name), :id ,:name %>
-  </p>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'button' %>

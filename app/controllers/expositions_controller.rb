@@ -51,12 +51,12 @@ class ExpositionsController < ApplicationController
     
     @exposition = Exposition.new(params[:exposition])
     
-    while @exposition.stand_key.nil?
+    while @exposition.exposition_key.nil?
       random_value = Array.new(3) {[*'0'..'9', *'a'..'z'].sample}.join
-      @exposition = Exposition.find_by_exposition_key(random_value) || Workshop.find_by_workshop_key(random_value)
+      @exists = Exposition.find_by_exposition_key(random_value) || Workshop.find_by_workshop_key(random_value)
         
       if @exists.nil?
-        @exposition.stand_key = random_value
+        @exposition.exposition_key = random_value
       end
     end
 
@@ -107,5 +107,16 @@ class ExpositionsController < ApplicationController
       format.html { redirect_to expositions_url }
       format.json { head :no_content }
     end
+  end
+  
+  def set_tolerance 
+    if !params[:tolerance].blank?
+      if SystemConfigurations.first.update_attributes(exposition_tolerance: params[:tolerance])
+        flash[:notice] = t(:tolerance_set_successfully)
+      else
+        flash[:error] = t(:tolerance_not_set)
+      end
+    end
+    redirect_to expositions_path
   end
 end

@@ -5,6 +5,7 @@
         <%#*<th><input class="check-all" type="checkbox" /></th>%>
         <th>ID</th>
                   <th><%= t'exposition.name' %></th>
+                  <th><%= t'exposition.exposition_key' %></th>
                   <th><%= t'exposition.stand' %></th>
                   <th><%= t'exposition.exhibitor' %></th>
                   <th><%= t'exposition.start_date' %></th>
@@ -38,6 +39,8 @@
              <% @model = exposition %>
         
           <td><%= exposition.name %></td>
+          
+          <td><%= exposition.exposition_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:key => exposition.exposition_key), :class => "qr_code" %></td>
                           
           <td><%= exposition.stand.name %></td>
                              
@@ -50,6 +53,11 @@
         <% end %>
     </tbody>
   </table>
+  <%= form_tag expositions_set_tolerance_path, :id => "tolerance_form", method: :post do %>
+    <%= label_tag t(:set_tolerance) %>
+    <%= text_field_tag "tolerance", SystemConfigurations.first.exposition_tolerance, :class=>"text-input small-input", :style => "width: 10% !important;" %>
+    <%= submit_tag t(:accept), :class => 'button' %>
+  <% end %>
   <%= render "layouts/action_links" %>
 </div> 
 <%= render "layouts/second_tab" %>

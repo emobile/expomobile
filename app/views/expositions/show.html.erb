@@ -14,6 +14,11 @@
     </tr>
     <tr>
       <td>
+        <b><%= t'exposition.exposition_key' %>:<%= @exposition.exposition_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:key => @exposition.exposition_key), :class => "qr_code" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <b><%= t'exposition.exhibitor' %>:<%= @exposition.exhibitor.social_reason %>
       </td>
     </tr>

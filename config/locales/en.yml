@@ -256,6 +256,7 @@ en:
   exposition:
     end_date: "End date"
     exhibitor: "Exhibitor"
+    exposition_key: "Key"
     name: "Name"
     stand: "Stand"
     start_date: "Start date"
@@ -399,10 +400,8 @@ en:
   sponsors: "Patrocinadores"
   
   stand:
-    exhibitor: "Exhibitor"
     name: "Name"
     stand_cant_be_destroyed: "Stand can't be destroyed, has dependent expositions"
-    stand_key: "Key"
   
   stands: "Stands"
   statistics: "Statistics"
@@ -447,6 +446,7 @@ en:
   visit_not_registered: "You couldn't register your visit, is not the appropriate time"
   visit_registered: "You have been registered your visit successfully"
   visits: "Visits"
+  want_to_replace: "Do you want to replace previous association?"
   web: "Web"
   welcome: "Welcome"
   

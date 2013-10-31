@@ -256,6 +256,7 @@ es:
   exposition:
     end_date: "Fecha final"
     exhibitor: "Expositor"
+    exposition_key: "Clave"
     name: "Nombre"
     stand: "Stand"
     start_date: "Fecha inicial"
@@ -399,10 +400,8 @@ es:
   sponsors: "Patrocinadores"
   
   stand:
-    exhibitor: "Expositor"
     name: "Nombre"
     stand_cant_be_destroyed: "El stand no puede ser destruido, tiene exposiciones dependientes"
-    stand_key: "Clave"
   
   stands: "Stands"
   statistics: "Estadísticas"
@@ -414,8 +413,8 @@ es:
     subgroup_key: "Clave del subgrupo"
   
   subgroups: "Subgrupos"
-  tolerance_not_set: "Error, tolerance could not set"
-  tolerance_set_successfully: "Tolerance was set successfully"
+  tolerance_not_set: "Error, la tolerancia no pudo ser establecida"
+  tolerance_set_successfully: "La tolerancia fue establecida exitosamente"
   true_value: "Si"
   unlock_instructions: "¿No haz recibido las instrucciones de desbloqueo?"
   users: "Usuarios"
@@ -447,6 +446,7 @@ es:
   visit_not_registered: "No pudiste registrar tu visita, no es la hora apropiada"
   visit_registered: "Haz registrado tu visita con éxito"
   visits: "Visitas"
+  want_to_replace: "¿Quieres sobreescribir la asociación existente?"
   web: "Web"
   welcome: "Bienvenid@"
         

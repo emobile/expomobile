@@ -1,6 +1,37 @@
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "schedules" %>
 <% end %>
+<script type="text/javascript">
+  $(function() {
+    $(".associate_workshop_to_group").submit(function() {
+      var workshop_id, subgroup_id, hour_id;
+
+      workshop_id = $(this).find("#workshop_id").val();
+      subgroup_id = $(this).find("#subgroup_id").val();
+      hour_id = $(this).find("#hour_id").val();
+
+      $.ajax({
+        type: "get",
+        url: "/schedules/subgroup_change",
+        data: {workshop_id: workshop_id, subgroup_id: subgroup_id, hour_id: hour_id},
+        dataType: "json",
+        cache: false,
+        async: false,
+        success: function(data) {
+
+          if (data.change) {
+            var response = confirm("<%= t(:want_to_replace) %>");
+
+            if (!response) {
+              return false;
+            }
+            
+          }
+        }
+      });
+    });
+  });
+</script>
 
 <% workshops = Workshop.all %>
 <% i = 1 %>
@@ -43,7 +74,7 @@
         <% end %>
       </tbody>
     </table>
-    <%= form_tag "/schedules/do_association", :id => "form#{i}" do %>
+    <%= form_tag "/schedules/do_association", :id => "form#{i}", :class => "associate_workshop_to_group" do %>
       <p class="field">
         <%= label_tag t("hour.workshop_name") %>
         <%= select_tag "workshop_id", options_from_collection_for_select(Workshop.order(:name), :id, :name) %>
@@ -62,12 +93,12 @@
         <%= submit_tag t(:associate_workshop_to_group), :class => 'button' %>
       </div>
     <% end %>
-  <br/>
-  <%= form_tag "/schedules/deallocate", :id => "form-delete#{i}" do %>
-    <%= hidden_field_tag "schedule_id_delete" %>
-    <div class="form-actions">
-      <%= submit_tag t("schedule.deallocate"), :class => 'button' %>
-    </div>
-  <% end %>
+    <br/>
+    <%= form_tag "/schedules/deallocate", :id => "form-delete#{i}" do %>
+      <%= hidden_field_tag "schedule_id_delete" %>
+      <div class="form-actions">
+        <%= submit_tag t("schedule.deallocate"), :class => 'button' %>
+      </div>
+    <% end %>
   </div>
 <% end %>

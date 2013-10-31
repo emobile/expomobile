@@ -81,16 +81,5 @@ class StandsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  def set_tolerance 
-    if !params[:tolerance].blank?
-      if SystemConfigurations.first.update_attributes(exposition_tolerance: params[:tolerance])
-        flash[:notice] = t(:tolerance_set_successfully)
-      else
-        flash[:error] = t(:tolerance_not_set)
-      end
-    end
-    redirect_to stands_path
-  end
 
 end

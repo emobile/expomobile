@@ -1,10 +1,9 @@
 class Stand < ActiveRecord::Base
   belongs_to :exhibitor
   has_one :exposition, :dependent => :destroy
-  attr_accessible :name, :exhibitor_id
+  attr_accessible :name
   
   validates :name, :presence => true
-  validates_uniqueness_of :exhibitor_id
   before_destroy :stand_with_exposition?
 
   private

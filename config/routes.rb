@@ -16,7 +16,7 @@ Expomobile::Application.routes.draw do
  
   resources :sponsors
 
-  post "stands/set_tolerance"
+  post "expositions/set_tolerance"
   post "workshops/set_tolerance"
   get "visits/visits_to_workshops_index"
   get "visits/visits_to_expositions_index"
@@ -67,6 +67,7 @@ Expomobile::Application.routes.draw do
 
   resources :subgroups
   
+  get "schedules/subgroup_change"
   post "schedules/deallocate"
   post "schedules/do_association"
   get "schedules/associate_workshop_group"

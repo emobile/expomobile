@@ -2,29 +2,20 @@ class SchedulesController < ApplicationController
   before_filter :authenticate_user!
   
   def do_association
-    @schedule = nil
-    @schedule = Schedule.find(params[:schedule_id]) unless params[:schedule_id].blank?
-    if @schedule.nil?
-      Schedule.delete_all(workshop_id: params[:workshop_id], hour_id: params[:hour_id])
-      @schedule = Schedule.new(workshop_id: params[:workshop_id], subgroup_id: params[:subgroup_id], hour_id: params[:hour_id])
-      if @schedule.save
-        flash[:notice] = t("schedule.created")
-        flash[:schedule_start_date] = @schedule.hour.start_date
-      else
-        flash[:error] = t("schedule.not_created")
-      end
-      redirect_to schedules_associate_workshop_group_path
+    @s1 = Schedule.find_by_hour_id_and_subgroup_id(params[:hour_id], params[:subgroup_id])
+    @s1.destroy if !@s1.nil?
+    @s2 = Schedule.find_by_workshop_id_and_subgroup_id(params[:workshop_id], params[:subgroup_id])
+    @s2.destroy if !@s2.nil?
+    @s3 = Schedule.find_by_hour_id_and_workshop_id(params[:hour_id], params[:workshop_id])
+    @s3.destroy if !@s3.nil?
+    @schedule = Schedule.new(workshop_id: params[:workshop_id], subgroup_id: params[:subgroup_id], hour_id: params[:hour_id])
+    if @schedule.save
+      flash[:notice] = t("schedule.created")
+      flash[:schedule_start_date] = @schedule.hour.start_date
     else
-      Schedule.delete_all(workshop_id: params[:workshop_id], hour_id: params[:hour_id])
-      if @schedule.update_attributes(workshop_id: params[:workshop_id], subgroup_id: params[:subgroup_id], hour_id: params[:hour_id])
-        flash[:notice] = t("schedule.updated")
-        flash[:schedule_start_date] = @schedule.hour.start_date
-      else
-        flash[:error] = t("schedule.not_updated")
-        flash[:schedule_start_date] = Hour.find(params[:hour_id]).start_date
-      end
-      redirect_to schedules_associate_workshop_group_path
+      flash[:error] = t("schedule.not_created")
     end
+    redirect_to schedules_associate_workshop_group_path
   end
   
   def associate_workshop_group
@@ -38,5 +29,16 @@ class SchedulesController < ApplicationController
     flash[:notice] = t("schedule.deallocation_done")
     redirect_to schedules_associate_workshop_group_path
   end
-
+  
+  def subgroup_change
+    params[:workshop_id] = 10
+    params[:subgroup_id] = 16
+    params[:hour_id] = 1
+    @change = false
+    @schedule = Schedule.find_by_hour_id_and_workshop_id(params[:hour_id], params[:workshop_id])
+    @change = @schedule.subgroup_id != params[:subgroup_id].to_i
+    p @change
+    sleep 3
+    render json: {:change => @change}
+  end
 end
