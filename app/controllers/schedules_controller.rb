@@ -31,14 +31,9 @@ class SchedulesController < ApplicationController
   end
   
   def subgroup_change
-    params[:workshop_id] = 10
-    params[:subgroup_id] = 16
-    params[:hour_id] = 1
     @change = false
     @schedule = Schedule.find_by_hour_id_and_workshop_id(params[:hour_id], params[:workshop_id])
     @change = @schedule.subgroup_id != params[:subgroup_id].to_i
-    p @change
-    sleep 3
     render json: {:change => @change}
   end
 end
