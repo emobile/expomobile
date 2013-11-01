@@ -15,9 +15,9 @@ class Exposition < ActiveRecord::Base
   def date_not_overlaps_in_stand
     overlaps = []
     if action == "update"
-      overlaps = Exposition.where("? < end_date AND start_date < ? AND stand_id = ? AND id != ?", start_date, end_date, stand_id, id)
+      overlaps = Exposition.where("start_date < ? AND end_date > ? AND stand_id = ? AND id != ?", end_date, start_date, stand_id, id)
     else
-      overlaps = Exposition.where("? < end_date AND start_date < ? AND stand_id = ?", start_date, end_date, stand_id)
+      overlaps = Exposition.where("start_date < ? AND end_date > ? AND stand_id = ?", end_date, start_date, stand_id)
     end
     if overlaps.any?
       errors.add(:base, :overlaps_in_stand)
