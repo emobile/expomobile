@@ -414,6 +414,8 @@ es:
     subgroup_key: "Clave del subgrupo"
   
   subgroups: "Subgrupos"
+  successfully_created: "El registro fue creado exitosamente"
+  successfully_updated: "El registro fue actualizado exitosamente"
   tolerance_not_set: "Error, la tolerancia no pudo ser establecida"
   tolerance_set_successfully: "La tolerancia fue establecida exitosamente"
   true_value: "Si"

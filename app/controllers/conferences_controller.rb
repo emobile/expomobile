@@ -44,7 +44,7 @@ class ConferencesController < ApplicationController
 
     respond_to do |format|
       if @conference.save
-        format.html { redirect_to @conference, notice: 'Conference was successfully created.' }
+        format.html { redirect_to @conference, notice: t(:successfully_created) }
         format.json { render json: @conference, status: :created, location: @conference }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ConferencesController < ApplicationController
 
     respond_to do |format|
       if @conference.update_attributes(params[:conference])
-        format.html { redirect_to @conference, notice: 'Conference was successfully updated.' }
+        format.html { redirect_to @conference, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

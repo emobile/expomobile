@@ -49,7 +49,7 @@ class ExhibitorsController < ApplicationController
 
     respond_to do |format|
       if @exhibitor.save
-        format.html { redirect_to @exhibitor, notice: 'Exhibitor was successfully created.' }
+        format.html { redirect_to @exhibitor, notice: t(:successfully_created) }
         format.json { render json: @exhibitor, status: :created, location: @exhibitor }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ class ExhibitorsController < ApplicationController
 
     respond_to do |format|
       if @exhibitor.update_attributes(params[:exhibitor])
-        format.html { redirect_to @exhibitor, notice: 'Exhibitor was successfully updated.' }
+        format.html { redirect_to @exhibitor, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

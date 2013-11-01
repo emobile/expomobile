@@ -414,6 +414,8 @@ en:
     subgroup_key: "Subgroup key"
   
   subgroups: "Subgroups"
+  successfully_created: "Record was created successfully"
+  successfully_updated: "Record was updated successfully"
   tolerance_not_set: "Error, tolerance could not set"
   tolerance_set_successfully: "Tolerance was set successfully"
   true_value: "Yes"

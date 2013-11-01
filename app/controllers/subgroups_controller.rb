@@ -44,7 +44,7 @@ class SubgroupsController < ApplicationController
 
     respond_to do |format|
       if @subgroup.save
-        format.html { redirect_to @subgroup, notice: 'Subgroup was successfully created.' }
+        format.html { redirect_to @subgroup, notice: t(:successfully_created) }
         format.json { render json: @subgroup, status: :created, location: @subgroup }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SubgroupsController < ApplicationController
 
     respond_to do |format|
       if @subgroup.update_attributes(params[:subgroup])
-        format.html { redirect_to @subgroup, notice: 'Subgroup was successfully updated.' }
+        format.html { redirect_to @subgroup, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

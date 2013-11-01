@@ -56,7 +56,7 @@ class HoursController < ApplicationController
 
     respond_to do |format|
       if @hour.save
-        format.html { redirect_to @hour, notice: 'Hour was successfully created.' }
+        format.html { redirect_to @hour, notice: t(:successfully_created) }
         format.json { render json: @hour, status: :created, location: @hour }
       else
         format.html { render action: "new" }
@@ -82,7 +82,7 @@ class HoursController < ApplicationController
       end
       
       if @hour.update_attributes(params[:hour])
-        format.html { redirect_to @hour, notice: 'Hour was successfully updated.' }
+        format.html { redirect_to @hour, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

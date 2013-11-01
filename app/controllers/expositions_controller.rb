@@ -62,7 +62,7 @@ class ExpositionsController < ApplicationController
 
     respond_to do |format|
       if @exposition.save
-        format.html { redirect_to @exposition, notice: 'Exposition was successfully created.' }
+        format.html { redirect_to @exposition, notice: t(:successfully_created) }
         format.json { render json: @exposition, status: :created, location: @exposition }
       else
         format.html { render action: "new" }
@@ -88,7 +88,7 @@ class ExpositionsController < ApplicationController
       end
       
       if @exposition.update_attributes(params[:exposition])
-        format.html { redirect_to @exposition, notice: 'Exposition was successfully updated.' }
+        format.html { redirect_to @exposition, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
