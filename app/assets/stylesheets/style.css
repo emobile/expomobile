@@ -131,7 +131,6 @@ a.remove-link:hover {
     width: 180px;
     height: auto;
     -ms-interpolation-mode: bicubic;
-    background-color: #fff;
     padding: 0 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -619,8 +618,10 @@ body#login {
     width: 180px;
     height: auto;
     -ms-interpolation-mode: bicubic;
-    background-color: #fff;
     padding: 0 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 #login-wrapper #login-content {
