@@ -881,7 +881,7 @@ td.schedule {
 }
 
 .td-selected {
-    background-color: coral;
+    background-color: #ffba66;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;

@@ -15,9 +15,9 @@ class FaceToFace < ActiveRecord::Base
   def date_not_overlaps
     overlaps = []
     if action == "update"
-      overlaps = FaceToFace.where("? < end_date AND start_date < ? AND int_name = ? AND id != ?", start_date, end_date, int_name, id)
+      overlaps = FaceToFace.where("start_date < ? AND end_date > ? AND int_name LIKE ? AND id != ?", end_date, start_date, int_name, id)
     else
-      overlaps = FaceToFace.where("? < end_date AND start_date < ? AND int_name = ?", start_date, end_date, int_name)
+      overlaps = FaceToFace.where("start_date < ? AND end_date > ? AND int_name LIKE ?", end_date, start_date, int_name)
     end
     if overlaps.any?
       errors.add(:base, :overlaps)
