@@ -445,8 +445,8 @@ class MobileServicesController < ApplicationController
           
           if @visit_registered.nil?
             
-            if current_time >= @workshop.start_date && current_time < (@workshop.end_date + SystemConfiguration.first.workshop_tolerance.minutes + 1.minutes)
-              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: params[:key])
+            if current_time >= @hour.start_date && current_time < (@hour.end_date + SystemConfiguration.first.workshop_tolerance.minutes + 1.minutes)
+              AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: @workshop.id)
               @msg = { success: "yes", msg: t(:visit_registered) }
             else
               @msg = { success: "no", msg: t(:visit_not_registered) }
@@ -482,7 +482,7 @@ class MobileServicesController < ApplicationController
           if @visit_registered.nil?
             
                 if current_time >= @exposition.start_date && current_time <= @exposition.end_date + SystemConfiguration.first.exposition_tolerance.minutes
-                AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: params[:exposition_id])
+                AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: @exposition.id)
                 @msg = { success: "yes", msg: t(:visit_registered) }
               else
                 @msg = { success: "no", msg: t(:visit_not_registered) }
