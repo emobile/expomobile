@@ -471,11 +471,12 @@ class MobileServicesController < ApplicationController
   
   def register_visit_to_exposition
     current_time = Time.now - 7.hour
+
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
         @exposition = Exposition.find_by_exposition_key(params[:key])
-        
+
         if !@exposition.nil?
           @visit_registered = AttendeeExposition.find_by_attendee_id_and_exposition_id(session[:attendee_id], @exposition.id)
           
