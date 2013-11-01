@@ -2,8 +2,14 @@
 
 one:
   token: MyString
-  tolerance: 1
+  workshop_tolerance: 1
+  exposition_tolerance: 1
+  logo: 
+  banner: 
 
 two:
   token: MyString
-  tolerance: 1
+  workshop_tolerance: 1
+  exposition_tolerance: 1
+  logo: 
+  banner: 

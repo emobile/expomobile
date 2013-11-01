@@ -94,9 +94,9 @@ Hour.create(start_date: 'Tue, 26 Nov 2013 10:40:00 UTC +00:00', end_date: 'Tue, 
 Hour.create(start_date: 'Tue, 26 Nov 2013 11:20:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 11:50:00 UTC +00:00')
 Hour.create(start_date: 'Tue, 26 Nov 2013 12:00:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 12:30:00 UTC +00:00')
 
-Stand.create(name: "Stand 1", exhibitor_id: 1)
-Stand.create(name: "Stand 2", exhibitor_id: 1)
-Stand.create(name: "Stand 3", exhibitor_id: 1) 
+Stand.create(name: "Stand 1")
+Stand.create(name: "Stand 2")
+Stand.create(name: "Stand 3") 
 
 Exposition.create(name: "Exposition 1", exposition_key: "e11", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 1, exhibitor_id: 1)
 Exposition.create(name: "Exposition 2", exposition_key: "e22", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 2, exhibitor_id: 2)
@@ -113,8 +113,6 @@ Sponsor.create(name: "Julián Soto", job: "Gerente de ventas", social_reason: "H
 Sponsor.create(name: "Carlos Muñoz", job: "Tesorero", social_reason: "Microsoft México", work_address: "C. Tarahumara #456", web_page: "microsoftmexico.com", phone: "4789123", email: "carlosmunoz@gmail.com", facebook: "www.facebook.com/carlosmunoz", twitter: "carlosmunoz", logo: File.open("#{Rails.root}/app/assets/images/microsoft.png"))
 Sponsor.create(name: "Victor Pérez", job: "Líder de proyectos", social_reason: "BIT technologies", work_address: "C. Independencia #789", web_page: "bittechnologies.com", phone: "4456789", email: "victorperez@gmail.com", facebook: "www.facebook.com/victorperez", twitter: "victorperez", logo: File.open("#{Rails.root}/app/assets/images/bit.png"))
 
-SystemConfigurations.create(token: "emobile", workshop_tolerance: 15, exposition_tolerance: 15)
-
 Conference.create(name: "Software Libre", conferencist: "Miguel Ramos", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 1")
 Conference.create(name: "Seguridad Informática", conferencist: "José Rosales", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 2")
 Conference.create(name: "Virtualización", conferencist: "Victoria Loya", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 3")
@@ -122,3 +120,5 @@ Conference.create(name: "Virtualización", conferencist: "Victoria Loya", start_
 Activity.create(name: "Disco 80's", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 1")
   
 FaceToFace.create(attendee_id: 1, start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', int_name: "Julián González", int_social_reason: "HP", int_job: "Gerente de ventas", subject: "Convenio con empresa")
+
+SystemConfiguration.create(token: "emobile", workshop_tolerance: 15, exposition_tolerance: 15, logo: File.open("#{Rails.root}/app/assets/images/anadic.png"), banner: File.open("#{Rails.root}/app/assets/images/congreso.png"))

@@ -135,6 +135,7 @@ es:
       sponsor: "patrocinador"
       stand: "stand"
       subgroup: "subgrupo"
+      system_configuration: "Configuración del sistema"
       user: "usuario"
       workshop: "taller"
   
@@ -325,12 +326,14 @@ es:
     workshop_name: "Nombre del taller"
     
   hours: "Horarios"
+  images: "Imágenes"
   interviewee: "Entrevistado"
   login: "Usuario"
   logout: "Salir"
   map: "Mapa"
   new_record_female: "Nueva %{record}"
   new_record_male: "Nuevo %{record}"
+  no_comments_available: "No hay comentarios disponibles"
   no_visits: "No hay ninguna visita registrada."
   not_registered: "No registrad@"
   of: de
@@ -416,9 +419,16 @@ es:
   subgroups: "Subgrupos"
   successfully_created: "El registro fue creado exitosamente"
   successfully_updated: "El registro fue actualizado exitosamente"
+  system_configuration:
+    banner: "Banner"
+    images_change: "Cambiar imágenes"
+    images_change_again: "Cambiar imágenes de nuevo"
+    logo: "Logo"
+  system_configurations: "Configuraciones del sistema"
   tolerance_not_set: "Error, la tolerancia no pudo ser establecida"
   tolerance_set_successfully: "La tolerancia fue establecida exitosamente"
   true_value: "Si"
+  type_attendee_id: "Introduce el ID del asistente:"
   unlock_instructions: "¿No haz recibido las instrucciones de desbloqueo?"
   users: "Usuarios"
   

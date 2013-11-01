@@ -21,7 +21,7 @@
   <fieldset class="column-left">
     <h3 style="text-align: center;"><%= t(:applicant) %></h3><br/>
     <p class="field">
-      <%= label_tag "ID" %>
+      <%= label_tag t(:type_attendee_id), nil, :style => "font-size: 14px;" %>
       <%= text_field_tag "app_id", nil, :class=>"text-input small-input" %>
     </p>
     <p class="field">

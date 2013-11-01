@@ -91,7 +91,7 @@ class WorkshopsController < ApplicationController
   
   def set_tolerance
     if !params[:tolerance].blank?
-      if SystemConfigurations.first.update_attributes(workshop_tolerance: params[:tolerance])
+      if SystemConfiguration.first.update_attributes(workshop_tolerance: params[:tolerance])
         flash[:notice] = t(:tolerance_set_successfully)
       else
         flash[:error] = t(:tolerance_not_set)

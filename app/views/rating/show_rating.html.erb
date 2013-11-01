@@ -13,5 +13,7 @@
       <p>-- <%= r.comment %></p>
       <hr/>
     <% end %>
-  <% end %>
+  <% else %>
+    <p><h3><%= t(:no_comments_available) %></h3></p>
+<% end %>
 </div>

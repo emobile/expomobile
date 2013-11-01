@@ -1,0 +1,38 @@
+<%= render "layouts/first_tab" %>
+
+<div class="CSSTableGenerator" >
+  <table >
+      <tr>
+        <td>
+          <b><%= (t'activerecord.models.system_configuration').capitalize %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= t'system_configuration.token' %>:<%= @system_configuration.token %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= t'system_configuration.workshop_tolerance' %>:<%= @system_configuration.workshop_tolerance %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= t'system_configuration.exposition_tolerance' %>:<%= @system_configuration.exposition_tolerance %>
+        </td>
+      </tr>
+          <tr>
+        <td style="text-align: center;">
+          <b><%= image_tag @system_configuration.logo.url(:thumb) %>
+        </td>
+      </tr>
+          <tr>
+        <td style="text-align: center;">
+          <b><%= image_tag @system_configuration.banner.url(:thumb) %>
+        </td>
+      </tr>
+      </table>
+</div>
+
+<%= render "layouts/action_links" %>
