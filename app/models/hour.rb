@@ -1,7 +1,7 @@
 class Hour < ActiveRecord::Base
   attr_accessible :end_date, :start_date
   cattr_accessor :action
-  has_many :schedules, :dependent => :destroy
+  has_many :schedules
   has_many :subgroups, :through => :schedules
   has_many :workshops, :through => :schedules
  
@@ -18,6 +18,7 @@ class Hour < ActiveRecord::Base
   validates_datetime :end_date, :if => :end_date
   validate :date_not_overlaps, :if => :start_date? && :end_date?
   validate :start_date_less_than_end_date, :if => :start_date? && :end_date?
+  before_destroy :hour_with_subgroups?
   
   private
   
@@ -37,5 +38,9 @@ class Hour < ActiveRecord::Base
     if start_date > end_date
       errors.add(:start_date, :not_less_than_end_date)
     end
+  end
+  
+  def hour_with_subgroups?
+    return subgroups.blank?
   end
 end

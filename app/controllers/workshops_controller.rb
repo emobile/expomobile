@@ -81,7 +81,10 @@ class WorkshopsController < ApplicationController
   # DELETE /workshops/1.json
   def destroy
     @workshop = Workshop.find(params[:id])
-    @workshop.destroy
+    @deleted = @workshop.destroy
+    p @deleted
+    sleep 3
+    flash[:error] = t("workshop.workshop_cant_be_destroyed") if !@deleted
 
     respond_to do |format|
       format.html { redirect_to workshops_url }

@@ -119,7 +119,7 @@ en:
         not_a_number: " is not a numeric value."
         not_less_than_end_date: "is not less than end date."
         overlaps: "Dates overlap with other existing."
-        overlaps: "Dates overlap with other existing in stand."
+        overlaps_in_stand: "Dates overlap with other existing in stand."
     models:
       activity: "activity"
       attendee: "attendee"
@@ -320,6 +320,7 @@ en:
     create_hour: "Create schedule"
     end_date: "End date"
     hour: "Hour"
+    hour_cant_be_destroyed: "Hour can't be destroyed, has associated subgroups"
     new_hour: "New schedule"
     start_date: "Start date"
     subgroup_name: "Subgroup name"
@@ -485,6 +486,7 @@ en:
     name: "Name"
     room: "Room"
     teacher_name: "Instructor"
+    workshop_cant_be_destroyed: "Workshop can't be destroyed, has associated subgroups"
     workshop_key: "Key"
   
   workshops: "Workshops"

@@ -95,7 +95,8 @@ class HoursController < ApplicationController
   # DELETE /hours/1.json
   def destroy
     @hour = Hour.find(params[:id])
-    @hour.destroy
+    @deleted = @hour.destroy
+    flash[:error] = t("hour.hour_cant_be_destroyed") if !@deleted
 
     respond_to do |format|
       format.html { redirect_to hours_url }

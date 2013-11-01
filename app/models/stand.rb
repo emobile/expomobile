@@ -1,6 +1,6 @@
 class Stand < ActiveRecord::Base
   belongs_to :exhibitor
-  has_one :exposition, :dependent => :destroy
+  has_one :exposition
   attr_accessible :name
   
   validates :name, :presence => true

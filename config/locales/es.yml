@@ -320,6 +320,7 @@ es:
     create_hour: "Crear horario"
     end_date: "Hora final"
     hour: "Hora"
+    hour_cant_be_destroyed: "La hora no puede ser destruida, tiene subgrupos asociados"
     new_hour: "Nuevo horario"
     start_date: "Hora inicial"
     subgroup_name: "Nombre del grupo"
@@ -485,6 +486,7 @@ es:
     name: "Nombre"
     room: "Salón"
     teacher_name: "Instructor"
+    workshop_cant_be_destroyed: "El taller no puede ser destruido, tiene subgrupos asociados"
     workshop_key: "Clave"
   
   workshops: "Talleres"

@@ -74,7 +74,7 @@ class StandsController < ApplicationController
   def destroy
     @stand = Stand.find(params[:id])
     @deleted = @stand.destroy
-    flash[:error] = t("stand.stand_cant_be_destroyed") if !@deleted.nil?
+    flash[:error] = t("stand.stand_cant_be_destroyed") if !@deleted
     
     respond_to do |format|
       format.html { redirect_to stands_url }
