@@ -64,7 +64,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.save
-        format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }
+        format.html { redirect_to @attendee, notice: t(:successfully_created) }
         format.json { render json: @attendee, status: :created, location: @attendee }
       else
         format.html { render action: "new" }
@@ -84,7 +84,7 @@ class AttendeesController < ApplicationController
     
     respond_to do |format|
       if @attendee.update_attributes(params[:attendee])
-        format.html { redirect_to @attendee, notice: 'Attendee was successfully updated.' }
+        format.html { redirect_to @attendee, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

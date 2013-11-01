@@ -52,7 +52,7 @@ class WorkshopsController < ApplicationController
 
     respond_to do |format|
       if @workshop.save
-        format.html { redirect_to @workshop, notice: 'Workshop was successfully created.' }
+        format.html { redirect_to @workshop, notice: t(:successfully_created) }
         format.json { render json: @workshop, status: :created, location: @workshop }
       else
         format.html { render action: "new" }
@@ -68,7 +68,7 @@ class WorkshopsController < ApplicationController
 
     respond_to do |format|
       if @workshop.update_attributes(params[:workshop])
-        format.html { redirect_to @workshop, notice: 'Workshop was successfully updated.' }
+        format.html { redirect_to @workshop, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -81,7 +81,10 @@ class WorkshopsController < ApplicationController
   # DELETE /workshops/1.json
   def destroy
     @workshop = Workshop.find(params[:id])
-    @workshop.destroy
+    @deleted = @workshop.destroy
+    p @deleted
+    sleep 3
+    flash[:error] = t("workshop.workshop_cant_be_destroyed") if !@deleted
 
     respond_to do |format|
       format.html { redirect_to workshops_url }
@@ -91,7 +94,7 @@ class WorkshopsController < ApplicationController
   
   def set_tolerance
     if !params[:tolerance].blank?
-      if SystemConfigurations.first.update_attributes(workshop_tolerance: params[:tolerance])
+      if SystemConfiguration.first.update_attributes(workshop_tolerance: params[:tolerance])
         flash[:notice] = t(:tolerance_set_successfully)
       else
         flash[:error] = t(:tolerance_not_set)

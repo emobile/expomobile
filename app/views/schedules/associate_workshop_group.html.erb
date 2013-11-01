@@ -3,7 +3,7 @@
 <% end %>
 <script type="text/javascript">
   $(function() {
-    $(".associate_workshop_to_group").submit(function() {
+    $(".associate_workshop_to_group").submit(function(e) {
       var workshop_id, subgroup_id, hour_id;
 
       workshop_id = $(this).find("#workshop_id").val();
@@ -23,10 +23,15 @@
             var response = confirm("<%= t(:want_to_replace) %>");
 
             if (!response) {
+              e.preventDefault();
               return false;
             }
-            
+
           }
+          /*else {
+            e.preventDefault();
+            return false;
+          }*/
         }
       });
     });
@@ -43,7 +48,7 @@
   <% end %>
   <div class="tab-content<%= " default-tab" if i == default_tab %>" id="tab<%= i %>">
     <% i += 1 %>
-    <% hours = Hour.all.select { |h| h.start_date.strftime('%d/%m/%Y') == d } %>
+    <% hours = Hour.order(:start_date).select { |h| h.start_date.strftime('%d/%m/%Y') == d } %>
     <table id="schedule">
       <thead>
         <tr>

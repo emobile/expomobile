@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015003752) do
+ActiveRecord::Schema.define(:version => 20131101021329) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",         :null => false
@@ -226,13 +226,10 @@ ActiveRecord::Schema.define(:version => 20131015003752) do
   end
 
   create_table "stands", :force => true do |t|
-    t.string   "name",         :null => false
-    t.integer  "exhibitor_id", :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  add_index "stands", ["exhibitor_id"], :name => "index_stands_on_exhibitor_id"
 
   create_table "subgroups", :force => true do |t|
     t.string   "name",         :null => false
@@ -249,6 +246,14 @@ ActiveRecord::Schema.define(:version => 20131015003752) do
     t.integer  "exposition_tolerance"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   create_table "users", :force => true do |t|

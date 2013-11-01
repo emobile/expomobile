@@ -1,5 +1,7 @@
 Expomobile::Application.routes.draw do
 
+  resources :system_configurations
+
   get "rating/show_rating"
 
   resources :diaries

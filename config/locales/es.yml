@@ -135,6 +135,7 @@ es:
       sponsor: "patrocinador"
       stand: "stand"
       subgroup: "subgrupo"
+      system_configuration: "Configuración del sistema"
       user: "usuario"
       workshop: "taller"
   
@@ -194,7 +195,8 @@ es:
     thanks_for_joining: "¡Gracias por unirte, disfruta de un excelente día!"
     type_nip: "Ahora puedes ingresar a la aplicación, solo escribe este NIP:"
     
-  attendance: "Lista de asistencia"    
+  attendance: "Lista de asistencia"
+  attendances: "Asistencias"
   attendees: "Asistentes"
   apply_to_selected: "Aplicar a seleccionados"
   back: "Volver"
@@ -318,18 +320,21 @@ es:
     create_hour: "Crear horario"
     end_date: "Hora final"
     hour: "Hora"
+    hour_cant_be_destroyed: "La hora no puede ser destruida, tiene subgrupos asociados"
     new_hour: "Nuevo horario"
     start_date: "Hora inicial"
     subgroup_name: "Nombre del grupo"
     workshop_name: "Nombre del taller"
     
   hours: "Horarios"
+  images: "Imágenes"
   interviewee: "Entrevistado"
   login: "Usuario"
   logout: "Salir"
   map: "Mapa"
   new_record_female: "Nueva %{record}"
   new_record_male: "Nuevo %{record}"
+  no_comments_available: "No hay comentarios disponibles"
   no_visits: "No hay ninguna visita registrada."
   not_registered: "No registrad@"
   of: de
@@ -413,9 +418,18 @@ es:
     subgroup_key: "Clave del subgrupo"
   
   subgroups: "Subgrupos"
+  successfully_created: "El registro fue creado exitosamente"
+  successfully_updated: "El registro fue actualizado exitosamente"
+  system_configuration:
+    banner: "Banner"
+    images_change: "Cambiar imágenes"
+    images_change_again: "Cambiar imágenes de nuevo"
+    logo: "Logo"
+  system_configurations: "Configuraciones del sistema"
   tolerance_not_set: "Error, la tolerancia no pudo ser establecida"
   tolerance_set_successfully: "La tolerancia fue establecida exitosamente"
   true_value: "Si"
+  type_attendee_id: "Introduce el ID del asistente:"
   unlock_instructions: "¿No haz recibido las instrucciones de desbloqueo?"
   users: "Usuarios"
   
@@ -435,6 +449,8 @@ es:
     zip: "Código postal"
   
   visit:
+    attendances_to_expositions: "Asistencias a exposiciones"
+    attendances_to_workshops: "Asistencias a talleres"
     visits_to_workshops: "Visitas a talleres"
     visits_to_expositions: "Visitas a exposiciones"
     visits_expositions_by_exposition: "Visitas a exposiciones por exposición"
@@ -470,6 +486,7 @@ es:
     name: "Nombre"
     room: "Salón"
     teacher_name: "Instructor"
+    workshop_cant_be_destroyed: "El taller no puede ser destruido, tiene subgrupos asociados"
     workshop_key: "Clave"
   
   workshops: "Talleres"

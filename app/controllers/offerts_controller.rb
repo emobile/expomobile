@@ -53,7 +53,7 @@ class OffertsController < ApplicationController
 
     respond_to do |format|
       if @offert.save
-        format.html { redirect_to @offert, notice: 'Offert was successfully created.' }
+        format.html { redirect_to @offert, notice: t(:successfully_created) }
         format.json { render json: @offert, status: :created, location: @offert }
       else
         format.html { render action: "new" }
@@ -78,7 +78,7 @@ class OffertsController < ApplicationController
       end
     
       if @offert.update_attributes(params[:offert])
-        format.html { redirect_to @offert, notice: 'Offert was successfully updated.' }
+        format.html { redirect_to @offert, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

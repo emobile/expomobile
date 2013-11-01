@@ -44,7 +44,7 @@ class StandsController < ApplicationController
 
     respond_to do |format|
       if @stand.save
-        format.html { redirect_to @stand, notice: 'Stand was successfully created.' }
+        format.html { redirect_to @stand, notice: t(:successfully_created) }
         format.json { render json: @stand, status: :created, location: @stand }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class StandsController < ApplicationController
 
     respond_to do |format|
       if @stand.update_attributes(params[:stand])
-        format.html { redirect_to @stand, notice: 'Stand was successfully updated.' }
+        format.html { redirect_to @stand, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -74,7 +74,7 @@ class StandsController < ApplicationController
   def destroy
     @stand = Stand.find(params[:id])
     @deleted = @stand.destroy
-    flash[:error] = t("stand.stand_cant_be_destroyed") if !@deleted.nil?
+    flash[:error] = t("stand.stand_cant_be_destroyed") if !@deleted
     
     respond_to do |format|
       format.html { redirect_to stands_url }

@@ -45,7 +45,7 @@ class FaceToFacesController < ApplicationController
 
     respond_to do |format|
       if @face_to_face.save
-        format.html { redirect_to @face_to_face, notice: 'Face to face was successfully created.' }
+        format.html { redirect_to @face_to_face, notice: t(:successfully_created) }
         format.json { render json: @face_to_face, status: :created, location: @face_to_face }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class FaceToFacesController < ApplicationController
 
     respond_to do |format|
       if @face_to_face.update_attributes(params[:face_to_face])
-        format.html { redirect_to @face_to_face, notice: 'Face to face was successfully updated.' }
+        format.html { redirect_to @face_to_face, notice: t(:successfully_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

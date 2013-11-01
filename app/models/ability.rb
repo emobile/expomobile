@@ -7,9 +7,12 @@ class Ability
     @user = User.find_by_id(user.id)
     if @user && @user.role.is_super_admin
       can :manage, :all
+      can :edit, SystemConfiguration
+      can :update, SystemConfiguration
+      can :read, SystemConfiguration
     elsif @user && !@user.role.is_super_admin
       @models = Dir['app/models/*.rb'].map { |f| File.basename(f, '.*').camelize.constantize.name }
-      @models -= %w{Ability Nip Schedule Hour AttendeeWorkshop AttendeeExposition SystemConfigurations Rating Role}
+      @models -= %w{Ability Nip Schedule Hour AttendeeWorkshop AttendeeExposition Rating Role}
       @models.each do |m|
         if m == "User"
           can :edit, User, :id => @user.id
@@ -23,6 +26,9 @@ class Ability
           can :manage, eval(m)
         end
       end
+      can :edit, SystemConfiguration
+      can :update, SystemConfiguration
+      can :read, SystemConfiguration
     end
 
     # The first argument to `can` is the action you are giving the user 

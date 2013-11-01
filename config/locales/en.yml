@@ -119,7 +119,7 @@ en:
         not_a_number: " is not a numeric value."
         not_less_than_end_date: "is not less than end date."
         overlaps: "Dates overlap with other existing."
-        overlaps: "Dates overlap with other existing in stand."
+        overlaps_in_stand: "Dates overlap with other existing in stand."
     models:
       activity: "activity"
       attendee: "attendee"
@@ -135,6 +135,7 @@ en:
       sponsor: "sponsor"
       stand: "stand"
       subgroup: "subgroup"
+      system_configuration: "System configuration"
       user: "user"
       workshop: "workshop"
     
@@ -195,6 +196,7 @@ en:
     type_nip: "Now you can login to the application, just type this PIN:"
     
   attendance: "Attendance"
+  attendances: "Attendances"
   attendees: "Attendees"
   apply_to_selected: "Apply to selected"
   back: "Back"
@@ -318,18 +320,21 @@ en:
     create_hour: "Create schedule"
     end_date: "End date"
     hour: "Hour"
+    hour_cant_be_destroyed: "Hour can't be destroyed, has associated subgroups"
     new_hour: "New schedule"
     start_date: "Start date"
     subgroup_name: "Subgroup name"
     workshop_name: "Workshop name"
   
   hours: "Schedules"
+  images: "Images"
   interviewee: "Interviewee"
   login: "Login"
   logout: "Logout"
   map: "Map"
   new_record_female: "New %{record}"
   new_record_male: "New %{record}"
+  no_comments_available: "There are no comments available"
   no_visits: "No visits registered."
   not_registered: "Not registered"
   of: "of"
@@ -413,9 +418,18 @@ en:
     subgroup_key: "Subgroup key"
   
   subgroups: "Subgroups"
+  successfully_created: "Record was created successfully"
+  successfully_updated: "Record was updated successfully"
+  system_configuration:
+    banner: "Banner"
+    images_change: "Change images"
+    images_change_again: "Change images again"
+    logo: "Logo"
+  system_configurations: "System configurations"
   tolerance_not_set: "Error, tolerance could not set"
   tolerance_set_successfully: "Tolerance was set successfully"
   true_value: "Yes"
+  type_attendee_id: "Type attendee ID:"
   unlock_instructions: "Didn't receive unlock instructions?"
   users: "Users"
   
@@ -435,6 +449,8 @@ en:
     zip: "Zip"
   
   visit:
+    attendances_to_expositions: "Attendances to expositions"
+    attendances_to_workshops: "Attendances to workshops"
     visits_to_workshops: "Visits to workshops"
     visits_to_expositions: "Visits to expositions"
     visits_expositions_by_exposition: "Expositions visits by exposition"
@@ -470,6 +486,7 @@ en:
     name: "Name"
     room: "Room"
     teacher_name: "Instructor"
+    workshop_cant_be_destroyed: "Workshop can't be destroyed, has associated subgroups"
     workshop_key: "Key"
   
   workshops: "Workshops"

@@ -1,0 +1,33 @@
+<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+  <table>
+    <thead>
+      <tr>
+                  <th><%= t'system_configuration.token' %></th>
+                  <th><%= t'system_configuration.workshop_tolerance' %></th>
+                  <th><%= t'system_configuration.exposition_tolerance' %></th>
+                  <th><%= t'system_configuration.logo' %></th>
+                  <th><%= t'system_configuration.banner' %></th>
+              </tr>
+
+    </thead>
+
+    <tbody>
+      <% @system_configurations.each do |system_configuration| %>
+      <tr>      
+                
+             <% @model = system_configuration %>
+                          
+          <td><%= system_configuration.token %></td>
+                             
+          <td><%= system_configuration.workshop_tolerance %></td>
+                             
+          <td><%= system_configuration.exposition_tolerance %></td>
+                             
+          <td><%= system_configuration.logo %></td>
+                             
+          <td><%= system_configuration.banner %></td>
+                <%= render "layouts/index_links" %>
+        <% end %>
+    </tbody>
+  </table>
+</div>
