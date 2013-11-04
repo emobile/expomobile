@@ -10,4 +10,5 @@ class Exhibitor < ActiveRecord::Base
   
   validates :name, :social_reason, :job, :presence => true
   validates :name, :uniqueness => true
+  validates :social_reason, :uniqueness => true   
 end

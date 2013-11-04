@@ -135,7 +135,7 @@ class MobileServicesController < ApplicationController
     
     if !session[:attendee_id].blank?
       @offert = Offert.find_by_id(params[:offert_id])
-      @offert[:exhibitor_name] = @offert.exhibitor.name
+      @offert[:exhibitor_name] = @offert.exhibitor.social_reason
       render json: @offert
     end
 
@@ -431,6 +431,7 @@ class MobileServicesController < ApplicationController
   
   def register_visit_to_workshop
     current_time = Time.now - 7.hour
+    
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
