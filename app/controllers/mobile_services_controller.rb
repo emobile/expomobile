@@ -144,7 +144,7 @@ class MobileServicesController < ApplicationController
   def index_sponsors
     
     if !session[:attendee_id].blank?
-      @sponsors = Sponsor.order(:name)
+      @sponsors = Sponsor.order(:social_reason)
       @sponsors.each {|s| s[:mobile_logo_url] = s.logo.url(:mobile)}
       render json: @sponsors
     end
@@ -268,10 +268,10 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
 
       if params[:with_offerts] == "1"
-        @exhibitors = Exhibitor.joins("RIGHT OUTER JOIN offerts o ON exhibitors.id = o.exhibitor_id").uniq
+        @exhibitors = Exhibitor.joins("RIGHT OUTER JOIN offerts o ON exhibitors.id = o.exhibitor_id").order(:social_reason).uniq
         @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
       else
-        @exhibitors = Exhibitor.order('id DESC')
+        @exhibitors = Exhibitor.order(:social_reason)
       end
       
       render json: @exhibitors
