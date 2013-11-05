@@ -272,6 +272,7 @@ class MobileServicesController < ApplicationController
         @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
       else
         @exhibitors = Exhibitor.order(:social_reason)
+        @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
       end
       
       render json: @exhibitors
@@ -284,6 +285,7 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
 
       @exhibitor = Exhibitor.find_by_id(params[:exhibitor_id])
+      @exhibitor[:mobile_logo_url] = @exhibitor.logo.url(:mobile)
       
       render json: @exhibitor
     end
