@@ -20,7 +20,7 @@
   <% end %>
 
   <p class="field">
-    <%= f.label t("exhibitor.logo") %>
+    <%= f.label t("sponsor.logo") %>
     <%= f.file_field :logo %>
   </p>
   <p class="field">
@@ -28,12 +28,16 @@
     <%= f.text_field :name, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
-    <%= f.label t("sponsor.job") %>
-    <%= f.text_field :job, :class=>"text-input small-input", :required => true %><span class="required">*</span>
-  </p>
-  <p class="field">
     <%= f.label t("sponsor.social_reason") %>
     <%= f.text_field :social_reason, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+  </p>
+  <p class="field">
+    <%= f.label t("sponsor.contact") %>
+    <%= f.text_field :contact, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+  </p>
+  <p class="field">
+    <%= f.label t("sponsor.job") %>
+    <%= f.text_field :job, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
     <%= f.label t("sponsor.work_street") %>
@@ -52,16 +56,16 @@
     <%= f.text_field :work_zip, :class=>"text-input small-input", :style => "width: 10% !important;" %>
   </p>
   <p class="field">
-    <%= f.label t("sponsor.web_page") %>
-    <%= f.text_field :web_page, :class=>"text-input small-input" %>
-  </p>
-  <p class="field">
     <%= f.label t("sponsor.phone") %>
     <%= f.text_field :phone, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
     <%= f.label t("sponsor.email") %>
     <%= f.email_field :email, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+  </p>
+  <p class="field">
+    <%= f.label t("sponsor.web_page") %>
+    <%= f.text_field :web_page, :class=>"text-input small-input" %>
   </p>
   <p class="field">
     <%= f.label t("sponsor.twitter") %>

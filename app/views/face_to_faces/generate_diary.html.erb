@@ -65,9 +65,9 @@
             <th><%= t'face_to_face.app_enterprise' %></th>
             <th><%= t'face_to_face.app_email' %></th>
             <th><%= t'face_to_face.app_phone' %></th>
-            <th><%= t'face_to_face.int_name' %></th>
-            <th><%= t'face_to_face.int_social_reason' %></th>
+            <th><%= t'face_to_face.int_contact' %></th>
             <th><%= t'face_to_face.int_job' %></th>
+            <th><%= t'face_to_face.int_name' %></th>
             <th><%= t'face_to_face.subject' %></th>
             <th><%= t'face_to_face.start_date' %></th>
             <th><%= t'face_to_face.end_date' %></th>
@@ -75,7 +75,7 @@
         </thead>
         <tbody>
           <% color = false %>
-          <% @face_to_faces.each do |face_to_face| %>
+          <% @face_to_faces.order(:start_date).each do |face_to_face| %>
           <% color = !color %>
             <tr class="<%= "alt-row" if color %>">
               <td><%= face_to_face.attendee.id %></td>
@@ -88,11 +88,11 @@
 
               <td><%= face_to_face.attendee.e_phone %></td>
 
-              <td><%= face_to_face.int_name %></td>
-
-              <td><%= face_to_face.int_social_reason %></td>
+              <td><%= face_to_face.int_contact %></td>
 
               <td><%= face_to_face.int_job %></td>
+
+              <td><%= face_to_face.int_name %></td>
 
               <td><%= face_to_face.subject %></td>
 

@@ -46,8 +46,9 @@ en:
         event_type: "Event type"        
         place: "Place"
       exhibitor:
+        contact: "Contact"
         job: "Job"
-        name: "Nombre"
+        name: "Trademark"
         social_reason: "Social reason"
       exposition:
         contact: "Contact"
@@ -59,8 +60,9 @@ en:
       face_to_face:
         attendee_id: "Applicant ID"
         end_date: "End date"
-        int_name: "Interviewee name"
-        int_social_reason: "Interviewee social reason"
+        int_contact: "Interviewee name"
+        int_job: "Interviewee job"
+        int_name: "Interviewee enterprise"
         start_date: "Start date"
         subject: "Subject"
       group:
@@ -78,9 +80,10 @@ en:
         name: "Name"
         room_key: "Key"
       sponsor:
+        contact: "Contact"
         email: "Email"
         job: "Job"
-        name: "Name"
+        name: "Trademark"
         phone: "Phone"
         social_reason: "Social reason"
       stand:
@@ -257,7 +260,7 @@ en:
     exposition_key: "Key"
     job: "Job"
     logo: "Logo"
-    name: "Nombre"
+    name: "Trademark"
     social_reason: "Social reason"
     
   exposition:
@@ -289,9 +292,9 @@ en:
     app_name: "A. Name"
     app_phone: "A. Phone"
     end_date: "End date"
-    int_name: "I. Name"
-    int_social_reason: "I. Social reason"
+    int_contact: "I. Name"
     int_job: "I. Job"
+    int_name: "I. Enterprise"
     subject: "Subject"
     start_date: "Start date"
     
@@ -397,10 +400,12 @@ en:
   signed_in: "Signed in"
   
   sponsor:
+    contact: "Contact"
     email: "Email"
     facebook: "Facebook"
     job: "Job"
-    name: "Name"
+    logo: "Logo"
+    name: "Trademark"
     phone: "Phone"
     social_reason: "Enterprise name"
     twitter: "Twitter"

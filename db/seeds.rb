@@ -104,9 +104,9 @@ AttendeeWorkshop.create(attendee_id: 1, workshop_id: 1)
 AttendeeWorkshop.create(attendee_id: 2, workshop_id: 2)
 AttendeeWorkshop.create(attendee_id: 3, workshop_id: 3)
 
-Sponsor.create(name: "Julián Soto", job: "Gerente de ventas", social_reason: "HP México", work_street: "C. Samalayuca", work_street_number: "123", work_colony: "Col. Obrera", work_zip: "31375", web_page: "hpmexico.com", phone: "4123456", email: "juliansoto@gmail.com", twitter: "@juliansoto", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
-Sponsor.create(name: "Carlos Muñoz", job: "Tesorero", social_reason: "Microsoft México", work_street: "C. Tarahumara", work_street_number: "456", work_colony: "Col. Infonavit", work_zip: "31376", web_page: "microsoftmexico.com", phone: "4789123", email: "carlosmunoz@gmail.com", twitter: "carlosmunoz", logo: File.open("#{Rails.root}/app/assets/images/microsoft.png"))
-Sponsor.create(name: "Victor Pérez", job: "Líder de proyectos", social_reason: "BIT technologies", work_street: "C. Independencia", work_street_number: "789", work_colony: "Col. Centro", work_zip: "31377", web_page: "bittechnologies.com", phone: "4456789", email: "victorperez@gmail.com", twitter: "victorperez", logo: File.open("#{Rails.root}/app/assets/images/bit.png"))
+Sponsor.create(name: "HP México", contact: "Julián Soto", job: "Gerente de ventas", social_reason: "HP México", work_street: "C. Samalayuca", work_street_number: "123", work_colony: "Col. Obrera", work_zip: "31375", web_page: "hpmexico.com", phone: "4123456", email: "juliansoto@gmail.com", twitter: "@juliansoto", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
+Sponsor.create(name: "Microsoft México", contact: "Carlos Muñoz", job: "Tesorero", social_reason: "Microsoft México", work_street: "C. Tarahumara", work_street_number: "456", work_colony: "Col. Infonavit", work_zip: "31376", web_page: "microsoftmexico.com", phone: "4789123", email: "carlosmunoz@gmail.com", twitter: "carlosmunoz", logo: File.open("#{Rails.root}/app/assets/images/microsoft.png"))
+Sponsor.create(name: "BIT Technologies", contact: "Victor Pérez", job: "Líder de proyectos", social_reason: "BIT technologies", work_street: "C. Independencia", work_street_number: "789", work_colony: "Col. Centro", work_zip: "31377", web_page: "bittechnologies.com", phone: "4456789", email: "victorperez@gmail.com", twitter: "victorperez", logo: File.open("#{Rails.root}/app/assets/images/bit.png"))
 
 Conference.create(name: "Software Libre", conferencist: "Miguel Ramos", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 1")
 Conference.create(name: "Seguridad Informática", conferencist: "José Rosales", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 2")
@@ -114,6 +114,6 @@ Conference.create(name: "Virtualización", conferencist: "Victoria Loya", start_
 
 Activity.create(name: "Disco 80's", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 1")
   
-FaceToFace.create(attendee_id: 1, start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', int_name: "Julián González", int_social_reason: "HP", int_job: "Gerente de ventas", subject: "Convenio con empresa")
+FaceToFace.create(attendee_id: 1, start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', int_contact: "Julián González", int_job: "Gerente de ventas", int_name: "HP", subject: "Convenio con empresa")
 
 SystemConfiguration.create(token: "emobile", workshop_tolerance: 15, exposition_tolerance: 15, logo: File.open("#{Rails.root}/app/assets/images/anadic.png"), banner: File.open("#{Rails.root}/app/assets/images/congreso.png"))

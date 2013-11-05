@@ -122,15 +122,15 @@ ActiveRecord::Schema.define(:version => 20131101021329) do
   end
 
   create_table "face_to_faces", :force => true do |t|
-    t.integer  "attendee_id",       :null => false
-    t.string   "int_name",          :null => false
-    t.string   "int_social_reason", :null => false
-    t.string   "int_job",           :null => false
-    t.string   "subject",           :null => false
-    t.datetime "start_date",        :null => false
-    t.datetime "end_date",          :null => false
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "attendee_id", :null => false
+    t.string   "int_contact", :null => false
+    t.string   "int_job",     :null => false
+    t.string   "int_name",    :null => false
+    t.string   "subject",     :null => false
+    t.datetime "start_date",  :null => false
+    t.datetime "end_date",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "groups", :force => true do |t|
@@ -207,6 +207,7 @@ ActiveRecord::Schema.define(:version => 20131101021329) do
 
   create_table "sponsors", :force => true do |t|
     t.string   "name",               :null => false
+    t.string   "contact",            :null => false
     t.string   "job"
     t.string   "social_reason",      :null => false
     t.string   "web_page"
@@ -216,7 +217,6 @@ ActiveRecord::Schema.define(:version => 20131101021329) do
     t.string   "work_zip"
     t.string   "phone",              :null => false
     t.string   "email",              :null => false
-    t.string   "facebook"
     t.string   "twitter"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

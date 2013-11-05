@@ -2,6 +2,7 @@ class CreateSponsors < ActiveRecord::Migration
   def change
     create_table :sponsors do |t|
       t.string :name,                                  :null => false
+      t.string :contact,                               :null => false
       t.string :job
       t.string :social_reason,                         :null => false
       t.string :web_page
@@ -12,7 +13,6 @@ class CreateSponsors < ActiveRecord::Migration
       t.string :web_page
       t.string :phone,                                 :null => false
       t.string :email,                                 :null => false
-      t.string :facebook
       t.string :twitter
 
       t.timestamps

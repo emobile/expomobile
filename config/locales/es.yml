@@ -46,8 +46,9 @@ es:
         event_type: "Tipo de evento"
         place: "Lugar"
       exhibitor:
+        contact: "Contacto"
         job: "Puesto"
-        name: "Nombre"
+        name: "Nombre comercial"
         social_reason: "Razón social"
       exposition:
         contact: "Contacto"
@@ -59,8 +60,9 @@ es:
       face_to_face:
         attendee_id: "ID del solicitante"
         end_date: "Fecha final"
-        int_name: "Nombre del entrevistado"
-        int_social_reason: "Razón social del entrevistado"
+        int_contact: "Nombre del entrevistado"
+        int_job: "Puesto del entrevistado"
+        int_name: "Empresa del entrevistado"
         start_date: "Fecha inicial"
         subject: "Asunto"
       group:
@@ -78,9 +80,10 @@ es:
         name: "Nombre"
         room_key: "Clave"
       sponsor:
+        contact: "Contacto"
         email: "Correo electrónico"
         job: "Puesto"
-        name: "Nombre"
+        name: "Nombre comercial"
         phone: "Teléfono"
         social_reason: "Razón social"
       stand:
@@ -253,11 +256,11 @@ es:
   education: "Educación"
   
   exhibitor:
-    contact: "Contact"
+    contact: "Contacto"
     exposition_key: "Clave"
     job: "Puesto"
     logo: "Logotipo"
-    name: "Nombre"
+    name: "Nombre comercial"
     social_reason: "Razón social"
     
   exposition:
@@ -289,9 +292,9 @@ es:
     app_name: "S. Nombre"
     app_phone: "S. Teléfono"
     end_date: "Fecha final"
-    int_name: "E. Nombre"
-    int_social_reason: "E. Razón social"
+    int_contact: "E. Nombre"
     int_job: "E. Puesto"
+    int_name: "E. Empresa"
     subject: "Asunto"
     start_date: "Fecha inicial"
     
@@ -397,10 +400,11 @@ es:
   signed_in: "En línea"
   
   sponsor:
+    contact: "Contacto"
     email: "Correo electrónico"
-    facebook: "Facebook"
     job: "Puesto"
-    name: "Nombre"
+    logo: "Logotipo"
+    name: "Nombre comercial"
     phone: "Teléfono"
     social_reason: "Razón social"
     twitter: "Twitter"
