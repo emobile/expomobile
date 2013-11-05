@@ -1,5 +1,5 @@
 class MobileServicesController < ApplicationController
-  before_filter :detect_platform
+  #before_filter :detect_platform
   skip_before_filter :verify_authenticity_token, :only => [:register_visit_to_workshop, :register_visit_to_stand]
   respond_to :json
   layout false
@@ -526,16 +526,16 @@ class MobileServicesController < ApplicationController
     render json: @msg
   end
   
-  def detect_platform
-    if request.env['HTTP_USER_AGENT'] == ""
-      access = true
-    else
-      access = false
-    end
-    unless access
-      flash[:alert] = t("no_access")
-      redirect_to root_path
-    end
-  end
+#  def detect_platform
+#    if request.env['HTTP_USER_AGENT'] == ""
+#      access = true
+#    else
+#      access = false
+#    end
+#    unless access
+#      flash[:alert] = t("no_access")
+#      redirect_to root_path
+#    end
+#  end
   
 end
