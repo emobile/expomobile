@@ -12,8 +12,8 @@ Role.create(name: "Administrator")
 
 User.create(first_name: 'System', last_name: 'Administrator', phone: '6141111111', address: 'Address 1', city: 'Chihuahua', state: 'Chihuahua', zip: 33333, country: 'México', username: 'administrator', email: 'emobile@emobile.com.mx', password: 'Password1', password_confirmation: 'Password1', confirmed_at: Date.today, role_id: 1)
 
-Exhibitor.create(name: "Julián González", social_reason: "HP", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
-Exhibitor.create(name: "Manuel Lara", social_reason: "CISCO", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/cisco.gif"))
+Exhibitor.create(name: "HP", exposition_key: "e11", contact: "Julián González", social_reason: "HP", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
+Exhibitor.create(name: "CISCO", exposition_key: "e22", contact: "Manuel Lara", social_reason: "CISCO", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/cisco.gif"))
 
 Offert.create(exhibitor_id: '1', description: 'Computadora', price: '5000', start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 18 Sep 2013 18:05:00 UTC +00:00', location: "Stand 1")
 Offert.create(exhibitor_id: '1', description: 'Impresora', price: '1000', start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 18 Sep 2013 18:05:00 UTC +00:00', location: "Stand 1")
@@ -94,24 +94,19 @@ Hour.create(start_date: 'Tue, 26 Nov 2013 10:40:00 UTC +00:00', end_date: 'Tue, 
 Hour.create(start_date: 'Tue, 26 Nov 2013 11:20:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 11:50:00 UTC +00:00')
 Hour.create(start_date: 'Tue, 26 Nov 2013 12:00:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 12:30:00 UTC +00:00')
 
-Stand.create(name: "Stand 1")
-Stand.create(name: "Stand 2")
-Stand.create(name: "Stand 3") 
+Exposition.create(name: "Exposition 1", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', location: "Ubicación", exhibitor_name: "Expositor 1")
+Exposition.create(name: "Exposition 2", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', location: "Ubicación", exhibitor_name: "Expositor 2")
 
-Exposition.create(name: "Exposition 1", exposition_key: "e11", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 1, exhibitor_id: 1)
-Exposition.create(name: "Exposition 2", exposition_key: "e22", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', stand_id: 2, exhibitor_id: 2)
-
-AttendeeExposition.create(attendee_id: 1, exposition_id: 1)
-AttendeeExposition.create(attendee_id: 2, exposition_id: 2)
-AttendeeExposition.create(attendee_id: 3, exposition_id: 3)
+AttendeeExposition.create(attendee_id: 1, exhibitor_id: 1)
+AttendeeExposition.create(attendee_id: 2, exhibitor_id: 2)
 
 AttendeeWorkshop.create(attendee_id: 1, workshop_id: 1)
 AttendeeWorkshop.create(attendee_id: 2, workshop_id: 2)
 AttendeeWorkshop.create(attendee_id: 3, workshop_id: 3)
 
-Sponsor.create(name: "Julián Soto", job: "Gerente de ventas", social_reason: "HP México", work_address: "C. Samalayuca #123", web_page: "hpmexico.com", phone: "4123456", email: "juliansoto@gmail.com", facebook: "www.facebook.com/juliansoto", twitter: "@juliansoto", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
-Sponsor.create(name: "Carlos Muñoz", job: "Tesorero", social_reason: "Microsoft México", work_address: "C. Tarahumara #456", web_page: "microsoftmexico.com", phone: "4789123", email: "carlosmunoz@gmail.com", facebook: "www.facebook.com/carlosmunoz", twitter: "carlosmunoz", logo: File.open("#{Rails.root}/app/assets/images/microsoft.png"))
-Sponsor.create(name: "Victor Pérez", job: "Líder de proyectos", social_reason: "BIT technologies", work_address: "C. Independencia #789", web_page: "bittechnologies.com", phone: "4456789", email: "victorperez@gmail.com", facebook: "www.facebook.com/victorperez", twitter: "victorperez", logo: File.open("#{Rails.root}/app/assets/images/bit.png"))
+Sponsor.create(name: "Julián Soto", job: "Gerente de ventas", social_reason: "HP México", work_street: "C. Samalayuca", work_street_number: "123", work_colony: "Col. Obrera", work_zip: "31375", web_page: "hpmexico.com", phone: "4123456", email: "juliansoto@gmail.com", twitter: "@juliansoto", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
+Sponsor.create(name: "Carlos Muñoz", job: "Tesorero", social_reason: "Microsoft México", work_street: "C. Tarahumara", work_street_number: "456", work_colony: "Col. Infonavit", work_zip: "31376", web_page: "microsoftmexico.com", phone: "4789123", email: "carlosmunoz@gmail.com", twitter: "carlosmunoz", logo: File.open("#{Rails.root}/app/assets/images/microsoft.png"))
+Sponsor.create(name: "Victor Pérez", job: "Líder de proyectos", social_reason: "BIT technologies", work_street: "C. Independencia", work_street_number: "789", work_colony: "Col. Centro", work_zip: "31377", web_page: "bittechnologies.com", phone: "4456789", email: "victorperez@gmail.com", twitter: "victorperez", logo: File.open("#{Rails.root}/app/assets/images/bit.png"))
 
 Conference.create(name: "Software Libre", conferencist: "Miguel Ramos", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 1")
 Conference.create(name: "Seguridad Informática", conferencist: "José Rosales", start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 11 Sep 2013 18:05:00 UTC +00:00', place: "Salón 2")

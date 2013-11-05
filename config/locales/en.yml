@@ -50,7 +50,10 @@ en:
         name: "Nombre"
         social_reason: "Social reason"
       exposition:
+        contact: "Contact"
         end_date: "End date"
+        exhibitor_name: "Exhibitor name"
+        location: "Location"
         name: "Name"
         start_date: "Start date"
       face_to_face:
@@ -250,6 +253,8 @@ en:
   education: "Education"
   
   exhibitor:
+    contact: "Contact"
+    exposition_key: "Key"
     job: "Job"
     logo: "Logo"
     name: "Nombre"
@@ -257,10 +262,9 @@ en:
     
   exposition:
     end_date: "End date"
-    exhibitor: "Exhibitor"
-    exposition_key: "Key"
+    exhibitor_name: "Exhibitor name"
+    location: "Location"
     name: "Name"
-    stand: "Stand"
     start_date: "Start date"
   
   exhibitors: "Exhibitors"
@@ -400,7 +404,10 @@ en:
     social_reason: "Enterprise name"
     twitter: "Twitter"
     web_page: "Web page"
-    work_address: "Work address"
+    work_colony: "Colony"
+    work_street: "Street"
+    work_street_number: "Street number"
+    work_zip: "ZIP"
     
   sponsors: "Patrocinadores"
   
@@ -460,7 +467,8 @@ en:
   
   visit_already_registered: "Visit already registered"
   visit_not_registered: "You couldn't register your visit, is not the appropriate time"
-  visit_registered: "You have been registered your visit successfully"
+  visit_registered_to_exposition: "You have been registered your visit to the exposition successfully"
+  visit_registered_to_workshop: "You have been registered your visit to the workshop successfully"
   visits: "Visits"
   want_to_replace: "Do you want to replace previous association?"
   web: "Web"

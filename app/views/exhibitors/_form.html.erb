@@ -26,6 +26,11 @@
   </p>
   
   <p class="field">
+    <%= f.label t("exhibitor.contact") %>
+    <%= f.text_field :contact, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+  </p>
+  
+  <p class="field">
     <%= f.label t("exhibitor.job") %>
     <%= f.text_field :job, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>

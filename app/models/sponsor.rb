@@ -1,5 +1,5 @@
 class Sponsor < ActiveRecord::Base
-  attr_accessible :email, :job, :name, :phone, :facebook, :twitter, :social_reason, :web_page, :work_address, :logo
+  attr_accessible :email, :job, :name, :phone, :twitter, :social_reason, :web_page, :work_street, :work_street_number, :work_colony, :work_zip, :logo
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100",

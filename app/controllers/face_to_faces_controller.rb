@@ -85,7 +85,7 @@ class FaceToFacesController < ApplicationController
   
   def get_interviewee
     @interviewee = Sponsor.where(:name => params[:name]).select([:social_reason, :job]).first
-    @interviewee = Exhibitor.where(:name => params[:name]).select([:social_reason, :job]).first if @interviewee.blank?
+    @interviewee = Exhibitor.where(:contact => params[:name]).select([:social_reason, :job]).first if @interviewee.blank?
     
     render json: @interviewee
   end

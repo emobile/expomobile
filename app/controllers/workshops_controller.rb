@@ -43,7 +43,7 @@ class WorkshopsController < ApplicationController
 
     while @workshop.workshop_key.nil?
       random_value = Array.new(3) {[*'0'..'9', *'a'..'z'].sample}.join
-      @exists = Workshop.find_by_workshop_key(random_value) || Stand.find_by_stand_key(random_value)
+      @exists = Workshop.find_by_workshop_key(random_value) || Exhibitor.find_by_exposition_key(random_value)
         
       if @exists.nil?
         @workshop.workshop_key = random_value

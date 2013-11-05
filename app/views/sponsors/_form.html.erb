@@ -36,8 +36,20 @@
     <%= f.text_field :social_reason, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
-    <%= f.label t("sponsor.work_address") %>
-    <%= f.text_field :work_address, :class=>"text-input small-input" %>
+    <%= f.label t("sponsor.work_street") %>
+    <%= f.text_field :work_street, :class=>"text-input small-input" %>
+  </p>
+  <p class="field">
+    <%= f.label t("sponsor.work_street_number") %>
+    <%= f.text_field :work_street_number, :class=>"text-input small-input" %>
+  </p>
+  <p class="field">
+    <%= f.label t("sponsor.work_colony") %>
+    <%= f.text_field :work_colony, :class=>"text-input small-input" %>
+  </p>
+    <p class="field">
+    <%= f.label t("sponsor.work_zip") %>
+    <%= f.text_field :work_zip, :class=>"text-input small-input" %>
   </p>
   <p class="field">
     <%= f.label t("sponsor.web_page") %>

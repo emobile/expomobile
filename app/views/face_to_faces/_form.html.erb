@@ -46,7 +46,7 @@
     <h3 style="text-align: center;"><%= t(:interviewee) %></h3><br/>
     <p class="field">
       <%= f.label t("face_to_face.int_name") %>
-      <% @interviewees = Sponsor.all.map { |s| [s.name, s.name] } + Exhibitor.all.map { |e| [e.name, e.name] } %>
+      <% @interviewees = Sponsor.all.map { |s| [s.name, s.name] } + Exhibitor.all.map { |e| [e.contact, e.contact] } %>
       <%= f.select :int_name, @interviewees, :prompt => t(:please_select) %><span class="required">*</span>
     </p>
     <p class="field">
