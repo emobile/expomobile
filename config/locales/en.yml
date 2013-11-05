@@ -338,6 +338,7 @@ en:
   map: "Map"
   new_record_female: "New %{record}"
   new_record_male: "New %{record}"
+  no_access: "No tienes acceso a esta página"
   no_comments_available: "There are no comments available"
   no_visits: "No visits registered."
   not_registered: "Not registered"

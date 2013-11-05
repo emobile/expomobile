@@ -489,7 +489,7 @@ class MobileServicesController < ApplicationController
       if params[:key] =~ /\A[a-z0-9]{3}\z/
         @exhibitor = Exhibitor.find_by_exposition_key(params[:key])
 
-        if @exhibitor.nil?
+        if !@exhibitor.nil?
           @visit_registered = AttendeeExposition.find_by_attendee_id_and_exhibitor_id(session[:attendee_id], @exhibitor.id)
           
           if @visit_registered.nil?
@@ -533,7 +533,7 @@ class MobileServicesController < ApplicationController
       access = false
     end
     unless access
-      flash[:alert] = t('no_access')
+      flash[:alert] = t("no_access")
       redirect_to root_path
     end
   end

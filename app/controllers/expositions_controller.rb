@@ -50,15 +50,6 @@ class ExpositionsController < ApplicationController
     end
     
     @exposition = Exposition.new(params[:exposition])
-    
-    while @exposition.exposition_key.nil?
-      random_value = Array.new(3) {[*'0'..'9', *'a'..'z'].sample}.join
-      @exists = Exposition.find_by_exposition_key(random_value) || Workshop.find_by_workshop_key(random_value)
-        
-      if @exists.nil?
-        @exposition.exposition_key = random_value
-      end
-    end
 
     respond_to do |format|
       if @exposition.save

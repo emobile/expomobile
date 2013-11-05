@@ -1,6 +1,5 @@
 class Exposition < ActiveRecord::Base
   belongs_to :stand
-  belongs_to :exhibitor
   attr_accessible :name, :end_date, :start_date, :location, :exhibitor_name, :exposition_key
   cattr_accessor :action
   

@@ -6,7 +6,6 @@ class Exhibitor < ActiveRecord::Base
     :mobile => "x64" },
     :default_url => "/assets/missing.jpg"
   has_many :offerts, :dependent => :destroy
-  has_one :exposition, :dependent => :destroy
   
   validates :name, :social_reason, :job, :presence => true
   validates :name, :uniqueness => true
