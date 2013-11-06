@@ -484,7 +484,6 @@ class MobileServicesController < ApplicationController
   end
   
   def register_visit_to_exposition
-    current_time = Time.now - 7.hour
 
     if !session[:attendee_id].blank?
 
