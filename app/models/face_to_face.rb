@@ -1,10 +1,10 @@
 class FaceToFace < ActiveRecord::Base
-  attr_accessible :attendee_id, :end_date, :int_name, :int_social_reason, :int_job, :start_date, :subject
+  attr_accessible :attendee_id, :end_date, :int_contact, :int_job, :int_name, :start_date, :subject
   cattr_accessor :action
   belongs_to :attendee
   belongs_to :interviewee 
 
-  validates :attendee_id, :end_date, :int_name, :int_social_reason, :int_job, :start_date, :subject, :presence => true
+  validates :attendee_id, :end_date, :int_contact, :int_job, :int_name, :start_date, :subject, :presence => true
   validates_datetime :end_date, :if => :end_date
   validates_datetime :start_date, :if => :start_date
   validate :date_not_overlaps, :if => :start_date? && :end_date?
@@ -15,9 +15,9 @@ class FaceToFace < ActiveRecord::Base
   def date_not_overlaps
     overlaps = []
     if action == "update"
-      overlaps = FaceToFace.where("start_date < ? AND end_date > ? AND int_name LIKE ? AND id != ?", end_date, start_date, int_name, id)
+      overlaps = FaceToFace.where("start_date < ? AND end_date > ? AND int_contact LIKE ? AND id != ?", end_date, start_date, int_contact, id)
     else
-      overlaps = FaceToFace.where("start_date < ? AND end_date > ? AND int_name LIKE ?", end_date, start_date, int_name)
+      overlaps = FaceToFace.where("start_date < ? AND end_date > ? AND int_contact LIKE ?", end_date, start_date, int_contact)
     end
     if overlaps.any?
       errors.add(:base, :overlaps)

@@ -23,7 +23,7 @@ class AttendeesController < ApplicationController
     @workshops = Workshop.joins("INNER JOIN attendee_workshops a ON workshops.id = a.workshop_id")
     .joins("INNER JOIN attendees at ON a.attendee_id = at.id")
     .where("at.id = ?", @attendee.id)
-    @expositions = Exposition.joins("INNER JOIN attendee_expositions a ON expositions.id = a.exposition_id")
+    @expositions = Exposition.joins("INNER JOIN attendee_expositions a ON expositions.id = a.exhibitor_id")
     .joins("INNER JOIN attendees at ON a.attendee_id = at.id")
     .where("at.id = ?", @attendee.id)
 

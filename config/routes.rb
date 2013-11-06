@@ -34,8 +34,6 @@ Expomobile::Application.routes.draw do
   get "visits/visits_to_expositions_generate_report_by_exposition"
 
   resources :expositions
-
-  resources :stands
   
   get "mobile_services/rate"
   get "mobile_services/index_diary_days"
@@ -57,6 +55,7 @@ Expomobile::Application.routes.draw do
   get "mobile_services/index_offerts"
   get "mobile_services/show_offert"
   get "mobile_services/index_exhibitors"
+  get "mobile_services/show_exhibitor"  
   get "mobile_services/index_workshop_days"
   get "mobile_services/index_exposition_days"
   get "mobile_services/index_workshops"

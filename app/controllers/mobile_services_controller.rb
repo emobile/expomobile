@@ -1,5 +1,5 @@
 class MobileServicesController < ApplicationController
-  before_filter :detect_platform
+  #before_filter :detect_platform
   skip_before_filter :verify_authenticity_token, :only => [:register_visit_to_workshop, :register_visit_to_stand]
   respond_to :json
   layout false
@@ -135,7 +135,7 @@ class MobileServicesController < ApplicationController
     
     if !session[:attendee_id].blank?
       @offert = Offert.find_by_id(params[:offert_id])
-      @offert[:exhibitor_name] = @offert.exhibitor.name
+      @offert[:exhibitor_name] = @offert.exhibitor.social_reason
       render json: @offert
     end
 
@@ -144,7 +144,7 @@ class MobileServicesController < ApplicationController
   def index_sponsors
     
     if !session[:attendee_id].blank?
-      @sponsors = Sponsor.order(:name)
+      @sponsors = Sponsor.order(:social_reason)
       @sponsors.each {|s| s[:mobile_logo_url] = s.logo.url(:mobile)}
       render json: @sponsors
     end
@@ -268,13 +268,26 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
 
       if params[:with_offerts] == "1"
-        @exhibitors = Exhibitor.joins("RIGHT OUTER JOIN offerts o ON exhibitors.id = o.exhibitor_id").uniq
+        @exhibitors = Exhibitor.joins("RIGHT OUTER JOIN offerts o ON exhibitors.id = o.exhibitor_id").order(:social_reason).uniq
         @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
       else
-        @exhibitors = Exhibitor.order('id DESC').paginate(:per_page => 10, :page => params[:page])
+        @exhibitors = Exhibitor.order(:social_reason)
+        @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
       end
       
       render json: @exhibitors
+    end
+    
+  end
+  
+  def show_exhibitor
+    
+    if !session[:attendee_id].blank?
+
+      @exhibitor = Exhibitor.find_by_id(params[:exhibitor_id])
+      @exhibitor[:mobile_logo_url] = @exhibitor.logo.url(:mobile)
+      
+      render json: @exhibitor
     end
     
   end
@@ -431,6 +444,7 @@ class MobileServicesController < ApplicationController
   
   def register_visit_to_workshop
     current_time = Time.now - 7.hour
+    
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
@@ -447,7 +461,7 @@ class MobileServicesController < ApplicationController
             
             if current_time >= @hour.start_date && current_time < (@hour.end_date + SystemConfiguration.first.workshop_tolerance.minutes + 1.minutes)
               AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: @workshop.id)
-              @msg = { success: "yes", msg: t(:visit_registered) }
+              @msg = { success: "yes", msg: t(:visit_registered_to_workshop) }
             else
               @msg = { success: "no", msg: t(:visit_not_registered) }
             end
@@ -475,60 +489,55 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
 
       if params[:key] =~ /\A[a-z0-9]{3}\z/
-        @exposition = Exposition.find_by_exposition_key(params[:key])
+        @exhibitor = Exhibitor.find_by_exposition_key(params[:key])
 
-        if !@exposition.nil?
-          @visit_registered = AttendeeExposition.find_by_attendee_id_and_exposition_id(session[:attendee_id], @exposition.id)
+        if !@exhibitor.nil?
+          @visit_registered = AttendeeExposition.find_by_attendee_id_and_exhibitor_id(session[:attendee_id], @exhibitor.id)
           
           if @visit_registered.nil?
-            
-                if current_time >= @exposition.start_date && current_time <= @exposition.end_date + SystemConfiguration.first.exposition_tolerance.minutes
-                AttendeeExposition.create(attendee_id: session[:attendee_id], exposition_id: @exposition.id)
-                @msg = { success: "yes", msg: t(:visit_registered) }
-              else
-                @msg = { success: "no", msg: t(:visit_not_registered) }
-              end
-            else
-              @msg = { success: "no", msg: t(:visit_already_registered) }
-            end
-          
+            AttendeeExposition.create(attendee_id: session[:attendee_id], exhibitor_id: @exhibitor.id)
+            @msg = { success: "yes", msg: t(:visit_registered_to_exposition) }
           else
-            @msg = { success: "no", msg: t("errors.exposition_not_assigned") }
+            @msg = { success: "no", msg: t(:visit_already_registered) }
           end
           
         else
-          @msg = { success: "no", msg: t("errors.invalid_stand_key") }
+          @msg = { success: "no", msg: t("errors.exposition_not_assigned") }
         end
-
+          
+      else
+        @msg = { success: "no", msg: t("errors.invalid_stand_key") }
       end
-    
-      render json: @msg
-    end
 
-    def rate
+    end
     
-      if !session[:attendee_id].blank?
-
-        if params[:value] =~ /\A[1-3]\z/
-          Rating.create(value: params[:value], comment: params[:comment])
-          @msg = { success: "yes", msg: t(:rate_thank_you) }
-        end
-      
-      end
-  
-      render json: @msg
-    end
-  
-    def detect_platform
-      #    if request.env['HTTP_USER_AGENT'] == ""
-      #      access = true
-      #    else
-      #      access = false
-      #    end
-      #    unless access
-      #      flash[:alert] = t('no_access')
-      #      redirect_to root_path
-      #    end
-    end
-  
+    render json: @msg
   end
+
+  def rate
+    
+    if !session[:attendee_id].blank?
+
+      if params[:value] =~ /\A[1-3]\z/
+        Rating.create(value: params[:value], comment: params[:comment])
+        @msg = { success: "yes", msg: t(:rate_thank_you) }
+      end
+      
+    end
+  
+    render json: @msg
+  end
+  
+#  def detect_platform
+#    if request.env['HTTP_USER_AGENT'] == ""
+#      access = true
+#    else
+#      access = false
+#    end
+#    unless access
+#      flash[:alert] = t("no_access")
+#      redirect_to root_path
+#    end
+#  end
+  
+end

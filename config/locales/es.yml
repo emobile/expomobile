@@ -46,18 +46,23 @@ es:
         event_type: "Tipo de evento"
         place: "Lugar"
       exhibitor:
+        contact: "Contacto"
         job: "Puesto"
-        name: "Nombre"
+        name: "Nombre comercial"
         social_reason: "Razón social"
       exposition:
+        contact: "Contacto"
         end_date: "Fecha final"
+        exhibitor_name: "Nombre del expositor"
+        location: "Ubicación"
         name: "Nombre"
         start_date: "Fecha inicial"
       face_to_face:
         attendee_id: "ID del solicitante"
         end_date: "Fecha final"
-        int_name: "Nombre del entrevistado"
-        int_social_reason: "Razón social del entrevistado"
+        int_contact: "Nombre del entrevistado"
+        int_job: "Puesto del entrevistado"
+        int_name: "Empresa del entrevistado"
         start_date: "Fecha inicial"
         subject: "Asunto"
       group:
@@ -75,9 +80,10 @@ es:
         name: "Nombre"
         room_key: "Clave"
       sponsor:
+        contact: "Contacto"
         email: "Correo electrónico"
         job: "Puesto"
-        name: "Nombre"
+        name: "Nombre comercial"
         phone: "Teléfono"
         social_reason: "Razón social"
       stand:
@@ -250,17 +256,18 @@ es:
   education: "Educación"
   
   exhibitor:
+    contact: "Contacto"
+    exposition_key: "Clave"
     job: "Puesto"
     logo: "Logotipo"
-    name: "Nombre"
+    name: "Nombre comercial"
     social_reason: "Razón social"
     
   exposition:
     end_date: "Fecha final"
-    exhibitor: "Expositor"
-    exposition_key: "Clave"
+    exhibitor_name: "Expositor"
+    location: "Ubicación"
     name: "Nombre"
-    stand: "Stand"
     start_date: "Fecha inicial"
   
   exhibitors: "Expositores"
@@ -285,9 +292,9 @@ es:
     app_name: "S. Nombre"
     app_phone: "S. Teléfono"
     end_date: "Fecha final"
-    int_name: "E. Nombre"
-    int_social_reason: "E. Razón social"
+    int_contact: "E. Nombre"
     int_job: "E. Puesto"
+    int_name: "E. Empresa"
     subject: "Asunto"
     start_date: "Fecha inicial"
     
@@ -334,6 +341,7 @@ es:
   map: "Mapa"
   new_record_female: "Nueva %{record}"
   new_record_male: "Nuevo %{record}"
+  no_access: "No tienes acceso a esta página"
   no_comments_available: "No hay comentarios disponibles"
   no_visits: "No hay ninguna visita registrada."
   not_registered: "No registrad@"
@@ -392,15 +400,19 @@ es:
   signed_in: "En línea"
   
   sponsor:
+    contact: "Contacto"
     email: "Correo electrónico"
-    facebook: "Facebook"
     job: "Puesto"
-    name: "Nombre"
+    logo: "Logotipo"
+    name: "Nombre comercial"
     phone: "Teléfono"
     social_reason: "Razón social"
     twitter: "Twitter"
     web_page: "Página web"
-    work_address: "Dirección de trabajo"
+    work_colony: "Colonia"
+    work_street: "Calle"
+    work_street_number: "Número de calle"
+    work_zip: "Código postal"
     
   sponsors: "Patrocinadores"
   
@@ -460,7 +472,8 @@ es:
   
   visit_already_registered: "Tu visita ya ha sido registrada"
   visit_not_registered: "No pudiste registrar tu visita, no es la hora apropiada"
-  visit_registered: "Haz registrado tu visita con éxito"
+  visit_registered_to_exposition: "Haz registrado tu visita con éxito a la exposición"
+  visit_registered_to_workshop: "Haz registrado tu visita con éxito a el taller"
   visits: "Visitas"
   want_to_replace: "¿Quieres sobreescribir la asociación existente?"
   web: "Web"

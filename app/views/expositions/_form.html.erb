@@ -20,15 +20,15 @@
 <% end %>
   <p class="field">
     <%= f.label t("exposition.name") %>
-    <%= f.text_field :name, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+    <%= f.text_field :name, :class => "text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
-    <%= f.label t("exposition.stand") %>
-    <%= f.collection_select :stand_id, Stand.order(:name), :id ,:name %>
+    <%= f.label t("exposition.location") %>
+    <%= f.text_field :location, :class => "text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
-    <%= f.label t("exposition.exhibitor") %>
-    <%= f.collection_select :exhibitor_id, Exhibitor.order(:social_reason), :id ,:social_reason %>
+    <%= f.label t("exposition.exhibitor_name") %>
+    <%= f.text_field :exhibitor_name, :class => "text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
     <%= f.label t("exposition.start_date") %>

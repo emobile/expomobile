@@ -17,12 +17,17 @@
 
   <p class="field">
     <%= f.label t("exhibitor.name") %>
-    <%= f.text_field :name, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+    <%= f.text_field :name, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>
   
   <p class="field">
     <%= f.label t("exhibitor.social_reason") %>
     <%= f.text_field :social_reason, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.contact") %>
+    <%= f.text_field :contact, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
   </p>
   
   <p class="field">

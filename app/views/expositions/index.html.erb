@@ -5,9 +5,8 @@
         <%#*<th><input class="check-all" type="checkbox" /></th>%>
         <th>ID</th>
                   <th><%= t'exposition.name' %></th>
-                  <th><%= t'exposition.exposition_key' %></th>
-                  <th><%= t'exposition.stand' %></th>
-                  <th><%= t'exposition.exhibitor' %></th>
+                  <th><%= t'exposition.location' %></th>
+                  <th><%= t'exposition.exhibitor_name' %></th>
                   <th><%= t'exposition.start_date' %></th>
                   <th><%= t'exposition.end_date' %></th>
               </tr>
@@ -39,12 +38,10 @@
              <% @model = exposition %>
         
           <td><%= exposition.name %></td>
-          
-          <td><%= exposition.exposition_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:key => exposition.exposition_key), :class => "qr_code" %></td>
                           
-          <td><%= exposition.stand.name %></td>
+          <td><%= exposition.location %></td>
                              
-          <td><%= exposition.exhibitor.social_reason %></td>
+          <td><%= exposition.exhibitor_name %></td>
                              
           <td><%= (exposition.start_date.nil?)? "": exposition.start_date.strftime("%d/%m/%Y %I:%M%p") %></td>
                              

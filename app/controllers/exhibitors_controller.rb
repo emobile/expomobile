@@ -46,6 +46,15 @@ class ExhibitorsController < ApplicationController
   # POST /exhibitors.json
   def create
     @exhibitor = Exhibitor.new(params[:exhibitor])
+    
+    while @exhibitor.exposition_key.nil?
+      random_value = Array.new(3) {[*'0'..'9', *'a'..'z'].sample}.join
+      @exists = Workshop.find_by_workshop_key(random_value) || Exhibitor.find_by_exposition_key(random_value)
+        
+      if @exists.nil?
+        @exhibitor.exposition_key = random_value
+      end
+    end
 
     respond_to do |format|
       if @exhibitor.save

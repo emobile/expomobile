@@ -50,7 +50,7 @@
             <%= t(:expositions) %>
           </a>
           <ul>
-            <% @models = %w{Exposition Stand Exhibitor Offert} %>
+            <% @models = %w{Exposition Exhibitor Offert} %>
             <% @models.each do |model| %>
               <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
               <% if %w{Exposition Offert}.include?(model) %>

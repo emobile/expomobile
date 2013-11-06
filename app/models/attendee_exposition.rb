@@ -1,8 +1,8 @@
 class AttendeeExposition < ActiveRecord::Base
   belongs_to :attendee
-  belongs_to :exposition
+  belongs_to :expositor
   
-  attr_accessible :attendee_id, :exposition_id
+  attr_accessible :attendee_id, :exhibitor_id
   
-  validates :attendee_id, :exposition_id, :presence => true
+  validates :attendee_id, :exhibitor_id, :presence => true
 end

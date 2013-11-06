@@ -46,18 +46,23 @@ en:
         event_type: "Event type"        
         place: "Place"
       exhibitor:
+        contact: "Contact"
         job: "Job"
-        name: "Nombre"
+        name: "Trademark"
         social_reason: "Social reason"
       exposition:
+        contact: "Contact"
         end_date: "End date"
+        exhibitor_name: "Exhibitor name"
+        location: "Location"
         name: "Name"
         start_date: "Start date"
       face_to_face:
         attendee_id: "Applicant ID"
         end_date: "End date"
-        int_name: "Interviewee name"
-        int_social_reason: "Interviewee social reason"
+        int_contact: "Interviewee name"
+        int_job: "Interviewee job"
+        int_name: "Interviewee enterprise"
         start_date: "Start date"
         subject: "Subject"
       group:
@@ -75,9 +80,10 @@ en:
         name: "Name"
         room_key: "Key"
       sponsor:
+        contact: "Contact"
         email: "Email"
         job: "Job"
-        name: "Name"
+        name: "Trademark"
         phone: "Phone"
         social_reason: "Social reason"
       stand:
@@ -250,17 +256,18 @@ en:
   education: "Education"
   
   exhibitor:
+    contact: "Contact"
+    exposition_key: "Key"
     job: "Job"
     logo: "Logo"
-    name: "Nombre"
+    name: "Trademark"
     social_reason: "Social reason"
     
   exposition:
     end_date: "End date"
-    exhibitor: "Exhibitor"
-    exposition_key: "Key"
+    exhibitor_name: "Exhibitor name"
+    location: "Location"
     name: "Name"
-    stand: "Stand"
     start_date: "Start date"
   
   exhibitors: "Exhibitors"
@@ -285,9 +292,9 @@ en:
     app_name: "A. Name"
     app_phone: "A. Phone"
     end_date: "End date"
-    int_name: "I. Name"
-    int_social_reason: "I. Social reason"
+    int_contact: "I. Name"
     int_job: "I. Job"
+    int_name: "I. Enterprise"
     subject: "Subject"
     start_date: "Start date"
     
@@ -334,6 +341,7 @@ en:
   map: "Map"
   new_record_female: "New %{record}"
   new_record_male: "New %{record}"
+  no_access: "No tienes acceso a esta página"
   no_comments_available: "There are no comments available"
   no_visits: "No visits registered."
   not_registered: "Not registered"
@@ -392,15 +400,20 @@ en:
   signed_in: "Signed in"
   
   sponsor:
+    contact: "Contact"
     email: "Email"
     facebook: "Facebook"
     job: "Job"
-    name: "Name"
+    logo: "Logo"
+    name: "Trademark"
     phone: "Phone"
     social_reason: "Enterprise name"
     twitter: "Twitter"
     web_page: "Web page"
-    work_address: "Work address"
+    work_colony: "Colony"
+    work_street: "Street"
+    work_street_number: "Street number"
+    work_zip: "ZIP"
     
   sponsors: "Patrocinadores"
   
@@ -460,7 +473,8 @@ en:
   
   visit_already_registered: "Visit already registered"
   visit_not_registered: "You couldn't register your visit, is not the appropriate time"
-  visit_registered: "You have been registered your visit successfully"
+  visit_registered_to_exposition: "You have been registered your visit to the exposition successfully"
+  visit_registered_to_workshop: "You have been registered your visit to the workshop successfully"
   visits: "Visits"
   want_to_replace: "Do you want to replace previous association?"
   web: "Web"

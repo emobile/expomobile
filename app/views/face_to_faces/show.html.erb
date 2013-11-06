@@ -34,22 +34,22 @@
     </tr>
     <tr>
       <td>
-        <b><%= t(:interviewee) %>:<%= link_to t(:generate_diary), face_to_faces_generate_diary_path(:int_name => @face_to_face.int_name), :class => "menu-link", :style => "margin-left: 50px;" %>
+        <b><%= t(:interviewee) %>:<%= link_to t(:generate_diary), face_to_faces_generate_diary_path(:int_contact => @face_to_face.int_contact), :class => "menu-link", :style => "margin-left: 50px;" %>
       </td>
     </tr>
     <tr>
       <td>
-        <b><%= t'face_to_face.int_name' %>:<%= @face_to_face.int_name %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <b><%= t'face_to_face.int_social_reason' %>:<%= @face_to_face.int_social_reason %>
+        <b><%= t'face_to_face.int_contact' %>:<%= @face_to_face.int_contact %>
       </td>
     </tr>
     <tr>
       <td>
         <b><%= t'face_to_face.int_job' %>:<%= @face_to_face.int_job %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'face_to_face.int_name' %>:<%= @face_to_face.int_name %>
       </td>
     </tr>
     <tr>
