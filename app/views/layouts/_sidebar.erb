@@ -21,14 +21,19 @@
       </li>
       <% if signed_in? %>
         <li>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups}.include?(controller_name) %>" id="2main"> <!-- Add the class "current" to current menu item -->
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups massive_loads}.include?(controller_name) %>" id="2main"> <!-- Add the class "current" to current menu item -->
             <%= t(:attendees) %>
           </a>
           <ul>
-            <% @models = %w{Attendee Group Subgroup} %>
+            <% @models = %w{Attendee Group Subgroup Massive_Load} %>
             <% @models.each do |model| %>
               <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
-              <li><%= link_to t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")), eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
+              <% if %w{Massive_Load}.include?(model) %>
+                <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% else %>
+                <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
+              <% end %>
+              <li><%= link_to t(new_text, :record => eval("t('activerecord.models.#{model.downcase}')")), eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
             <% end %>
           </ul>
         </li>
@@ -104,9 +109,6 @@
             <li><%= link_to t("visit.attendances_to_workshops"), visits_visits_to_workshops_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_workshops_index" || controller.action_name == "visits_to_workshops" || controller.action_name == "visits_to_workshops_by_subgroup" || controller.action_name == "visits_to_workshops_by_workshop") ? "current": "" %></li>
             <li><%= link_to t("visit.attendances_to_expositions"), visits_visits_to_expositions_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_expositions_index" || controller.action_name == "visits_to_expositions" || controller.action_name == "visits_to_expositions_by_subgroup" || controller.action_name == "visits_to_expositions_by_exposition") ? "current": "" %></li>
           </ul>
-        </li>
-        <li>     
-          <%= link_to t(:massive_loads), massive_loads_path, :class=> "nav-top-item no-submenu" + (controller_name == "massive_loads" ? " current": ""), :id => "8main" %>
         </li>
         <li>     
           <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": ""), :id => "9main" %>

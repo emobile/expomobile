@@ -55,7 +55,7 @@ module MassiveLoadsHelper
         a_market_segment += "#{a_market_segments[k]};" if !s.cell(line, k).nil?
       end
       subgroup_id = Subgroup.find_by_subgroup_key(subgroup_key).name
-      p 
+      p [e_name, e_tradename, e_street, e_ext_number, e_int_number, e_colony, e_municipality, e_city, e_state, e_zip_code, e_lada, e_phone, a_name, a_email, e_main_line, a_sec_line, a_other_line, a_web, subgroup_key]
       #Attendee.create()
     end
   end
