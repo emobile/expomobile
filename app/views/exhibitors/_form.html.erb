@@ -39,6 +39,16 @@
     <%= f.label t("exhibitor.logo") %>
     <%= f.file_field :logo %>
   </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.stand_location") %>
+    <%= f.text_field :stand_location, :class=>"text-input small-input" %>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.stand_size") %>
+    <%= f.text_field :stand_size, :class=>"text-input small-input" %>
+  </p>
 
 <div class="form-actions">
   <%= f.submit nil, :class => 'button' %>

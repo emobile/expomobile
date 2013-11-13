@@ -6,6 +6,8 @@ class CreateExhibitors < ActiveRecord::Migration
       t.string :social_reason,  :null => false
       t.string :contact,        :null => false
       t.string :job,            :null => false
+      t.string :stand_location
+      t.string :stand_size
 
       t.timestamps
     end

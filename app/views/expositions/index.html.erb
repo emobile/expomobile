@@ -6,7 +6,6 @@
         <th>ID</th>
                   <th><%= t'exposition.name' %></th>
                   <th><%= t'exposition.location' %></th>
-                  <th><%= t'exposition.exhibitor_name' %></th>
                   <th><%= t'exposition.start_date' %></th>
                   <th><%= t'exposition.end_date' %></th>
               </tr>
@@ -41,11 +40,11 @@
                           
           <td><%= exposition.location %></td>
                              
-          <td><%= exposition.exhibitor_name %></td>
-                             
           <td><%= (exposition.start_date.nil?)? "": exposition.start_date.strftime("%d/%m/%Y %I:%M%p") %></td>
                              
           <td><%= (exposition.end_date.nil?)? "": exposition.end_date.strftime("%d/%m/%Y %I:%M%p") %></td>
+          
+          <td><%= exposition.observations %></td>
                 <%= render "layouts/index_links" %>
         <% end %>
     </tbody>

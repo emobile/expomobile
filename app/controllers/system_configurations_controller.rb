@@ -22,36 +22,9 @@ class SystemConfigurationsController < ApplicationController
     end
   end
 
-  # GET /system_configurations/new
-  # GET /system_configurations/new.json
-  def new
-    @system_configuration = SystemConfiguration.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @system_configuration }
-    end
-  end
-
   # GET /system_configurations/1/edit
   def edit
     @system_configuration = SystemConfiguration.find(params[:id])
-  end
-
-  # POST /system_configurations
-  # POST /system_configurations.json
-  def create
-    @system_configuration = SystemConfiguration.new(params[:system_configuration])
-
-    respond_to do |format|
-      if @system_configuration.save
-        format.html { redirect_to @system_configuration, notice: 'System configuration was successfully created.' }
-        format.json { render json: @system_configuration, status: :created, location: @system_configuration }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @system_configuration.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PUT /system_configurations/1
@@ -70,15 +43,4 @@ class SystemConfigurationsController < ApplicationController
     end
   end
 
-  # DELETE /system_configurations/1
-  # DELETE /system_configurations/1.json
-  def destroy
-    @system_configuration = SystemConfiguration.find(params[:id])
-    @system_configuration.destroy
-
-    respond_to do |format|
-      format.html { redirect_to system_configurations_url }
-      format.json { head :no_content }
-    end
-  end
 end

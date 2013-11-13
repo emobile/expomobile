@@ -12,8 +12,8 @@ Role.create(name: "Administrator")
 
 User.create(first_name: 'System', last_name: 'Administrator', phone: '6141111111', address: 'Address 1', city: 'Chihuahua', state: 'Chihuahua', zip: 33333, country: 'México', username: 'administrator', email: 'emobile@emobile.com.mx', password: 'Password1', password_confirmation: 'Password1', confirmed_at: Date.today, role_id: 1)
 
-Exhibitor.create(name: "HP", exposition_key: "e11", contact: "Julián González", social_reason: "HP", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"))
-Exhibitor.create(name: "CISCO", exposition_key: "e22", contact: "Manuel Lara", social_reason: "CISCO", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/cisco.gif"))
+Exhibitor.create(name: "HP", exposition_key: "e11", contact: "Julián González", social_reason: "HP", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/hp.jpg"), stand_location: "Stand 1", stand_size: "3x3")
+Exhibitor.create(name: "CISCO", exposition_key: "e22", contact: "Manuel Lara", social_reason: "CISCO", job: "Representante de ventas", logo: File.open("#{Rails.root}/app/assets/images/cisco.gif"), stand_location: "Stand 2", stand_size: "3x3")
 
 Offert.create(exhibitor_id: '1', description: 'Computadora', price: '5000', start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 18 Sep 2013 18:05:00 UTC +00:00', location: "Stand 1")
 Offert.create(exhibitor_id: '1', description: 'Impresora', price: '1000', start_date: 'Wed, 11 Sep 2013 17:05:00 UTC +00:00', end_date: 'Wed, 18 Sep 2013 18:05:00 UTC +00:00', location: "Stand 1")
@@ -94,8 +94,8 @@ Hour.create(start_date: 'Tue, 26 Nov 2013 10:40:00 UTC +00:00', end_date: 'Tue, 
 Hour.create(start_date: 'Tue, 26 Nov 2013 11:20:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 11:50:00 UTC +00:00')
 Hour.create(start_date: 'Tue, 26 Nov 2013 12:00:00 UTC +00:00', end_date: 'Tue, 26 Nov 2013 12:30:00 UTC +00:00')
 
-Exposition.create(name: "Exposition 1", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', location: "Ubicación", exhibitor_name: "Expositor 1")
-Exposition.create(name: "Exposition 2", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', location: "Ubicación", exhibitor_name: "Expositor 2")
+Exposition.create(name: "Exposition 1", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', location: "Ubicación")
+Exposition.create(name: "Exposition 2", start_date: 'Mon, 25 Nov 2013 08:00:00 UTC +00:00', end_date: 'Mon, 25 Nov 2013 08:30:00 UTC +00:00', location: "Ubicación")
 
 AttendeeExposition.create(attendee_id: 1, exhibitor_id: 1)
 AttendeeExposition.create(attendee_id: 2, exhibitor_id: 2)

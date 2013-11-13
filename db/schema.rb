@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131101021329) do
+ActiveRecord::Schema.define(:version => 20131112202019) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",         :null => false
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(:version => 20131101021329) do
     t.string   "social_reason",     :null => false
     t.string   "contact",           :null => false
     t.string   "job",               :null => false
+    t.string   "stand_location"
+    t.string   "stand_size"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "logo_file_name"
@@ -114,13 +116,13 @@ ActiveRecord::Schema.define(:version => 20131101021329) do
   end
 
   create_table "expositions", :force => true do |t|
-    t.string   "name",           :null => false
-    t.string   "location",       :null => false
-    t.string   "exhibitor_name", :null => false
-    t.datetime "start_date",     :null => false
-    t.datetime "end_date",       :null => false
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "name",         :null => false
+    t.string   "location",     :null => false
+    t.string   "observations"
+    t.datetime "start_date",   :null => false
+    t.datetime "end_date",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "face_to_faces", :force => true do |t|
@@ -148,6 +150,15 @@ ActiveRecord::Schema.define(:version => 20131101021329) do
     t.datetime "end_date",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "massive_loads", :force => true do |t|
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "excel_file_file_name"
+    t.string   "excel_file_content_type"
+    t.integer  "excel_file_file_size"
+    t.datetime "excel_file_updated_at"
   end
 
   create_table "nips", :force => true do |t|

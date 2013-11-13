@@ -46,3 +46,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 gem "paperclip", "~> 2.8"
 gem 'validates_timeliness', '~> 3.0'
+gem 'roo'

@@ -53,7 +53,6 @@ en:
       exposition:
         contact: "Contact"
         end_date: "End date"
-        exhibitor_name: "Exhibitor name"
         location: "Location"
         name: "Name"
         start_date: "Start date"
@@ -70,6 +69,8 @@ en:
       hour:
         end_date: "End date"
         start_date: "Start date"
+      massive_load:
+        excel_file: "excel file"
       offert:
         description: "Description"
         end_date: "End date"
@@ -126,6 +127,13 @@ en:
         not_less_than_end_date: "is not less than end date."
         overlaps: "Dates overlap with other existing."
         overlaps_in_stand: "Dates overlap with other existing in stand."
+      models:
+        massive_load:
+          attributes:
+            excel_file:
+              empty: "you have not selected a file."
+            excel_file_file_name:
+              empty: "you have not selected a file."
     models:
       activity: "activity"
       attendee: "attendee"
@@ -136,6 +144,7 @@ en:
       face_to_face: "face to face"
       group: "group"
       hour: "schedule"
+      massive_load: "massive load"
       offert: "offert"
       room: "room"
       sponsor: "sponsor"
@@ -262,12 +271,15 @@ en:
     logo: "Logo"
     name: "Trademark"
     social_reason: "Social reason"
+    stand_location: "Stand location"
+    stand_size: "Stand size"
     
   exposition:
     end_date: "End date"
     exhibitor_name: "Exhibitor name"
     location: "Location"
     name: "Name"
+    observations: "Observations"
     start_date: "Start date"
   
   exhibitors: "Exhibitors"
@@ -339,6 +351,11 @@ en:
   login: "Login"
   logout: "Logout"
   map: "Map"
+  
+  massive_load:
+    excel_file: "excel file"
+    
+  massive_loads: "Massive Loads" 
   new_record_female: "New %{record}"
   new_record_male: "New %{record}"
   no_access: "No tienes acceso a esta página"
@@ -402,7 +419,6 @@ en:
   sponsor:
     contact: "Contact"
     email: "Email"
-    facebook: "Facebook"
     job: "Job"
     logo: "Logo"
     name: "Trademark"
