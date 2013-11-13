@@ -27,10 +27,6 @@
     <%= f.text_field :location, :class => "text-input small-input", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
-    <%= f.label t("exposition.exhibitor_name") %>
-    <%= f.text_field :exhibitor_name, :class => "text-input small-input", :required => true %><span class="required">*</span>
-  </p>
-  <p class="field">
     <%= f.label t("exposition.start_date") %>
     <%= f.text_field :start_date, :value => (f.object.start_date.nil?)? "": f.object.start_date.strftime("%d/%m/%Y %I:%M%p"), :class=>"text-input small-input datetimeRange", :required => true %><span class="required">*</span>
   </p>
