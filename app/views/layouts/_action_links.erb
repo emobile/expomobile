@@ -1,5 +1,5 @@
 <br/><br/>
-<% if %w{offerts expositions conferences diaries}.include?(controller_name) %>
+<% if %w{offerts expositions conferences diaries massive_loads}.include?(controller_name) %>
   <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{controller_name.singularize}')")) %>
 <% else %>
   <% new_text = t(:new_record_male, :record => eval("t('activerecord.models.#{controller_name.singularize}')")) %>

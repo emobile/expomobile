@@ -53,7 +53,6 @@ es:
       exposition:
         contact: "Contacto"
         end_date: "Fecha final"
-        exhibitor_name: "Nombre del expositor"
         location: "Ubicación"
         name: "Nombre"
         start_date: "Fecha inicial"
@@ -70,6 +69,8 @@ es:
       hour:
         end_date: "Fecha final"
         start_date: "Fecha inicial"
+      massive_load:
+        excel_file: "Archivo de excel"
       offert:
         description: "Descripción"
         end_date: "Fecha final"
@@ -126,6 +127,13 @@ es:
         not_less_than_end_date: "no es menor que la final."
         overlaps: "las fechas se empalman con otras ya existentes."
         overlaps_in_stand: "Las fechas se empalman con otras ya existentes en el stand."
+      models:
+        massive_load:
+          attributes:
+            excel_file:
+              empty: "no haz seleccionado un archivo."
+            excel_file_file_name:
+              empty: "no haz seleccionado un archivo."
     models:
       activity: "actividad"
       attendee: "asistente"
@@ -136,6 +144,7 @@ es:
       face_to_face: "cara a cara"
       group: "grupo"
       hour: "horario"
+      massive_load: "carga masiva"
       offert: "oferta"
       room: "salón"
       sponsor: "patrocinador"
@@ -262,12 +271,15 @@ es:
     logo: "Logotipo"
     name: "Nombre comercial"
     social_reason: "Razón social"
+    stand_location: "Ubicación de stand"
+    stand_size: "Tamaño de stand"
     
   exposition:
     end_date: "Fecha final"
     exhibitor_name: "Expositor"
     location: "Ubicación"
     name: "Nombre"
+    observations: "Observaciones"
     start_date: "Fecha inicial"
   
   exhibitors: "Expositores"
@@ -339,6 +351,11 @@ es:
   login: "Usuario"
   logout: "Salir"
   map: "Mapa"
+  
+  massive_load:
+    excel_file: "Archivo excel"
+  
+  massive_loads: "Cargas masivas"
   new_record_female: "Nueva %{record}"
   new_record_male: "Nuevo %{record}"
   no_access: "No tienes acceso a esta página"

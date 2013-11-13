@@ -14,17 +14,17 @@
     </tr>
     <tr>
       <td>
-        <b><%= t'exposition.exhibitor_name' %>:<%= @exposition.exhibitor_name %>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <b><%= t'exposition.start_date' %>:<%= (@exposition.start_date.nil?)? "": @exposition.start_date.strftime("%d/%m/%Y %I:%M%p") %>
       </td>
     </tr>
     <tr>
       <td>
         <b><%= t'exposition.end_date' %>:<%= (@exposition.end_date.nil?)? "": @exposition.end_date.strftime("%d/%m/%Y %I:%M%p") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= t'exposition.observations' %>:<%= @exposition.observations %>
       </td>
     </tr>
   </table>

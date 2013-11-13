@@ -1,5 +1,7 @@
 Expomobile::Application.routes.draw do
 
+  resources :massive_loads
+
   resources :system_configurations
 
   get "rating/show_rating"

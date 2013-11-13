@@ -1,5 +1,5 @@
 class Exhibitor < ActiveRecord::Base
-  attr_accessible :name, :contact, :exposition_key, :logo, :social_reason, :job
+  attr_accessible :name, :contact, :exposition_key, :logo, :social_reason, :job, :stand_location, :stand_size
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100",
