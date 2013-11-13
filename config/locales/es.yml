@@ -42,7 +42,8 @@ es:
         start_date: "Fecha inicial"
       diary:
         description: "Descripción"
-        event_date: "Día del evento"
+        event_end_date: "Fecha final"
+        event_start_date: "Fecha inicial"
         event_type: "Tipo de evento"
         place: "Lugar"
       exhibitor:
@@ -256,7 +257,8 @@ es:
   
   diary:
     description: "Descripción"
-    event_date: "Día del evento"
+    event_end_date: "Fecha final"
+    event_start_date: "Fecha inicial"
     event_type: "Tipo de evento"
     place: "Lugar"
   

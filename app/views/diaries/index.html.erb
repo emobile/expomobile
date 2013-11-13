@@ -4,7 +4,8 @@
       <tr>
         <%#*<th><input class="check-all" type="checkbox" /></th>%>
         <th>ID</th>
-                  <th><%= t'diary.event_date' %></th>
+                  <th><%= t'diary.event_start_date' %></th>
+                  <th><%= t'diary.event_end_date' %></th>
                   <th><%= t'diary.event_type' %></th>
                   <th><%= t'diary.description' %></th>
                   <th><%= t'diary.place' %></th>
@@ -37,7 +38,8 @@
                 
              <% @model = diary %>
                           
-          <td><%= diary.event_date %></td>
+          <td><%= diary.event_start_date %></td>
+          <td><%= diary.event_end_date %></td>
           <td><%= diary.event_type %></td>
           <td><%= diary.description %></td>
           <td><%= diary.place %></td>

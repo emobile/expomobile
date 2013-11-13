@@ -4,22 +4,27 @@
   <table >
           <tr>
         <td>
-          <b><%= @diary.event_date %>
+          <b><%= t'diary.event_start_date' %>:<%= @diary.event_start_date %>
         </td>
       </tr>
           <tr>
         <td>
-          <b><%= @diary.event_type %>
+          <b><%= t'diary.event_end_date' %>:<%= @diary.event_end_date %>
         </td>
       </tr>
           <tr>
         <td>
-          <b><%= @diary.description %>
+          <b><%= t'diary.event_type' %>:<%= @diary.event_type %>
         </td>
       </tr>
           <tr>
         <td>
-          <b><%= @diary.place %>
+          <b><%= t'diary.description' %>:<%= @diary.description %>
+        </td>
+      </tr>
+          <tr>
+        <td>
+          <b><%= t'diary.place' %>:<%= @diary.place %>
         </td>
       </tr>
       </table>
