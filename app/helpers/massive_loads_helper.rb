@@ -42,15 +42,26 @@ module MassiveLoadsHelper
       e_ext_number = e_ext_number.gsub(/[a-zA-Z-]/, "") if !e_ext_number.nil?
       e_ext_number = 0 if e_ext_number.blank?
       e_int_number = e_int_number.to_i.to_s if e_int_number.is_a? Float
+      e_zip_code = e_zip_code.to_i.to_s if e_zip_code.is_a? Float
+      e_zip_code = 0 if e_zip_code.nil?
+      e_rfc = "N/A" if e_rfc.nil?
+      e_lada = e_lada.to_i.to_s if e_lada.is_a? Float
       e_lada = 0 if e_lada.nil?
-      e_phone = 0 if e_phone.nil?
+      e_phone = e_phone.to_i.to_s if e_phone.is_a? Float
+      e_phone = "N/A" if e_phone.nil?
       a_email = "N/A" if a_email.nil?
+      a_cellphone = a_cellphone.to_i.to_s if a_cellphone.is_a? Float
       a_cellphone = "N/A" if a_cellphone.nil?
+      a_tel_nextel = a_tel_nextel.to_i.to_s if a_tel_nextel.is_a? Float
+      a_radio_nextel = a_radio_nextel.to_i.to_s if a_radio_nextel.is_a? Float
+      a_is_director = "NO" if a_is_director.nil?
+      a_is_director = a_is_director.upcase == "SI"
       a_platform = "N/A" if a_platform.nil?
       e_main_line = "N/A" if e_main_line.nil?
-      e_main_line.mb_chars.upcase!
+      e_main_line = e_main_line.mb_chars.upcase
       a_sec_line = "N/A" if a_sec_line.nil?
-      a_sec_line.mb_chars.upcase!
+      a_sec_line = a_sec_line.mb_chars.upcase
+      a_num_employees = a_num_employees.to_i.to_s if a_num_employees.is_a? Float
       a_num_employees = 0 if a_num_employees.nil?
       a_other_line = "N/A" if a_other_line.nil?
       a_other_line.mb_chars.upcase!
@@ -59,10 +70,13 @@ module MassiveLoadsHelper
       a_market_segments.keys.each do |k|
         a_market_segment += "#{a_market_segments[k]};" if !s.cell(line, k).nil?
       end
-      #p "SUBGROUP KEY", subgroup_key
-      #subgroup_id = Subgroup.find_by_subgroup_key(subgroup_key).name
-      p [subgroup_key, e_name, e_tradename, e_street, e_ext_number, e_int_number, e_colony, e_municipality, e_city, e_state, e_zip_code, e_lada, e_phone, a_name, a_email, e_main_line, a_sec_line, a_other_line, a_web]
-      #Attendee.create()
+      attendee_id = s.cell(line, "AI")
+      subgroup_id = Subgroup.find_by_subgroup_key(subgroup_key).id
+      @attendee = Attendee.new(subgroup_id: subgroup_id, e_name: e_name, e_tradename: e_tradename, e_street: e_street, e_ext_number: e_ext_number, e_int_number: e_int_number, e_colony: e_colony, e_municipality: e_municipality, e_city: e_city, e_state: e_state, e_zip_code: e_zip_code, e_rfc: e_rfc, e_lada: e_lada, e_phone: e_phone, a_name: a_name, a_email: a_email, a_chat: a_chat, a_cellphone: a_cellphone, a_tel_nextel: a_tel_nextel, a_radio_nextel: a_radio_nextel, a_is_director: a_is_director, a_platform: a_platform, e_main_line: e_main_line, a_sec_line: a_sec_line, a_num_employees: a_num_employees, a_other_line: a_other_line, a_web: a_web, a_market_segment: a_market_segment, attendee_id: attendee_id)
+      if !@attendee.save
+        p @attendee
+        sleep 5
+      end
     end
   end
   
