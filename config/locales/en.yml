@@ -42,7 +42,8 @@ en:
         start_date: "Start date"
       diary:
         description: "Description"
-        event_date: "Event date"
+        event_end_date: "End date"
+        event_start_date: "Start date"
         event_type: "Event type"        
         place: "Place"
       exhibitor:
@@ -256,7 +257,8 @@ en:
   
   diary:
     description: "Description"
-    event_date: "Event date"
+    event_end_date: "End date"
+    event_start_date: "Start date"
     event_type: "Event type"
     place: "Place"
     

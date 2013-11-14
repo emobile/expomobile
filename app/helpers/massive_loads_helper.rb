@@ -11,7 +11,7 @@ module MassiveLoadsHelper
       s = Roo::Excelx.new(file_name)
     end
     2.upto(s.last_row) do |line|
-      e_name = s.cell(line, "B")
+      e_name = s.cell(line, "B")      
       e_tradename = s.cell(line, "C")
       e_street = s.cell(line, "D")
       e_ext_number = s.cell(line, "E")
@@ -19,7 +19,7 @@ module MassiveLoadsHelper
       e_colony = s.cell(line, "G")
       e_municipality = s.cell(line, "H")
       e_city = s.cell(line, "I")
-      e_state = s.cell(line, "J")
+      e_state = s.cell(line, "J") 
       e_zip_code = s.cell(line, "K")
       e_rfc = s.cell(line, "L")
       e_lada = s.cell(line, "M")
@@ -38,10 +38,15 @@ module MassiveLoadsHelper
       a_other_line = s.cell(line, "Z")
       a_web = s.cell(line, "AA")
       subgroup_key = s.cell(line, "A")
+      e_tradename = "N/A" if e_tradename.nil?
+      e_street = "N/A" if e_street.nil?
       e_ext_number = e_ext_number.to_i.to_s if e_ext_number.is_a? Float
       e_ext_number = e_ext_number.gsub(/[a-zA-Z-]/, "") if !e_ext_number.nil?
       e_ext_number = 0 if e_ext_number.blank?
       e_int_number = e_int_number.to_i.to_s if e_int_number.is_a? Float
+      e_colony = "N/A" if e_colony.nil?
+      e_municipality = "N/A" if e_municipality.nil?
+      e_city = "N/A" if e_city.nil?
       e_zip_code = e_zip_code.to_i.to_s if e_zip_code.is_a? Float
       e_zip_code = 0 if e_zip_code.nil?
       e_rfc = "N/A" if e_rfc.nil?
@@ -59,8 +64,10 @@ module MassiveLoadsHelper
       a_platform = "N/A" if a_platform.nil?
       e_main_line = "N/A" if e_main_line.nil?
       e_main_line = e_main_line.mb_chars.upcase
+      e_main_line = e_main_line.to_s
       a_sec_line = "N/A" if a_sec_line.nil?
       a_sec_line = a_sec_line.mb_chars.upcase
+      a_sec_line = a_sec_line.to_s
       a_num_employees = a_num_employees.to_i.to_s if a_num_employees.is_a? Float
       a_num_employees = 0 if a_num_employees.nil?
       a_other_line = "N/A" if a_other_line.nil?
@@ -70,12 +77,15 @@ module MassiveLoadsHelper
       a_market_segments.keys.each do |k|
         a_market_segment += "#{a_market_segments[k]};" if !s.cell(line, k).nil?
       end
+      a_market_segment = "N/A" if a_market_segment.blank?
       attendee_id = s.cell(line, "AI")
       subgroup_id = Subgroup.find_by_subgroup_key(subgroup_key).id
       @attendee = Attendee.new(subgroup_id: subgroup_id, e_name: e_name, e_tradename: e_tradename, e_street: e_street, e_ext_number: e_ext_number, e_int_number: e_int_number, e_colony: e_colony, e_municipality: e_municipality, e_city: e_city, e_state: e_state, e_zip_code: e_zip_code, e_rfc: e_rfc, e_lada: e_lada, e_phone: e_phone, a_name: a_name, a_email: a_email, a_chat: a_chat, a_cellphone: a_cellphone, a_tel_nextel: a_tel_nextel, a_radio_nextel: a_radio_nextel, a_is_director: a_is_director, a_platform: a_platform, e_main_line: e_main_line, a_sec_line: a_sec_line, a_num_employees: a_num_employees, a_other_line: a_other_line, a_web: a_web, a_market_segment: a_market_segment, attendee_id: attendee_id)
       if !@attendee.save
-        p @attendee
-        sleep 5
+        #p @attendee
+        out = File.open "/home/emobile/out.txt", "a"
+        out.puts @attendee.inspect
+        out.close
       end
     end
   end
