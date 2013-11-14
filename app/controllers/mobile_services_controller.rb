@@ -354,7 +354,7 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @days = Diary.pluck(:event_date).map{ |d| d.strftime("%d/%m/%Y") }.uniq
+        @days = Diary.pluck(:event_start_date).map{ |d| d.strftime("%d/%m/%Y") }.uniq
         render json: @days
       end
       
