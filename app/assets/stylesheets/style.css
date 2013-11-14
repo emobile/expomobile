@@ -1021,3 +1021,8 @@ form#tolerance_form {
     opacity: 1 !important;
     cursor: pointer;
 }
+
+.ui-autocomplete {
+    max-height: 250px;
+    overflow-y: auto;
+}
