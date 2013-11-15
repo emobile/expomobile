@@ -242,7 +242,7 @@ CREATE TABLE `exhibitors` (
   `logo_file_size` int(11) DEFAULT NULL,
   `logo_updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,7 +251,7 @@ CREATE TABLE `exhibitors` (
 
 LOCK TABLES `exhibitors` WRITE;
 /*!40000 ALTER TABLE `exhibitors` DISABLE KEYS */;
-INSERT INTO `exhibitors` VALUES (1,'CISCO','p1m','CISCO SYSTEMS DE MEXICO S.A. DE C.V','N/A','Expositor','N/A','3 X 3','2013-11-15 20:25:25','2013-11-15 20:25:25','cisco.jpg','image/jpeg',165324,'2013-11-15 20:25:24'),(2,'D-LINK','7y0','D-LINK MEXICANA, S.A. DE C.V.','N/A','Expositor','N/A','9 X 3','2013-11-15 20:26:48','2013-11-15 20:26:48','logo_pagina.jpg','image/jpeg',19278,'2013-11-15 20:26:48'),(3,'HUAWEI','4fy','HUAWEI TECHNOLOGIES DE MEXICO S.A. DE C.V.','N/A','Expositor','N/A','6 X 6','2013-11-15 20:28:43','2013-11-15 20:28:43','huawei.jpg','image/jpeg',7574,'2013-11-15 20:28:42');
+INSERT INTO `exhibitors` VALUES (1,'CISCO','p1m','CISCO SYSTEMS DE MEXICO S.A. DE C.V','N/A','Expositor','N/A','3 X 3','2013-11-15 20:25:25','2013-11-15 20:25:25','cisco.jpg','image/jpeg',165324,'2013-11-15 20:25:24'),(2,'D-LINK','7y0','D-LINK MEXICANA, S.A. DE C.V.','N/A','Expositor','N/A','9 X 3','2013-11-15 20:26:48','2013-11-15 20:26:48','logo_pagina.jpg','image/jpeg',19278,'2013-11-15 20:26:48'),(3,'HUAWEI','4fy','HUAWEI TECHNOLOGIES DE MEXICO S.A. DE C.V.','N/A','Expositor','N/A','6 X 6','2013-11-15 20:28:43','2013-11-15 20:28:43','huawei.jpg','image/jpeg',7574,'2013-11-15 20:28:42'),(4,'MICROSOFT','f96','MICROSOFT MEXICO, S.A. DE C.V.','N/A','Expositor','N/A','9 X 3','2013-11-15 20:29:40','2013-11-15 20:29:40','microsoft.jpg','image/jpeg',5619,'2013-11-15 20:29:40'),(5,'SYSCOM','eve','SISTEMAS Y SERVICIOS DE COMUNICACION S.A. DE C.V. ','N/A','Expositor','N/A','9 X 3','2013-11-15 20:30:32','2013-11-15 20:30:32','syscom.jpg','image/jpeg',5867,'2013-11-15 20:30:31'),(6,'TECHDATA','zpg','TECHDATA DE MEXICO S. DE R.L. DE C.V.','N/A','Expositor','N/A','6 x 6','2013-11-15 20:33:10','2013-11-15 20:33:10','Tech-Data-RGB.jpg','image/jpeg',31235,'2013-11-15 20:33:10');
 /*!40000 ALTER TABLE `exhibitors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -861,4 +861,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-15 15:29:17
+-- Dump completed on 2013-11-15 15:36:09
