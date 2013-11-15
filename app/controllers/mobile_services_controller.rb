@@ -213,7 +213,7 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @diaries = Diary.order(:event_date).select {|d| d.event_date.strftime('%d/%m/%Y') == params[:day]}
+        @diaries = Diary.order(:event_start_date).select {|d| d.event_start_date.strftime('%d/%m/%Y') == params[:day]}
         render json: @diaries
       end
       
