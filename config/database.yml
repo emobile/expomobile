@@ -6,9 +6,9 @@
 development:
   adapter: mysql2
   host: localhost
-  database: expomobi_expomobi
-  username: expomobi_admin
-  password: expomobilej2011
+  database: anadic
+  username: root
+  password: root
 
 test:
   adapter: mysql2
