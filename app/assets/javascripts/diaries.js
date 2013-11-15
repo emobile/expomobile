@@ -10,7 +10,7 @@ $(function() {
 
     function datetimeRange(input) {
         return {minDatetime: (input.id == 'diary_event_end_date' ?
-                    $('#diary_event_start_date').datetimeEntry('getDatetime') : null),
+                    $('#diary_event_date').datetimeEntry('getDatetime') : null),
             maxDatetime: (input.id == 'dtFrom' ?
                     $('#diary_event_end_date').datetimeEntry('getDatetime') : null)};
     }
