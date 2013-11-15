@@ -376,19 +376,17 @@ class MobileServicesController < ApplicationController
   end
   
   def index_workshops
-    
+
     if !session[:attendee_id].blank?
       @attendee = Attendee.find_by_id(session[:attendee_id])
-      
+
       unless @attendee.nil?
         @workshops = @attendee.workshops
-        .joins("INNER JOIN schedules s ON workshops.id = s.workshop_id")
-        .joins("INNER JOIN hours h ON s.hour_id = h.id")
         @workshops.each do |w|
           @hour = Hour
           .joins("INNER JOIN schedules s ON hours.id = s.hour_id")
           .joins("INNER JOIN workshops w ON s.workshop_id = w.id")
-          .where("w.id = #{w.id}")
+          .where("w.id = #{w.id} AND s.subgroup_id = #{@attendee.subgroup_id}")
           .select { |h| h.start_date.strftime('%d/%m/%Y') == params[:day] }.first
           if !@hour.nil?
             w[:start_date] = @hour.start_date
@@ -399,7 +397,6 @@ class MobileServicesController < ApplicationController
             w[:room_key] = w.room.room_key
           end
         end
-        @workshops.uniq
         @workshops.reject! { |w| w[:start_date].nil? }
         @workshops.sort_by! { |w| w[:start_date].to_i }
         render json: @workshops
