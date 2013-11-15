@@ -8,7 +8,7 @@ class Diary < ActiveRecord::Base
   private
   
   def start_date_less_than_end_date
-    if event_start_date > event_end_date
+    if event_date > event_end_date
       errors.add(:event_date, :not_less_than_end_date)
     end
   end

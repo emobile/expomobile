@@ -91,13 +91,13 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
   end
 
   create_table "diaries", :force => true do |t|
-    t.datetime "event_start_date", :null => false
-    t.datetime "event_end_date",   :null => false
-    t.string   "event_type",       :null => false
-    t.string   "description",      :null => false
-    t.string   "place",            :null => false
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "event_date",     :null => false
+    t.datetime "event_end_date", :null => false
+    t.string   "event_type",     :null => false
+    t.string   "description",    :null => false
+    t.string   "place",          :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "exhibitors", :force => true do |t|

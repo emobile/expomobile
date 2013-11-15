@@ -5,10 +5,10 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 development:
   adapter: mysql2
+  database: expomobi_expomobi
   host: localhost
-  database: anadic
-  username: root
-  password: root
+  username: expomobi_admin
+  password: emobilej2011
 
 test:
   adapter: mysql2

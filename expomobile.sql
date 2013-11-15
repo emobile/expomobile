@@ -198,7 +198,7 @@ DROP TABLE IF EXISTS `diaries`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `diaries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `event_start_date` datetime NOT NULL,
+  `event_date` datetime NOT NULL,
   `event_end_date` datetime NOT NULL,
   `event_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -599,38 +599,6 @@ LOCK TABLES `schema_migrations` WRITE;
 INSERT INTO `schema_migrations` VALUES ('20130710214100'),('20130710214101'),('20130710214102'),('20130710214455'),('20130903235632'),('20130903235645'),('20130904211206'),('20130909213248'),('20130909215936'),('20130909215937'),('20130909220207'),('20130909220208'),('20130909220209'),('20130909220210'),('20130909220211'),('20130921004409'),('20130924230025'),('20130925225349'),('20130925225350'),('20131005002651'),('20131005002652'),('20131008234441'),('20131009212301'),('20131010000216'),('20131010000407'),('20131015003752'),('20131101021328'),('20131101021329'),('20131112202018'),('20131112202019');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `sessions`
---
-
-DROP TABLE IF EXISTS `sessions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sessions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `session_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `data` text COLLATE utf8_unicode_ci,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_sessions_on_session_id` (`session_id`),
-  KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sessions`
---
-
-LOCK TABLES `sessions` WRITE;
-/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sponsors`
---
 
 DROP TABLE IF EXISTS `sponsors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
