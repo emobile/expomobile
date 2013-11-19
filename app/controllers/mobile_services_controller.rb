@@ -299,7 +299,7 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @days = @attendee.hours.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq
-        render json: @days.order("ASC start_date")
+        render json: @days#.order("ASC start_date")
       end
       
     end
