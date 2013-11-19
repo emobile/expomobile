@@ -191,7 +191,7 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @activities = Activity.order(:start_date).select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
-        render json: @activities
+        render json: @activities.sort_by { |w| w["start_date"] }.reverse!
       end
       
     end
