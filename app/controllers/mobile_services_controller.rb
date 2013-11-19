@@ -298,8 +298,8 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @days = @attendee.hours.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq
-        render json: @days.order("start_date ASC")
+        @days = @attendee.hours.pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.order("start_date ASC").uniq
+        render json: @days
       end
       
     end
