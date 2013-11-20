@@ -147,6 +147,7 @@ class MobileServicesController < ApplicationController
     if !session[:attendee_id].blank?
       @sponsors = Sponsor.order(:social_reason)
       @sponsors.each {|s| s[:mobile_logo_url] = s.logo.url(:mobile)}
+      
       render json: @sponsors
     end
     
@@ -217,7 +218,8 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @diaries = Diary.order(:event_date).select {|d| d.event_date.strftime('%d/%m/%Y') == params[:day]}
+        @diaries = Diary.order("event_date DESC").select {|d| d.event_date.strftime('%d/%m/%Y') == params[:day]}
+        
         render json: @diaries
       end
       
