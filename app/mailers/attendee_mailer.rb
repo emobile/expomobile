@@ -9,7 +9,7 @@ class AttendeeMailer < ActionMailer::Base
   
   def welcome_email(attendee)
     @attendee = attendee
-    mail(:to => @attendee.a_email, :subject => t('atten.mail.welcome', @attendee.a_name))
+    mail(:to => @attendee.a_email, :subject => "#{t(:welcome).upcase}: #{@attendee.a_name}")
   end
 
 end

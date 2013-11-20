@@ -295,6 +295,7 @@ en:
     atten_invalid_nip: "You did not provide your PIN correctly"
     atten_nips_dont_match: "The PIN you provided does not match with the one that was sent to you"
     atten_not_exists: "Attendee not exists"
+    atten_email_not_registered: "You have not registered your email"
     exposition_not_assigned: "Exposition not assigned"
     invalid_stand_key: "Invalid stand key"
     invalid_workshop_key: "Invalid workshop key"
@@ -522,3 +523,4 @@ en:
     workshop_key: "Key"
   
   workshops: "Workshops"
+  your_register_id_is: "Your register ID is"

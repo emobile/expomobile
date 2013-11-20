@@ -134,11 +134,18 @@ class AttendeesController < ApplicationController
             @email = @attendee.a_email
             @domain = @email.gsub(/@.*$/, "")
     
-            if AttendeeMailer.send_nip(@attendee, @nip).deliver!
-              @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
-              @msg = { email: @email, domain: @domain, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+            
+            if !@attendee.email.nil?
+              
+              if AttendeeMailer.send_nip(@attendee, @nip).deliver!
+                @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
+                @msg = { email: @email, domain: @domain, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+              else
+                @msg = { email: @email, domain: @domain, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+              end
+            
             else
-              @msg = { email: @email, domain: @domain, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+              @msg = { email: @email, domain: @domain, msg: t("errors.atten_email_not_registered"), sent: "no" }
             end
       
           else

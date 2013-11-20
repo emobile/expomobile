@@ -57,11 +57,17 @@ class MobileServicesController < ApplicationController
             @phone = @attendee.e_phone
             @address = "#{@attendee.e_street} #{@attendee.e_ext_number} #{@attendee.e_colony}"
     
-            if AttendeeMailer.send_nip(@attendee, @nip).deliver!
-              @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
-              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+            if !@attendee.a_email.nil?
+            
+              if AttendeeMailer.send_nip(@attendee, @nip).deliver!
+                @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
+                @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+              else
+                @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+              end
+              
             else
-              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_not_registered"), sent: "no" }
             end
       
           else

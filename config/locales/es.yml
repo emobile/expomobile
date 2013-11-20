@@ -295,6 +295,7 @@ es:
     atten_invalid_nip: "No proporcionaste tu NIP correctamente"
     atten_nips_dont_match: "El NIP que proporcionaste no coincide con el que te fue enviado"
     atten_not_exists: "El asistente no existe"
+    atten_email_not_registered: "No haz registrado tu email"
     exposition_not_assigned: "Exposición no asignada"
     invalid_stand_key: "Clave de stand inválida"
     invalid_workshop_key: "Clave de taller inválida"
@@ -522,3 +523,4 @@ es:
     workshop_key: "Clave"
   
   workshops: "Talleres"
+  your_register_id_is: "Tu ID de registro es"
