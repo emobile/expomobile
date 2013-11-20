@@ -399,9 +399,10 @@ class MobileServicesController < ApplicationController
             w[:room_key] = w.room.room_key
           end
         end
+        
         @workshops.reject! { |w| w[:start_date].nil? }
         @workshops.sort_by! { |w| w[:start_date].to_i }
-        render json: @workshops.sort_by { |w| w["start_hour"] }.reverse!
+        render json: @workshops
       end
       
     end
