@@ -5739,3 +5739,665 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
 
 
   Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_sidebar.erb (45.6ms)
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+Completed 200 OK in 272ms (Views: 142.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/highcharts.js" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /highcharts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/expomobile.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /expomobile.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /settings.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/expositions.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /expositions.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/conferences.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /conferences.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/face_to_face.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /face_to_face.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/oferts.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /oferts.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registration.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /registration.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sponsors.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /sponsors.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.png" for 127.0.0.1 at 2013-11-20 14:11:23 -0700
+Served asset /users.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-body.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bg-body.gif - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bg-radial-gradient.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bg-radial-gradient.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-sidebar.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bg-sidebar.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-menu-item-current.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bg-menu-item-current.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-menu-item-blue.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bg-menu-item-blue.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shortcut-button-bg.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /shortcut-button-bg.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-content-box.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bg-content-box.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icons/bullet_black.png" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /icons/bullet_black.png - 304 Not Modified (0ms)
+
+
+Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/bl.png" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /bl.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tl.png" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /tl.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/b.png" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /b.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/br.png" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /br.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tr.png" for 127.0.0.1 at 2013-11-20 14:11:24 -0700
+Served asset /tr.png - 304 Not Modified (0ms)
+
+
+Started GET "/visits/visits_to_workshops_index" for 127.0.0.1 at 2013-11-20 14:11:31 -0700
+Processing by VisitsController#visits_to_workshops_index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` [0m
+  [1m[35mWorkshop Load (0.2ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36mSubgroup Load (0.4ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`group_id` = 1 ORDER BY name[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 4)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 11)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 3 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 5)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 10)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 11)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 2 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 1)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 2)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 4)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 10)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 11)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 7 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 1)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 5)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 6)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 9)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 10)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 5 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 1)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 2)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 4)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 11)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 1 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 3)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 4)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 5)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 7)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 10)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 11)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 10 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 4)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 10)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 11)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 8 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 2)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 5)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 9)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 10)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 6 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 3)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 4)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 7)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 9)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 11)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 4 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 5)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 10)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 11)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 9 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36mSubgroup Load (0.6ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`group_id` = 2 ORDER BY name[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 1)[0m
+  [1m[35m (4.3ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 2)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 4)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 11)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 21 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 1)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 2)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 3)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 5)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 10)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 11)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 13 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 4)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 5)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 8)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 9)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 10)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 11)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 15 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 5)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 6)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 7)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 10)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 19 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 3)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 4)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 11)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 20 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 5)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 6)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 7)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 8)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 9)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 10)[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 11)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 22 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 1)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 2)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 3)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 4)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 10)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 11)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 17 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 5)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 8)[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 9)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 10)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 11)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 14 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 1)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 2)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 3)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 4)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 5)[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 6)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 7)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 8)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 11)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 11 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 2)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 5)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 6)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 7)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 8)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 9)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 10)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 16 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 3)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 4)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 5)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 7)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 8)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 9)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 10)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 11)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 24 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 1)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 2)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 4)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 5)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 6)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 7)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 8)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 10)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 11)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 23 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `workshops`.* FROM `workshops` 
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 1)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 2)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 3)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 4)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 5)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 6)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 7)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 8)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 9)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 10)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 11)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 18 AND w.id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `workshops`.* FROM `workshops` [0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 2)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 3)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 4)[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 5)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 6)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 7)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 8)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 9)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 10)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 11)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `attendee_workshops` INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id INNER JOIN subgroups s ON a.subgroup_id = s.id WHERE (s.id = 12 AND w.id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `groups`.* FROM `groups` 
+  Rendered visits/visits_to_workshops_index.html.erb within layouts/application (713.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (31.9ms)
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+Completed 200 OK in 759ms (Views: 613.4ms | ActiveRecord: 143.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/highcharts.js" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /highcharts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/expomobile.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /expomobile.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/conferences.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /conferences.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /settings.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/face_to_face.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /face_to_face.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/oferts.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /oferts.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/expositions.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /expositions.png - 304 Not Modified (6ms)
+
+
+Started GET "/assets/registration.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /registration.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-radial-gradient.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bg-radial-gradient.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-body.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bg-body.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-sidebar.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bg-sidebar.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-menu-item-blue.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bg-menu-item-blue.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-menu-item-current.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bg-menu-item-current.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/menu-current-arrow.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /menu-current-arrow.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icons/bullet_black.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /icons/bullet_black.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg-content-box.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bg-content-box.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/shortcut-button-bg.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /shortcut-button-bg.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sponsors.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /sponsors.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /users.png - 304 Not Modified (0ms)
+
+
+Started GET "/visits/resources/images/closelabel.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+
+ActionController::RoutingError (No route matches [GET] "/visits/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/visits/resources/images/loading.gif" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+
+ActionController::RoutingError (No route matches [GET] "/visits/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/b.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /b.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tl.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /tl.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tr.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /tr.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bl.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /bl.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/br.png" for 127.0.0.1 at 2013-11-20 14:11:32 -0700
+Served asset /br.png - 304 Not Modified (0ms)
