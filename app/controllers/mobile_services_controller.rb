@@ -169,7 +169,7 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @conferences = Conference.order(:start_date).select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
-        render json: @conferences
+        render json: @conferences.sort_by { |w| w["start_date"] }
       end
       
     end
@@ -215,7 +215,7 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @diaries = Diary.order(:event_date).select {|d| d.event_date.strftime('%d/%m/%Y') == params[:day]}
-        render json: @diaries.sort_by { |w| w["event_date"] }.reverse!
+        render json: @diaries.sort_by { |w| w["event_date"] }
       end
       
     end
@@ -328,7 +328,7 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @days = Conference.pluck(:start_date).map{ |c| c.strftime("%d/%m/%Y") }.uniq
-        render json: @days.sort_by { |w| w["start_date"] }.reverse!
+        render json: @days.sort_by { |w| w["start_date"] }
       end
       
     end
