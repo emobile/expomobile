@@ -170,6 +170,7 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @conferences = Conference.order("start_date ASC").select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
+        
         render json: @conferences
       end
       
@@ -192,7 +193,8 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @activities = Activity.order(:start_date).select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
+        @activities = Activity.order("start_date ASC").select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
+        
         render json: @activities
       end
       
@@ -401,7 +403,9 @@ class MobileServicesController < ApplicationController
         end
         
         @workshops.reject! { |w| w[:start_date].nil? }
-        @workshops.sort_by! { |w| w[:start_date] }.reverse!
+        @workshops.sort_by! { |w| w[:start_date] }
+        @workshops.reverse!
+        
         render json: @workshops
       end
       
@@ -415,7 +419,7 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @expositions = Exposition.order(:start_date).select {|e| e.start_date.strftime('%d/%m/%Y') == params[:day]}
+        @expositions = Exposition.order("start_date DESC").select {|e| e.start_date.strftime('%d/%m/%Y') == params[:day]}
         @expositions.each do |e|
           e[:start_day] = e.start_date.strftime('%d/%m/%Y')
           e[:end_day] = e.end_date.strftime('%d/%m/%Y')
