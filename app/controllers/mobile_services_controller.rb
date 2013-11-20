@@ -401,7 +401,7 @@ class MobileServicesController < ApplicationController
         end
         
         @workshops.reject! { |w| w[:start_date].nil? }
-        @workshops.sort_by! { |w| w[:start_date].to_i }
+        @workshops.sort_by! { |w| w[:start_date] }
         render json: @workshops
       end
       
