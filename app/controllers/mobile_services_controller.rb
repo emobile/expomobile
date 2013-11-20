@@ -421,6 +421,7 @@ class MobileServicesController < ApplicationController
           e[:start_hour] = e.start_date.strftime('%I:%M%p')
           e[:end_hour] = e.end_date.strftime('%I:%M%p')
         end
+        
         render json: @expositions
       end
       
