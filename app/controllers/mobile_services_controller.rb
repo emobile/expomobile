@@ -50,6 +50,7 @@ class MobileServicesController < ApplicationController
             @name = @attendee.a_name
             @email = @attendee.a_email
             @subgroup_name = @attendee.subgroup.name
+            @group_name = @attendee.subgroup.group.name
             @subgroup_leader = @attendee.subgroup.leader
             @domain = @email.gsub(/@.*$/, "")
             @enterprise = @attendee.e_name
@@ -58,25 +59,25 @@ class MobileServicesController < ApplicationController
     
             if AttendeeMailer.send_nip(@attendee, @nip).deliver!
               @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
-              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
             else
-              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
             end
       
           else
-            @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "no" }
+            @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "no" }
           end
         
         else
-          @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_maximum_sends"), sent: "no" }
+          @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_maximum_sends"), sent: "no" }
         end
     
       else
-        @msg = { name: nil, email: nil, subgroup_name: nil, subgroup_leader: nil, domain: nil, enterprise: nil, phone: nil, address: nil, msg: t("errors.atten_not_exists"), sent: "no" }
+        @msg = { name: nil, email: nil, subgroup_name: nil, group_name: nil, subgroup_leader: nil, domain: nil, enterprise: nil, phone: nil, address: nil, msg: t("errors.atten_not_exists"), sent: "no" }
       end
       
     else
-      @msg = { name: nil, email: nil, subgroup_name: nil, subgroup_leader: nil, enterprise: nil, phone: nil, address: nil, domain: nil, msg: t("errors.atten_invalid_id"), sent: "no" }
+      @msg = { name: nil, email: nil, subgroup_name: nil, group_name: nil, subgroup_leader: nil, enterprise: nil, phone: nil, address: nil, domain: nil, msg: t("errors.atten_invalid_id"), sent: "no" }
     end
     
     render json: @msg
