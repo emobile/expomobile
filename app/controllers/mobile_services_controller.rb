@@ -169,7 +169,7 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @conferences = Conference.order("start_date ASC").select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
+        @conferences = Conference.order("start_date DESC").select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
         
         render json: @conferences
       end
@@ -193,7 +193,7 @@ class MobileServicesController < ApplicationController
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
-        @activities = Activity.order("start_date ASC").select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
+        @activities = Activity.order("start_date DESC").select {|a| a.start_date.strftime('%d/%m/%Y') == params[:day]}
         
         render json: @activities
       end
