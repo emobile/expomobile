@@ -3,7 +3,7 @@ class Sponsor < ActiveRecord::Base
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100",
-    :mobile => "x64"},
+    :mobile => "200"},
     :default_url => "/assets/missing.jpg"
   
   validates :name, :phone, :email, :social_reason, :contact, :job, :presence => true

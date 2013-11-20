@@ -3,11 +3,11 @@ class Exhibitor < ActiveRecord::Base
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100",
-    :mobile => "x64" },
+    :mobile => "200" },
     :default_url => "/assets/missing.jpg"
   has_many :offerts, :dependent => :destroy
   
   validates :name, :social_reason, :job, :presence => true
   validates :name, :uniqueness => true
-  validates :social_reason, :uniqueness => true   
+  validates :social_reason, :uniqueness => true
 end
