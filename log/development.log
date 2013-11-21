@@ -7123,3 +7123,11 @@ Connecting to database specified by database.yml
   [1m[36mAttendee Load (2.5ms)[0m  [1mSELECT `attendees`.* FROM `attendees` [0m
   [1m[35mAttendee Load (0.2ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 403 LIMIT 1
   Rendered attendee_mailer/welcome_email.html.erb (51.3ms)
+Connecting to database specified by database.yml
+  [1m[36mAttendee Load (2.0ms)[0m  [1mSELECT `attendees`.* FROM `attendees` [0m
+  [1m[35mAttendee Load (0.2ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 403 LIMIT 1
+  Rendered attendee_mailer/welcome_email.html.erb (47.6ms)
+Connecting to database specified by database.yml
+  [1m[36mAttendee Load (21.9ms)[0m  [1mSELECT `attendees`.* FROM `attendees` [0m
+  [1m[35mAttendee Load (0.2ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 403 LIMIT 1
+  Rendered attendee_mailer/welcome_email.html.erb (53.7ms)
