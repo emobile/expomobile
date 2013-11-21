@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class QrGeneratorController < ApplicationController
   
   def generate_qr
