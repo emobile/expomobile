@@ -41,7 +41,7 @@
   <% Subgroup.where(:group_id => g.id).order(:name).each do |s| %>
     <% data = [] %>
     <% Exposition.all.each do |e| %>
-      <% attendances = AttendeeExposition.joins("INNER JOIN expositions e ON attendee_expositions.exposition_id = e.id")
+      <% attendances = AttendeeExposition.joins("INNER JOIN expositions e ON attendee_expositions.exhibitor_id = e.id")
       .joins("INNER JOIN attendees a ON attendee_expositions.attendee_id = a.id")
       .joins("INNER JOIN subgroups s ON a.subgroup_id = s.id")
       .where("s.id = ? AND e.id = ?", s.id, e.id).count %>
