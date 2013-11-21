@@ -63,5 +63,5 @@
 </div>
 
 <% Group.all.each do |g| %>
-  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; margin: 50px auto;"><%= g.name %></div>
+  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; min-height: 800px; margin: 50px auto;"><%= g.name %></div>
 <% end %>

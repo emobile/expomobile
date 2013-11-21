@@ -50,7 +50,7 @@
     <% end %>
     <% series << { name: s.name, data: data } %>
   <% end %>
-    series: <%= series.to_json.html_safe %>,
+    series: <%= series.to_json.html_safe %>
     });
 <% end %>
   });
@@ -63,5 +63,5 @@
 </div>
 
 <% Group.all.each do |g| %>
-  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; height: 800px; margin: 50px auto;"><%= g.name %></div>
+  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; min-height: 800px; margin: 50px auto;"><%= g.name %></div>
 <% end %>
