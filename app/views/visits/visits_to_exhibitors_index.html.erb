@@ -101,15 +101,15 @@
 </script>
 
 <div class="menu-links">
-<%= link_to t("visit.visits_exhibitors_by_subgroup"), visits_visits_to_exhibitors_by_subgroup_path, :class => "menu-link" %>
+  <%= link_to t("visit.visits_exhibitors_by_subgroup"), visits_visits_to_exhibitors_by_subgroup_path, :class => "menu-link" %>
   <%= link_to t("visit.visits_exhibitors_by_exhibitor"), visits_visits_to_exhibitors_by_exhibitor_path, :class => "menu-link" %>
   <%= link_to t(:generate_report), visits_visits_to_exhibitors_generate_report_by_exhibitor_path, :class => "menu-link" %>
 </div>
 
 <div id="pies_container" style="text-align: center; margin: 50px 0;">
-<% Group.all.each do |g| %>
+  <% Group.all.each do |g| %>
     <div id="pie_container_<%= "#{g.id}" %>" style="min-width: 600px; min-height: 400px; margin: 0 25px; display: inline-block;"><%= g.name %></div>
-<% end %>
+  <% end %>
 </div>
 
 <% Group.all.each do |g| %>
