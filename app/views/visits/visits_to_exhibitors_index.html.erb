@@ -1,9 +1,53 @@
 <script type="text/javascript">
   $(function() {
+
 <% Group.all.each do |g| %>
-    $('#container_<%= g.id %>').highcharts({
+    $("#pie_container_<%= g.id %>").highcharts({
     chart: {
-    type: 'bar'
+    plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+    },
+            title: {
+    text: "Total de visitas a expositores"
+    },
+            subtitle: {
+    text: "<%= g.name %>"
+    },
+            tooltip: {
+    pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+    },
+            plotOptions: {
+    pie: {
+    allowPointSelect: true,
+            cursor: "pointer",
+            dataLabels: {
+    enabled: true,
+            color: "#000000",
+            connectorColor: "#000000",
+            format: "<b>{point.name}</b>: {point.y}"
+    }
+    }
+    },
+  <% data = [] %>
+  <% Exhibitor.all.each do |e| %>
+    <% attendances = AttendeeExposition.joins("INNER JOIN exhibitors e ON attendee_expositions.exhibitor_id = e.id")
+    .joins("INNER JOIN attendees a ON attendee_expositions.attendee_id = a.id")
+    .joins("INNER JOIN subgroups s ON a.subgroup_id = s.id")
+    .joins("INNER JOIN groups g ON s.group_id = g.id")
+    .where("g.id = ? AND e.id = ?", g.id, e.id).count %>
+    <% attendances = nil if attendances == 0 %>
+    <% data << [e.name, attendances] %>
+  <% end %>
+    series: [{
+    type: "pie",
+            name: "Visitas a expositor",
+            data: <%= data.to_json.html_safe %>
+    }]
+    });
+            $("#bars_container_<%= g.id %>").highcharts({
+    chart: {
+    type: "bar"
     },
             title: {
     text: "<%= t("visit.visits_exhibitors_by_exhibitor") %>"
@@ -57,11 +101,17 @@
 </script>
 
 <div class="menu-links">
-  <%= link_to t("visit.visits_exhibitors_by_subgroup"), visits_visits_to_exhibitors_by_subgroup_path, :class => "menu-link" %>
+<%= link_to t("visit.visits_exhibitors_by_subgroup"), visits_visits_to_exhibitors_by_subgroup_path, :class => "menu-link" %>
   <%= link_to t("visit.visits_exhibitors_by_exhibitor"), visits_visits_to_exhibitors_by_exhibitor_path, :class => "menu-link" %>
   <%= link_to t(:generate_report), visits_visits_to_exhibitors_generate_report_by_exhibitor_path, :class => "menu-link" %>
 </div>
 
+<div id="pies_container" style="text-align: center; margin: 50px 0;">
 <% Group.all.each do |g| %>
-  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; min-height: 800px; margin: 50px auto;"><%= g.name %></div>
+    <div id="pie_container_<%= "#{g.id}" %>" style="min-width: 600px; min-height: 400px; margin: 0 25px; display: inline-block;"><%= g.name %></div>
+<% end %>
+</div>
+
+<% Group.all.each do |g| %>
+  <div id="bars_container_<%= "#{g.id}" %>" style="min-width: 310px; min-height: 800px; margin: 50px auto;"><%= g.name %></div>
 <% end %>
