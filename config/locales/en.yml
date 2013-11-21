@@ -492,8 +492,8 @@ en:
   
   visit_already_registered: "Visit already registered"
   visit_not_registered: "You couldn't register your visit, is not the appropriate time"
-  visit_registered_to_exposition: "You have been registered your visit to #{ exhibitor_name } successfully"
-  visit_registered_to_workshop: "You have been registered your visit to #{ workshop_name } the workshop successfully"
+  visit_registered_to_exposition: "You have been registered your visit to %{exhibitor_name} successfully"
+  visit_registered_to_workshop: "You have been registered your visit to %{workshop_name} the workshop successfully"
   visits: "Visits"
   want_to_replace: "Do you want to replace previous association?"
   web: "Web"
