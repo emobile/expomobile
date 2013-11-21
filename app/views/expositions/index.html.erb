@@ -49,11 +49,6 @@
         <% end %>
     </tbody>
   </table>
-  <%= form_tag expositions_set_tolerance_path, :id => "tolerance_form", method: :post do %>
-    <%= label_tag t(:set_tolerance) %>
-    <%= text_field_tag "tolerance", SystemConfiguration.first.exposition_tolerance, :class=>"text-input small-input", :style => "width: 10% !important;" %>
-    <%= submit_tag t(:accept), :class => 'button' %>
-  <% end %>
   <%= render "layouts/action_links" %>
 </div> 
 <%= render "layouts/second_tab" %>

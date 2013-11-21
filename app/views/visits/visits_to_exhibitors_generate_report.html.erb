@@ -57,7 +57,7 @@
   </head>
   <body>
     <div id="main-content"> <!-- This is the target div. id must match the href of this div's tab -->
-      <h2 style="text-align: center;"><%= "#{(t"activerecord.models.exposition").capitalize} #{@exposition.name}" %></h2>
+      <h2 style="text-align: center;"><%= "#{(t"activerecord.models.exhibitor").capitalize} #{@exhibitor.name}" %></h2>
       <h3 style="text-align: center;"><%= t(:attendance) %></h3><br/><br/>
       <% @subgroups.each do |s| %>
         <% if s.attendees.any? %>

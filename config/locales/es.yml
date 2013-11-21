@@ -88,9 +88,6 @@ es:
         name: "Nombre comercial"
         phone: "Teléfono"
         social_reason: "Razón social"
-      stand:
-        exhibitor_id: "Expositor"
-        name: "Nombre"
       subgroup:
         leader: "Líder"
         name: "Nombre"
@@ -127,7 +124,6 @@ es:
         not_a_number: "no es un valor numérico."
         not_less_than_end_date: "no es menor que la final."
         overlaps: "las fechas se empalman con otras ya existentes."
-        overlaps_in_stand: "Las fechas se empalman con otras ya existentes en el stand."
       models:
         massive_load:
           attributes:
@@ -149,7 +145,6 @@ es:
       offert: "oferta"
       room: "salón"
       sponsor: "patrocinador"
-      stand: "stand"
       subgroup: "subgrupo"
       system_configuration: "Configuración del sistema"
       user: "usuario"
@@ -296,8 +291,8 @@ es:
     atten_nips_dont_match: "El NIP que proporcionaste no coincide con el que te fue enviado"
     atten_not_exists: "El asistente no existe"
     atten_email_not_registered: "No haz registrado tu email"
-    exposition_not_assigned: "Exposición no asignada"
-    invalid_stand_key: "Clave de stand inválida"
+    exhibitor_not_assigned: "Expositor no asignado"
+    invalid_exhibitor_key: "Clave de expositor inválida"
     invalid_workshop_key: "Clave de taller inválida"
     workshop_not_assigned: "Taller no asignado"
   
@@ -435,12 +430,6 @@ es:
     work_zip: "Código postal"
     
   sponsors: "Patrocinadores"
-  
-  stand:
-    name: "Nombre"
-    stand_cant_be_destroyed: "El stand no puede ser destruido, tiene exposiciones dependientes"
-  
-  stands: "Stands"
   statistics: "Estadísticas"
   
   subgroup:
@@ -481,18 +470,18 @@ es:
     zip: "Código postal"
   
   visit:
-    attendances_to_expositions: "Asistencias a exposiciones"
+    attendances_to_exhibitors: "Asistencias a expositores"
     attendances_to_workshops: "Asistencias a talleres"
     visits_to_workshops: "Visitas a talleres"
-    visits_to_expositions: "Visitas a exposiciones"
-    visits_expositions_by_exposition: "Visitas a exposiciones por exposición"
-    visits_expositions_by_subgroup: "Visitas a exposiciones por subgrupo"
+    visits_to_exhibitors: "Visitas a expositores"
+    visits_exhibitors_by_exhibitor: "Visitas a expositores por expositor"
+    visits_exhibitors_by_subgroup: "Visitas a expositores por subgrupo"
     visits_workshops_by_subgroup: "Visitas a talleres por subgrupo"
     visits_workshops_by_workshop: "Visitas a talleres por taller"
   
   visit_already_registered: "Tu visita ya ha sido registrada"
   visit_not_registered: "No pudiste registrar tu visita, no es la hora apropiada"
-  visit_registered_to_exposition: "Haz registrado tu visita con éxito a %{exhibitor_name}"
+  visit_registered_to_exhibitor: "Haz registrado tu visita con éxito a %{exhibitor_name}"
   visit_registered_to_workshop: "Haz registrado tu visita con éxito a %{workshop_name}"
   visits: "Visitas"
   want_to_replace: "¿Quieres sobreescribir la asociación existente?"

@@ -1,9 +1,8 @@
 <div class="menu-links">
-  <% Exposition.all.each do |e| %>
-    <%= link_to e.name, visits_visits_to_expositions_generate_report_path(:exposition_id => e.id), :class => "menu-link" %>
+  <% Exhibitor.all.each do |e| %>
+    <%= link_to e.name, visits_visits_to_exhibitors_path(:exhibitor_id => e.id, :subgroup_id => @subgroup_id), :class => "menu-link" %>
   <% end %>
 </div>
-
 <div style="text-align: center; margin-top: 50px;">
   <%= link_to t(:back), :back, :class => "button", :style => "width: 100px; height: 25px; font-size: 20px !important; text-align: center;" %>
 </div>

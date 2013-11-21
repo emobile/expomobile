@@ -509,17 +509,17 @@ class MobileServicesController < ApplicationController
           
           if @visit_registered.nil?
             AttendeeExposition.create(attendee_id: session[:attendee_id], exhibitor_id: @exhibitor.id)
-            @msg = { success: "yes", msg: t(:visit_registered_to_exposition, :exhibitor_name => @exhibitor.name) }
+            @msg = { success: "yes", msg: t(:visit_registered_to_exhibitor, :exhibitor_name => @exhibitor.name) }
           else
             @msg = { success: "no", msg: t(:visit_already_registered) }
           end
           
         else
-          @msg = { success: "no", msg: t("errors.exposition_not_assigned") }
+          @msg = { success: "no", msg: t("errors.exhibitor_not_assigned") }
         end
           
       else
-        @msg = { success: "no", msg: t("errors.invalid_stand_key") }
+        @msg = { success: "no", msg: t("errors.invalid_exhibitor_key") }
       end
 
     end

@@ -88,9 +88,6 @@ en:
         name: "Trademark"
         phone: "Phone"
         social_reason: "Social reason"
-      stand:
-        exhibitor_id: "Exhibitor"
-        name: "Name"
       subgroup:
         leader: "Leader"
         name: "Name"
@@ -127,7 +124,6 @@ en:
         not_a_number: " is not a numeric value."
         not_less_than_end_date: "is not less than end date."
         overlaps: "Dates overlap with other existing."
-        overlaps_in_stand: "Dates overlap with other existing in stand."
       models:
         massive_load:
           attributes:
@@ -149,7 +145,6 @@ en:
       offert: "offert"
       room: "room"
       sponsor: "sponsor"
-      stand: "stand"
       subgroup: "subgroup"
       system_configuration: "System configuration"
       user: "user"
@@ -296,8 +291,8 @@ en:
     atten_nips_dont_match: "The PIN you provided does not match with the one that was sent to you"
     atten_not_exists: "Attendee not exists"
     atten_email_not_registered: "You have not registered your email"
-    exposition_not_assigned: "Exposition not assigned"
-    invalid_stand_key: "Invalid stand key"
+    exhibitor_not_assigned: "Exhibitor not assigned"
+    invalid_exhibitor_key: "Invalid exhibitor key"
     invalid_workshop_key: "Invalid workshop key"
     workshop_not_assigned: "Workshop not assigned"
   
@@ -435,12 +430,6 @@ en:
     work_zip: "ZIP"
     
   sponsors: "Patrocinadores"
-  
-  stand:
-    name: "Name"
-    stand_cant_be_destroyed: "Stand can't be destroyed, has dependent expositions"
-  
-  stands: "Stands"
   statistics: "Statistics"
   
   subgroup:
@@ -481,18 +470,18 @@ en:
     zip: "Zip"
   
   visit:
-    attendances_to_expositions: "Attendances to expositions"
+    attendances_to_exhibitors: "Attendances to exhibitors"
     attendances_to_workshops: "Attendances to workshops"
     visits_to_workshops: "Visits to workshops"
-    visits_to_expositions: "Visits to expositions"
-    visits_expositions_by_exposition: "Expositions visits by exposition"
-    visits_expositions_by_subgroup: "Expositions visits by subgroup"
+    visits_to_exhibitors: "Visits to exhibitors"
+    visits_exhibitors_by_exhibitor: "Exhibitors visits by exhibitor"
+    visits_exhibitors_by_subgroup: "Exhibitors visits by subgroup"
     visits_workshops_by_subgroup: "Workshops visits by subgroup"
     visits_workshops_by_workshop: "Workshops visits by workshop"
   
   visit_already_registered: "Visit already registered"
   visit_not_registered: "You couldn't register your visit, is not the appropriate time"
-  visit_registered_to_exposition: "You have been registered your visit to %{exhibitor_name} successfully"
+  visit_registered_to_exhibitor: "You have been registered your visit to %{exhibitor_name} successfully"
   visit_registered_to_workshop: "You have been registered your visit to %{workshop_name} the workshop successfully"
   visits: "Visits"
   want_to_replace: "Do you want to replace previous association?"

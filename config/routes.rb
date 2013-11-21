@@ -20,20 +20,19 @@ Expomobile::Application.routes.draw do
  
   resources :sponsors
 
-  post "expositions/set_tolerance"
   post "workshops/set_tolerance"
   get "visits/visits_to_workshops_index"
-  get "visits/visits_to_expositions_index"
+  get "visits/visits_to_exhibitors_index"
   get "visits/visits_to_workshops_by_subgroup"
   get "visits/visits_to_workshops_by_workshop"
-  get "visits/visits_to_expositions_by_subgroup"
-  get "visits/visits_to_expositions_by_exposition"
+  get "visits/visits_to_exhibitors_by_subgroup"
+  get "visits/visits_to_exhibitors_by_exhibitor"
   get "visits/visits_to_workshops"
-  get "visits/visits_to_expositions"
+  get "visits/visits_to_exhibitors"
   get "visits/visits_to_workshops_generate_report"
-  get "visits/visits_to_expositions_generate_report"
+  get "visits/visits_to_exhibitors_generate_report"
   get "visits/visits_to_workshops_generate_report_by_workshop"
-  get "visits/visits_to_expositions_generate_report_by_exposition"
+  get "visits/visits_to_exhibitors_generate_report_by_exhibitor"
 
   resources :expositions
   

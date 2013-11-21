@@ -3,7 +3,7 @@
   <div class="group-container">
     <h3><%= g.name %></h3>
     <% Subgroup.where("group_id = ?", @group_id).each do |s| %>
-      <%= link_to "#{s.name} #{s.subgroup_key}", visits_visits_to_expositions_by_exposition_path(:subgroup_id => s.id), :class => "menu-link" %>
+      <%= link_to "#{s.name} #{s.subgroup_key}", visits_visits_to_exhibitors_by_exhibitor_path(:subgroup_id => s.id), :class => "menu-link" %>
     <% end %>
   </div>
 <% end %>

@@ -44,46 +44,60 @@ class VisitsController < ApplicationController
     end
   end
 
-  def visits_to_expositions_by_exposition
+  def visits_to_exhibitors_by_exhibitor
+    
     if params[:subgroup_id] =~ /\A\d+\z/
       @subgroup_id = params[:subgroup_id]
     end
+    
   end
 
-  def visits_to_expositions
+  def visits_to_exhibitors
     @attendees = []
     @subgroups = {}
-    if params[:exposition_id] =~ /\A\d+\z/
+    
+    if params[:exhibitor_id] =~ /\A\d+\z/
       @attendees = Attendee.joins("INNER JOIN attendee_expositions a ON attendees.id = a.attendee_id")
-      .where("a.exposition_id = ?", params[:exposition_id])
+      .where("a.exhibitor_id = ?", params[:exhibitor_id])
     elsif
       @attendees = Attendee.joins("INNER JOIN subgroups s ON attendees.subgroup_id = s.id")
       .joins("INNER JOIN attendee_expositions a ON attendees.id = a.attendee_id")
-      .where("attendees.subgroup_id = ? AND a.exposition_id = ?", params[:subgroup_id], params[:exposition_id])
+      .where("attendees.subgroup_id = ? AND a.exhibitor_id = ?", params[:subgroup_id], params[:exhibitor_id])
     end
+    
     @attendees.each do |a|
       a[:register_date] = AttendeeExposition.find_by_attendee_id(a.id).created_at
       subgroup_name = a.subgroup.name
+      
       if @subgroups.has_key?(subgroup_name)
         @subgroups[subgroup_name] << a
       else
         @subgroups[subgroup_name] = [a]
       end
+      
     end
+    
   end
   
-  def visits_to_expositions_generate_report
-    @exposition = Exposition.find_by_id(params[:exposition_id])
+  def visits_to_exhibitors_generate_report
+    @exhibitor = Exhibitor.find_by_id(params[:exhibitor_id])
     
-    if !@exposition.nil?
+    if !@exhibitor.nil?
+      
       @subgroups = Subgroup.all.each do |s|
+        
         s.attendees.each do |a|
-          a[:assisted] = AttendeeExposition.where("attendee_id = ? AND exposition_id = ?", a.id, params[:exposition_id]).any?
+          a[:assisted] = AttendeeExposition.where("attendee_id = ? AND exhibitor_id = ?", a.id, params[:exhibitor_id]).any?
         end
+        
+        s.attendees.sort_by!{ |a| [(a[:assisted])? 0: 1, a.id] }
       end
+      
       render layout: false
     else
       render nothing: true
     end
+    
   end
+  
 end
