@@ -492,8 +492,8 @@ es:
   
   visit_already_registered: "Tu visita ya ha sido registrada"
   visit_not_registered: "No pudiste registrar tu visita, no es la hora apropiada"
-  visit_registered_to_exposition: "Haz registrado tu visita con éxito a la exposición"
-  visit_registered_to_workshop: "Haz registrado tu visita con éxito a el taller"
+  visit_registered_to_exposition: "Haz registrado tu visita con éxito a #{ exhibitor_name }"
+  visit_registered_to_workshop: "Haz registrado tu visita con éxito a #{ workshop_name }"
   visits: "Visitas"
   want_to_replace: "¿Quieres sobreescribir la asociación existente?"
   web: "Web"
