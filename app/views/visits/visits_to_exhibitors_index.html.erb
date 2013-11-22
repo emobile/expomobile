@@ -1,6 +1,5 @@
 <script type="text/javascript">
   $(function() {
-
 <% Group.all.each do |g| %>
     $("#pie_container_<%= g.id %>").highcharts({
     chart: {
@@ -9,13 +8,13 @@
             plotShadow: false
     },
             title: {
-    text: "Total de visitas a expositores por grupo"
+    text: "<%= t("visit.total_visits_to_exhibitors_by_group") %>"
     },
             subtitle: {
     text: "<%= g.name %>"
     },
             tooltip: {
-    pointFormat: "{series.name}: <b>{point.y}%</b>"
+    pointFormat: "{series.name}: <b>{point.y}</b>"
     },
             plotOptions: {
     pie: {
@@ -25,7 +24,9 @@
     enabled: true,
             color: "#000000",
             connectorColor: "#000000",
-            format: "<b>{point.name}</b>: {point.y}"
+            formatter: function() {
+    if (this.y > 0) return "<b>" + this.point.name + "</b>: " + this.y;
+    }
     }
     }
     },
@@ -41,7 +42,7 @@
   <% end %>
     series: [{
     type: "pie",
-            name: "Visitas a expositor",
+            name: "<%= t(:attendances) %>",
             data: <%= data.to_json.html_safe %>
     }]
     });

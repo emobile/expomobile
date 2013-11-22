@@ -1,7 +1,53 @@
 <script type="text/javascript">
   $(function() {
 <% Group.all.each do |g| %>
-    $('#container_<%= g.id %>').highcharts({
+    var total = 0;
+            $("#pie_container_<%= g.id %>").highcharts({
+    chart: {
+    plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+    },
+            title: {
+    text: "<%= t("visit.total_visits_to_workshops_by_group") %>"
+    },
+            subtitle: {
+    text: "<%= g.name %>"
+    },
+            tooltip: {
+    pointFormat: "{series.name}: <b>{point.y}</b>"
+    },
+            plotOptions: {
+    pie: {
+    allowPointSelect: true,
+            cursor: "pointer",
+            dataLabels: {
+    enabled: true,
+            color: "#000000",
+            connectorColor: "#000000",
+            formatter: function() {
+    if (this.y > 0) return "<b>" + this.point.name + "</b>: " + this.y;
+    }
+    }
+    }
+    },
+  <% data = [] %>
+  <% Workshop.all.each do |w| %>
+    <% attendances = AttendeeWorkshop.joins("INNER JOIN workshops w ON attendee_workshops.workshop_id = w.id")
+    .joins("INNER JOIN attendees a ON attendee_workshops.attendee_id = a.id")
+    .joins("INNER JOIN subgroups s ON a.subgroup_id = s.id")
+    .joins("INNER JOIN groups g ON s.group_id = g.id")
+    .where("g.id = ? AND w.id = ?", g.id, w.id).count %>
+    <% attendances = nil if attendances == 0 %>
+    <% data << [w.name, attendances] %>
+  <% end %>
+    series: [{
+    type: "pie",
+            name: "<%= t(:attendances) %>",
+            data: <%= data.to_json.html_safe %>
+    }]
+    });
+            $('#bars_container_<%= g.id %>').highcharts({
     chart: {
     type: 'bar'
     },
@@ -62,6 +108,12 @@
   <%= link_to t(:generate_report), visits_visits_to_workshops_generate_report_by_workshop_path, :class => "menu-link" %>
 </div>
 
+<div id="pies_container" style="text-align: center; margin: 50px 0;">
+  <% Group.all.each do |g| %>
+    <div id="pie_container_<%= "#{g.id}" %>" style="min-width: 600px; min-height: 400px; margin: 0 25px; display: inline-block;"><%= g.name %></div>
+  <% end %>
+</div>
+
 <% Group.all.each do |g| %>
-  <div id="container_<%= "#{g.id}" %>" style="min-width: 310px; min-height: 800px; margin: 50px auto;"><%= g.name %></div>
+  <div id="bars_container_<%= "#{g.id}" %>" style="min-width: 310px; min-height: 800px; margin: 50px auto;"><%= g.name %></div>
 <% end %>
