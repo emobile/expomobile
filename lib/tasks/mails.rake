@@ -1,6 +1,6 @@
 namespace :mails do
   task :send => :environment do
-    @attendees = Attendee.where("ID != 'N/A'")
+    @attendees = Attendee.where("a_email != 'N/A'")
     output = File.open "mail-output.txt", "a"
     output.puts(Date.today.to_s)
     @attendees.each do |attendee|

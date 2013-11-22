@@ -13,7 +13,7 @@ class Sponsor < ActiveRecord::Base
   private
   
   def name_to_upcase
-    self.name.upcase! if !name.nil?
-    self.social_reason.upcase! if !social_reason.nil?
+    self.name.mb_chars.upcase! if !name.nil?
+    self.social_reason.mb_chars.upcase! if !social_reason.nil?
   end
 end
