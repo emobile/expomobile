@@ -46,3 +46,4 @@ gem "paperclip", "~> 2.8"
 gem 'validates_timeliness', '~> 3.0'
 gem 'roo'
 gem 'seed_dump'
+gem 'prawn'

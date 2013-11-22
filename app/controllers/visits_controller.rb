@@ -100,4 +100,43 @@ class VisitsController < ApplicationController
     
   end
   
+  #  def control_numbers_report_html
+  #    
+  #  end
+  
+  def control_numbers_report_pdf
+    pdf = Prawn::Document.new do
+      @system_configuration = SystemConfiguration.first
+      @attendees_total = Attendee.count
+      if @system_configuration.logo.nil?
+        @logo_url = "#{Rails.root}/app/assets/images/anadic.png"
+      else
+        @logo_url = "#{Rails.root}/public#{@system_configuration.logo.url.gsub(/\?.*\z/, "")}"
+      end
+      image @logo_url, :height => 50
+      text "EXPOMOBILE", :style => :bold, :size => 14, :align => :center;
+      move_down 10
+      text I18n.t("visit.control_numbers_report"), :style => :bold, :size => 12, :align => :center;
+      move_down 50
+      table_data_1 = [[I18n.t("visit.attendees_total"), @attendees_total], [I18n.t("visit.exhibitors_total"), Exhibitor.count], [I18n.t("visit.sponsors_total"), Sponsor.count], [I18n.t("visit.workshops_total"), Workshop.count]]
+      table(table_data_1) do
+        column(1).font_style = :bold
+        self.cell_style = { :size => 7 }
+      end
+      move_down 20
+      text I18n.t(:attendances), :style => :bold, :size => 10
+      move_down 10
+      table_data_2 = [[I18n.t(:exhibitors), "#{"%.1f" % (AttendeeExposition.count * 100 / @attendees_total)}%"], [I18n.t(:workshops), "#{"%.1f" % (AttendeeWorkshop.count * 100 / @attendees_total)}%"], [I18n.t("visit.users_using_the_app"), Nip.count]]
+      table(table_data_2) do
+        column(1).font_style = :bold
+        self.cell_style = { :size => 7 }
+      end
+    end.render
+    respond_to do |format|
+      format.pdf {
+        send_data pdf, filename: "control_numbers_report_#{Date.today.to_s.gsub("-", "_")}", type: "application/pdf", disposition: "inline"
+      }
+    end
+  end
+    
 end

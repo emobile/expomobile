@@ -108,6 +108,7 @@
           <ul>
             <li><%= link_to t("visit.attendances_to_workshops"), visits_visits_to_workshops_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_workshops_index" || controller.action_name == "visits_to_workshops" || controller.action_name == "visits_to_workshops_by_subgroup" || controller.action_name == "visits_to_workshops_by_workshop") ? "current": "" %></li>
             <li><%= link_to t("visit.attendances_to_exhibitors"), visits_visits_to_exhibitors_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_exhibitors_index" || controller.action_name == "visits_to_exhibitors" || controller.action_name == "visits_to_exhibitors_by_subgroup" || controller.action_name == "visits_to_exhibitors_by_exhibitor") ? "current": "" %></li>
+            <li><%= link_to t("visit.control_numbers_report"), visits_control_numbers_report_html_path, :class => controller_name == "visits" && (controller.action_name == "control_numbers_report_html") ? "current": "" %></li>
           </ul>
         </li>
         <li>     

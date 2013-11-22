@@ -33,6 +33,8 @@ Expomobile::Application.routes.draw do
   get "visits/visits_to_exhibitors_generate_report"
   get "visits/visits_to_workshops_generate_report_by_workshop"
   get "visits/visits_to_exhibitors_generate_report_by_exhibitor"
+  get "visits/control_numbers_report_html"
+  get "visits/control_numbers_report_pdf"
 
   resources :expositions
   
