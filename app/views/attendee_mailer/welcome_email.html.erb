@@ -7,7 +7,7 @@
           <td colspan="2" align="left" valign="top" bgcolor="#2a2a2a" style="background-color:#2a2a2a; padding:10px;">
 
             <p style = "font-family:Arial, 'Arial Narrow', Times, serif; color:#F2F2F2; font-size:30px; font-weight: bold;">ExpoMobile</p>
-            <p style = "font-family:Arial, 'Arial Narrow', Times, serif; color:#F2F2F2; font-size:18px;"><span style="font-weight: bold;"><%= "#{t(:welcome).upcase}:" %></span><%= @attendee.a_name %></p>
+            <p style = "font-family:Arial, 'Arial Narrow', Times, serif; color:#F2F2F2; font-size:18px;"><span style="font-weight: bold;"><%= "#{t(:welcome).upcase}: " %></span><%= "Presidente " + @attendee.a_name %></p>
             <p style = "font-family:Arial, 'Arial Narrow', Times, serif; color:#F2F2F2; font-size:18px; font-style: italic;"><%= "#{t(:your_register_id_is)}: #{@attendee.attendee_id}" %></p>
           </td>
 
