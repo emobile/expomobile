@@ -215,4 +215,14 @@ class AttendeesController < ApplicationController
     
     render json: @attendees
   end
+  
+  def generate_gafete
+    @a_name = params[:a_name]
+    @e_tradename = params[:e_tradename]
+    @layout = params[:layout]
+    @with_logos = params[:with_logos]
+
+    render layout: false if params[:layout] == "false"
+  end
+
 end

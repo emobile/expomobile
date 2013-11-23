@@ -199,12 +199,16 @@ en:
       street: "STREET"
       tradename: "TRADENAME"
       zip_code: "ZIP CODE"
+    gafete: "Gafete"
+    generate_gafete: "Generate"
     id_ok: "You have provided your ID correctly"
     mail:
       nip_subject: "PIN to access to ANADIC application"
     nip_sended: "Your PIN code was sent to %{email}, Please check your email"
+    print_gafete: "Print gafete"
     thanks_for_joining: "Thanks for joining and have a great day!"
     type_nip: "Now you can login to the application, just type this PIN:"
+    with_logos: "Con logotipos"
     
   attendance: "Attendance"
   attendances: "Attendances"

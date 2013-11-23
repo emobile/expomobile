@@ -16,8 +16,9 @@
         <th>ID</th>
         <th><%= t'atten.atten.register_id' %></th>
         <th><%= t'atten.atten.subgroup' %></th>
-        <th><%= t'atten.enter.name' %></th>
+        <th><%= t'atten.enter.tradename' %></th>
         <th><%= t'atten.atten.name' %></th>
+        <th><%= t'atten.gafete' %></th>
         <th><%= t'atten.atten.email' %></th>
         <th><%= t'atten.atten.cellphone' %></th>
         <th><%= t'atten.atten.is_director' %></th>
@@ -52,9 +53,11 @@
 
           <td><%= attendee.subgroup.name %></td>
 
-          <td><%= attendee.e_name %></td>                                
+          <td><%= attendee.e_tradename %></td>                      
 
           <td><%= attendee.a_name %></td>
+          
+          <td><%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(:a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :layout => "true", :with_logos => "true"), :class => "button" %>
 
           <td><%= attendee.a_email %></td>            
 

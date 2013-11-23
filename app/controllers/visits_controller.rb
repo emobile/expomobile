@@ -108,11 +108,7 @@ class VisitsController < ApplicationController
     pdf = Prawn::Document.new do
       @system_configuration = SystemConfiguration.first
       @attendees_total = Attendee.count
-      if @system_configuration.logo.nil?
-        @logo_url = "#{Rails.root}/app/assets/images/anadic.png"
-      else
-        @logo_url = "#{Rails.root}/public#{@system_configuration.logo.url.gsub(/\?.*\z/, "")}"
-      end
+      @logo_url = "#{Rails.root}/public#{@system_configuration.logo.url.gsub(/\?.*\z/, "")}"
       image @logo_url, :height => 50
       text "EXPOMOBILE", :style => :bold, :size => 14, :align => :center;
       move_down 10

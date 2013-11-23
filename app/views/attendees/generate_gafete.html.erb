@@ -1,0 +1,61 @@
+<script type="text/javascript">
+  $(function() {
+    $("#with_logos").change(function() {
+      if ($(this).prop("checked")) {
+        $(".gafete-logo").fadeIn(200);
+        $("#gafete-text").css({"border-top": "1px solid #000", "border-bottom": "1px solid #000"});
+        generate_gafete_href = $("#generate-gafete").attr("href").replace("&with_logos=false", "&with_logos=true");
+        $("#generate-gafete").attr("href", generate_gafete_href);
+        $("#gafete").height(454);
+      }
+      else {
+        $(".gafete-logo").fadeOut(200);
+        $("#gafete-text").css({border: "none"});
+        generate_gafete_href = $("#generate-gafete").attr("href").replace("&with_logos=true", "&with_logos=false");
+        $("#generate-gafete").attr("href", generate_gafete_href);
+        $("#gafete").height(121);
+      }
+    });
+  });
+</script>
+<% if @layout == "true" %>
+  <h2 style="text-align: center; margin-bottom: 20px;"><%= "#{t("atten.generate_gafete")} gafete" %></h2>
+  <%= label_tag t("atten.with_logos"), nil, :style => "font-size: 14px; font-weight: bold;" %>
+  <%= check_box_tag "with_logos", nil, true %>
+<% end %>
+<div id="gafete-container" style="height: 454px; margin: 40px 0; min-height: 400px; color: #000;">
+  <% @system_configuration = SystemConfiguration.first %>
+  <% @logo_url = @system_configuration.logo.url %>
+  <% @banner_url = @system_configuration.banner.url %>
+  <% @gafete_height = (@with_logos == "true")? "454px": "121px" %>
+  <div id="gafete" style="width: 310px; height: <%= @gafete_height %>; border: 1px solid #000; margin: 0 auto 30px;">
+    <% if @with_logos == "true" %>
+      <div class="gafete-logo" style="height: 76px; width: 310px; border-bottom: 1px solid #000;">
+        <%= image_tag @logo_url, :height => 66, :style => "height: 66px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+      </div>
+      <div class="gafete-logo" style="height: 140px; width: 310px; text-align: center;">
+        <%= image_tag @banner_url, :height => 130, width: 300, :style => "height: 130px; width: 300px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+      </div>
+    <% end %>
+    <div id="gafete-text" style="height: 121px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 30px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: 22px;">
+      <span style="font-weight: bold; font-size: 20px;"><%= @a_name %></span><br/>
+      <span style="font-size: 20px;"><%= @e_tradename %></span>
+    </div>
+    <% if @with_logos == "true" %>
+      <div class="gafete-logo" style="height: 117px; width: 310px; padding-top: 20px;">
+        <%= image_tag "/assets/logoexpo.png", :width => 100, :style => "width 140px; height: auto; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+        <div style="float: right; display: inline-block; padding: 20px 20px 0 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+          <%= image_tag "/assets/face48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+          <span style="position: relative; bottom: 5px;">eMobileMobilizingIdeas</span><br/>
+          <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+          <span style="position: relative; bottom: 5px;">@eMobile_mi</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% if @layout == "true" %>
+  <div id="buttons" style="width: 300px; margin: 0 auto; text-align: center;">
+    <%= link_to t("atten.print_gafete"), attendees_generate_gafete_path(:a_name => @a_name, :e_tradename => @e_tradename, :layout => "false", :with_logos => "true"), :class => "button", :id => "generate-gafete" %>
+  </div>
+<% end %>

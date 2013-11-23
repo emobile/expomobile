@@ -48,16 +48,8 @@
         <% end %>
         <div id="images-container">
           <% @system_configuration = SystemConfiguration.first %>
-          <% if @system_configuration.logo.nil? %>
-            <div class="logo-div"><a href="http://anadic.com.mx"><img class="logo-img" src="/assets/anadic.png"/></a></div>
-          <% else %>
-            <div class="logo-div"><a href="http://anadic.com.mx"><%= image_tag @system_configuration.logo.url, :class => "logo-img" %></a></div>
-          <% end %>
-          <% if @system_configuration.banner.nil? %>
-            <div class="banner-div"><a href="http://anadic.com.mx/congreso"><img class="banner-img" src="/assets/congreso.png"/></a></div>
-          <% else %>
-            <div class="banner-div"><a href="http://anadic.com.mx/congreso"><%= image_tag @system_configuration.banner.url, :class => "logo-img" %></a></div>
-          <% end %>
+          <div class="logo-div"><a href="http://anadic.com.mx"><%= image_tag @system_configuration.logo.url, :class => "logo-img" %></a></div>
+          <div class="banner-div"><a href="http://anadic.com.mx/congreso"><%= image_tag @system_configuration.banner.url, :class => "logo-img" %></a></div>
           <% if current_user.role_id == 1 || current_user.role_id == 1 %>
             <div id="settings-div">
               <a href="/system_configurations/1/edit"><img src="/assets/settings.png"/></a>
