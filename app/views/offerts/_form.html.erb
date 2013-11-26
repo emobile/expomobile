@@ -29,7 +29,7 @@
   </p>
   <p class="field">
     <%= f.label t("offert.price") %>
-    <%= f.text_field :price, :value => number_to_currency(f.object.price, :unit => "$"),:class=>"text-input small-input", :style => "width: 10% !important;", :required => true %><span class="required">*</span>
+    <%= f.text_field :price,:class=>"text-input small-input", :style => "width: 10% !important;", :required => true %><span class="required">*</span>
   </p>
   <p class="field">
     <%= f.label t("offert.start_date") %>
