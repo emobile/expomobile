@@ -4,6 +4,7 @@ class CreateSystemConfigurations < ActiveRecord::Migration
       t.string :token
       t.integer :workshop_tolerance
       t.integer :exposition_tolerance
+      t.string :language
 
       t.timestamps
     end

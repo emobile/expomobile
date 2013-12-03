@@ -1,5 +1,5 @@
 class SystemConfiguration < ActiveRecord::Base
-  attr_accessible :token, :workshop_tolerance, :exposition_tolerance, :logo, :banner
+  attr_accessible :token, :workshop_tolerance, :exposition_tolerance, :logo, :banner, :language
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100"},

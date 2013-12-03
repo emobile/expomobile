@@ -7,7 +7,10 @@ class MobileServicesController < ApplicationController
   def get_attendee_id
     
     I18n.locale = "en" if params[:language] == "en"
-
+    output = File.open "lang.txt", "a"
+    output.puts "#{params[:language]}, #{Time.now}"
+    output.close 
+    
     if params[:attendee_id] =~ /\A[A-Z]\d{3}\z/
       @attendee = Attendee.find_by_attendee_id(params[:attendee_id])
       
