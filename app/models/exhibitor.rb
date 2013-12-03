@@ -1,14 +1,14 @@
 class Exhibitor < ActiveRecord::Base
-  attr_accessible :name, :contact, :exposition_key, :logo, :social_reason, :job, :stand_location, :stand_size
+  attr_accessible :name, :email, :contact, :job, :phone, :social_reason, :twitter, :web_page, :work_street, :work_street_number, :work_colony, :work_zip, :logo, :exposition_key, :stand_location, :stand_size
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100",
-    :mobile => "200" },
+    :mobile => "x60" },
     :default_url => "/assets/missing.jpg"
   has_many :offerts, :dependent => :destroy
   before_save :name_to_upcase
   
-  validates :name, :social_reason, :job, :presence => true
+  validates :name, :phone, :email, :social_reason, :contact, :job, :presence => true
   validates :name, :uniqueness => true
   validates :social_reason, :uniqueness => true
   

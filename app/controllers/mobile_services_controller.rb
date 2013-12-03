@@ -4,25 +4,9 @@ class MobileServicesController < ApplicationController
   respond_to :json
   layout false
 
-  #"/branches/" + Ti.App.current_user.branch_id + ".json
-  #"/mobile_services/get_driver_branch.json?branch_id=" + Ti.App.current_user.branch_id  
-  #  def get_driver_branch#done
-  #    @branch = Branch.find_by_id(params[:branch_id])
-  #    render json: @branch.blank? ?  {'status' => t('branch_not_found')} : @branch
-  #  end
-
-  #"/tasks/" + task.id + "?mobile_request=true"
-  #"/mobile_services/update_driver_task.json/" + task.id
-  #  def update_driver_task#done
-  #    @task = Task.find(params[:id])
-  #    if @task.update_attributes(params[:task])
-  #      render json: @task.blank? ?  {'status' => t('task_was_successfully_updated')} : @task
-  #    else
-  #      render json: @task.blank? ?  {'status' => t('an_error_has_ocurred')} : @task
-  #    end
-  #  end
-
   def get_attendee_id
+    
+    I18n.locale = "en" if params[:language] == "en"
 
     if params[:attendee_id] =~ /\A[A-Z]\d{3}\z/
       @attendee = Attendee.find_by_attendee_id(params[:attendee_id])
@@ -476,7 +460,7 @@ class MobileServicesController < ApplicationController
             if current_time >= @hour.start_date && current_time < (@hour.end_date + SystemConfiguration.first.workshop_tolerance.minutes + 1.minutes)
               AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: @workshop.id)
               @msg = { success: "yes", msg: t(:visit_registered_to_workshop, :workshop_name => @workshop.name ) }
-            else
+            #else
               #@msg = { success: "no", msg: t(:visit_not_registered) }
             end
           

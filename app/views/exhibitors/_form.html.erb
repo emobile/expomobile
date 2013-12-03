@@ -14,7 +14,12 @@
   </ul>
 </div>
 <% end %>
-
+  
+  <p class="field">
+    <%= f.label t("exhibitor.logo") %>
+    <%= f.file_field :logo %>
+  </p>
+  
   <p class="field">
     <%= f.label t("exhibitor.name") %>
     <%= f.text_field :name, :class=>"text-input small-input", :required => true %><span class="required">*</span>
@@ -31,13 +36,48 @@
   </p>
   
   <p class="field">
-    <%= f.label t("exhibitor.job") %>
-    <%= f.text_field :job, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+    <%= f.label t("exhibitor.email") %>
+    <%= f.email_field :email, :class=>"text-input small-input", :required => true %><span class="required">*</span>
   </p>
   
   <p class="field">
-    <%= f.label t("exhibitor.logo") %>
-    <%= f.file_field :logo %>
+    <%= f.label t("exhibitor.job") %>
+    <%= f.text_field :job, :class=>"text-input small-input", :required => true %>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.phone") %>
+    <%= f.text_field :phone, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.work_street") %>
+    <%= f.text_field :work_street, :class=>"text-input small-input" %>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.work_street_number") %>
+    <%= f.text_field :work_street_number, :class=>"text-input small-input" %>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.work_colony") %>
+    <%= f.text_field :work_colony, :class=>"text-input small-input" %>
+  </p>
+  
+    <p class="field">
+    <%= f.label t("exhibitor.work_zip") %>
+    <%= f.text_field :work_zip, :class=>"text-input small-input", :style => "width: 10% !important;" %>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.web_page") %>
+    <%= f.text_field :web_page, :class=>"text-input small-input" %>
+  </p>
+  
+  <p class="field">
+    <%= f.label t("exhibitor.twitter") %>
+    <%= f.text_field :twitter, :class=>"text-input small-input" %>
   </p>
   
   <p class="field">

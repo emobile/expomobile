@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "updated_at",                          :null => false
   end
 
+  add_index "attendees", ["subgroup_id"], :name => "attendees_subgroup_id_fk"
+
   create_table "conferences", :force => true do |t|
     t.string   "name",         :null => false
     t.string   "conferencist", :null => false
@@ -99,15 +101,23 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
   end
 
   create_table "exhibitors", :force => true do |t|
-    t.string   "name",              :null => false
-    t.string   "exposition_key",    :null => false
-    t.string   "social_reason",     :null => false
-    t.string   "contact",           :null => false
-    t.string   "job",               :null => false
+    t.string   "name",               :null => false
+    t.string   "exposition_key",     :null => false
+    t.string   "social_reason",      :null => false
+    t.string   "contact",            :null => false
+    t.string   "job"
     t.string   "stand_location"
     t.string   "stand_size"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.string   "phone",              :null => false
+    t.string   "email",              :null => false
+    t.string   "web_page"
+    t.string   "work_street"
+    t.string   "work_street_number"
+    t.string   "work_colony"
+    t.string   "work_zip"
+    t.string   "twitter"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
@@ -135,6 +145,8 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "face_to_faces", ["attendee_id"], :name => "face_to_faces_attendee_id_fk"
 
   create_table "groups", :force => true do |t|
     t.string   "name",       :null => false
@@ -167,6 +179,8 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "nips", ["attendee_id"], :name => "nips_attendee_id_fk"
+
   create_table "offerts", :force => true do |t|
     t.integer  "exhibitor_id",                               :null => false
     t.string   "description",                                :null => false
@@ -177,6 +191,8 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
   end
+
+  add_index "offerts", ["exhibitor_id"], :name => "offerts_exhibitor_id_fk"
 
   create_table "ratings", :force => true do |t|
     t.integer  "value",      :null => false
@@ -207,6 +223,10 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "schedules", ["hour_id"], :name => "schedules_hour_id_fk"
+  add_index "schedules", ["subgroup_id"], :name => "schedules_subgroup_id_fk"
+  add_index "schedules", ["workshop_id"], :name => "schedules_workshop_id_fk"
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -220,15 +240,15 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
   create_table "sponsors", :force => true do |t|
     t.string   "name",               :null => false
     t.string   "contact",            :null => false
-    t.string   "job"
     t.string   "social_reason",      :null => false
+    t.string   "phone",              :null => false
+    t.string   "email",              :null => false
+    t.string   "job"
     t.string   "web_page"
     t.string   "work_street"
     t.string   "work_street_number"
     t.string   "work_colony"
     t.string   "work_zip"
-    t.string   "phone",              :null => false
-    t.string   "email",              :null => false
     t.string   "twitter"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
@@ -252,6 +272,8 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "subgroups", ["group_id"], :name => "subgroups_group_id_fk"
 
   create_table "system_configurations", :force => true do |t|
     t.string   "token"
@@ -306,6 +328,7 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["role_id"], :name => "users_role_id_fk"
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
 
   create_table "workshops", :force => true do |t|
@@ -316,6 +339,8 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "workshops", ["room_id"], :name => "workshops_room_id_fk"
 
   add_foreign_key "attendees", "subgroups", :name => "attendees_subgroup_id_fk"
 

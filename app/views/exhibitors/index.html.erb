@@ -8,7 +8,9 @@
         <th><%= t'exhibitor.name' %></th>
         <th><%= t'exhibitor.social_reason' %></th>
         <th><%= t'exhibitor.contact' %></th>
+        <th><%= t'exhibitor.email' %></th>
         <th><%= t'exhibitor.job' %></th>
+        <th><%= t'exhibitor.phone' %></th>
         <th><%= t'exhibitor.stand_location' %></th>
         <th><%= t'exhibitor.stand_size' %></th>
       </tr>
@@ -38,11 +40,21 @@
   <%# end %>
           <% @model = exhibitor %>
           <td><%= exhibitor.exposition_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:key => exhibitor.exposition_key, :exhibitor => true, :exhibitor_name => exhibitor.name, :exhibitor_job => exhibitor.job, :stand_location => exhibitor.stand_location), :class => "qr_code" %></td>
+          
           <td><%= exhibitor.name %></td>
+          
           <td><%= exhibitor.social_reason %></td>
+          
           <td><%= exhibitor.contact %></td>
+          
+          <td><%= exhibitor.email %></td>
+          
           <td><%= exhibitor.job %></td>
+          
+          <td><%= exhibitor.phone %></td>
+          
           <td><%= exhibitor.stand_location %></td>
+          
           <td><%= exhibitor.stand_size %></td>
           <%= render "layouts/index_links" %>
         <% end %>

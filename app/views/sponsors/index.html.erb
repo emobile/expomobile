@@ -7,13 +7,13 @@
                   <th><%= t'sponsor.name' %></th>
                   <th><%= t'sponsor.social_reason' %></th>
                   <th><%= t'sponsor.contact' %></th>
+                  <th><%= t'sponsor.email' %></th>
                   <th><%= t'sponsor.job' %></th>
+                  <th><%= t'sponsor.phone' %></th>
                   <th><%= t'sponsor.work_street' %></th>
                   <th><%= t'sponsor.work_street_number' %></th>
                   <th><%= t'sponsor.work_colony' %></th>
                   <th><%= t'sponsor.work_zip' %></th>
-                  <th><%= t'sponsor.phone' %></th>
-                  <th><%= t'sponsor.email' %></th>
               </tr>
 
     </thead>
@@ -48,7 +48,11 @@
           
           <td><%= sponsor.contact %></td>
           
+          <td><%= sponsor.email %></td>
+          
           <td><%= sponsor.job %></td>
+          
+          <td><%= sponsor.phone %></td>
                              
           <td><%= sponsor.work_street %></td>
           
@@ -57,11 +61,8 @@
           <td><%= sponsor.work_colony %></td>
           
           <td><%= sponsor.work_zip %></td>
-          
-          <td><%= sponsor.phone %></td>
-                             
-          <td><%= sponsor.email %></td>
-                <%= render "layouts/index_links" %>
+
+          <%= render "layouts/index_links" %>
         <% end %>
     </tbody>
   </table>

@@ -48,8 +48,9 @@ es:
         place: "Lugar"
       exhibitor:
         contact: "Contacto"
-        job: "Puesto"
+        email: "Correo electrónico"
         name: "Nombre comercial"
+        phone: "Teléfono"
         social_reason: "Razón social"
       exposition:
         contact: "Contacto"
@@ -84,7 +85,6 @@ es:
       sponsor:
         contact: "Contacto"
         email: "Correo electrónico"
-        job: "Puesto"
         name: "Nombre comercial"
         phone: "Teléfono"
         social_reason: "Razón social"
@@ -267,13 +267,21 @@ es:
   
   exhibitor:
     contact: "Contacto"
+    email: "Correo electrónico"
     exposition_key: "Clave"
     job: "Puesto"
     logo: "Logotipo"
     name: "Nombre comercial"
+    phone: "Teléfono"
     social_reason: "Razón social"
     stand_location: "Ubicación de stand"
     stand_size: "Tamaño de stand"
+    twitter: "Twitter"
+    web_page: "Página web"
+    work_colony: "Colonia"
+    work_street: "Calle"
+    work_street_number: "Número de calle"
+    work_zip: "Código postal"
     
   exposition:
     end_date: "Fecha final"

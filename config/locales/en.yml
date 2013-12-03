@@ -48,8 +48,9 @@ en:
         place: "Place"
       exhibitor:
         contact: "Contact"
-        job: "Job"
+        email: "Email"
         name: "Trademark"
+        phone: "Phone"
         social_reason: "Social reason"
       exposition:
         contact: "Contact"
@@ -84,7 +85,6 @@ en:
       sponsor:
         contact: "Contact"
         email: "Email"
-        job: "Job"
         name: "Trademark"
         phone: "Phone"
         social_reason: "Social reason"
@@ -267,13 +267,21 @@ en:
   
   exhibitor:
     contact: "Contact"
+    email: "Email"
     exposition_key: "Key"
     job: "Job"
     logo: "Logo"
     name: "Trademark"
+    phone: "Phone"
     social_reason: "Social reason"
     stand_location: "Stand location"
     stand_size: "Stand size"
+    twitter: "Twitter"
+    web_page: "Web page"
+    work_colony: "Colony"
+    work_street: "Street"
+    work_street_number: "Street number"
+    work_zip: "ZIP"
     
   exposition:
     end_date: "End date"
