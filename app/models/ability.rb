@@ -20,11 +20,9 @@ class Ability
         if m == "User"
           can :edit, User, :id => @user.id
           can :update, User, :id => @user.id
-          can :read, User, :id => @user.id
+          can :show, User, :id => @user.id
           can :delete, User, :id => @user.id
           can :destroy, User, :id => @user.id
-          cannot :new, User
-          cannot :create, User
         else
           can :manage, eval(m)
         end

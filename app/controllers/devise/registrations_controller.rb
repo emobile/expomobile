@@ -11,9 +11,9 @@ class Devise::RegistrationsController < DeviseController
   end
 
   # POST /resource
-  def create 
+  def create
     @user = build_resource
-    @user.username = SecureRandom.hex(4) 
+    #@user.username = SecureRandom.hex(4) 
     @user.password = SecureRandom.hex(4) 
     @user.password_confirmation =  @user.password
     if resource.save

@@ -96,11 +96,15 @@ es:
         address: "Dirección"
         city: "Ciudad"
         country: "País"
+        current_password: "Tu contraseña actual"
         email: "Correo electrónico"
         first_name: "Primer nombre"
         last_name: "Apellido"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de la contraseña"
         phone: "Teléfono"
         state: "Estado"
+        username: "Nombre de usuario"
         zip: "Código postal"
       workshop:
         name: "Nombre"
@@ -131,6 +135,10 @@ es:
               empty: "no haz seleccionado un archivo."
             excel_file_file_name:
               empty: "no haz seleccionado un archivo."
+        user:
+          attributes:
+            password:
+              confirmation: "Confirmación de contraseña inválida."
     models:
       activity: "actividad"
       attendee: "asistente"
@@ -159,6 +167,7 @@ es:
     
   activities: "Actividades"
   applicant: "Solicitante"
+  are_you_sure: "¿Estás seguro(a)?"
   assisted: "asistidos"
   assisted_female: "asistidas"
   associate_workshop_to_group: "Asignar taller con grupo"
@@ -218,6 +227,7 @@ es:
   bad_total: "Total de malas"
   boolean_false: "No"
   boolean_true: "Si"
+  cancel_my_account: "Cancelar mi cuenta"
   catalogs: "Menú de catálogos"
   cellphone: "Celular"
   choose_action: "Elige una acción"
@@ -371,7 +381,7 @@ es:
   no_access: "No tienes acceso a esta página"
   no_comments_available: "No hay comentarios disponibles"
   no_visits: "No hay ninguna visita registrada."
-  not_registered: "No registrad@"
+  not_registered: "No registrado(a)"
   of: de
   
   offert:
@@ -463,6 +473,7 @@ es:
   tolerance_set_successfully: "La tolerancia fue establecida exitosamente"
   true_value: "Si"
   type_attendee_id: "Introduce el ID del asistente:"
+  unhappy: "¿No estas contento?"
   unlock_instructions: "¿No haz recibido las instrucciones de desbloqueo?"
   users: "Usuarios"
   
@@ -470,6 +481,7 @@ es:
     address: "Dirección"
     city: "Ciudad"
     country: "País"
+    current_password: "Tu contraseña actual"
     email: "Correo electrónico"
     first_name: "Primer nombre"
     fullname: "Nombre completo"
@@ -479,6 +491,7 @@ es:
     phone: "Teléfono"
     role_name: "Nombre del rol"
     state: "Estado"
+    username: "Nombre de usuario"
     zip: "Código postal"
   
   visit:
@@ -507,7 +520,7 @@ es:
   visits: "Visitas"
   want_to_replace: "¿Quieres sobreescribir la asociación existente?"
   web: "Web"
-  welcome: "Bienvenid@"
+  welcome: "Bienvenido(a)"
         
   will_paginate:
     previous_label: "&#8592; Anteriores"

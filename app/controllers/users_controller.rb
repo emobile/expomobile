@@ -3,11 +3,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
-    if current_user.role.is_super_admin
-      @users = User.order('first_name ASC').paginate(:per_page => 10, :page => params[:page])
-    else
-      @users = User.where(:id => current_user.id).paginate(:per_page => 10, :page => params[:page])
-    end
+    @users = User.order('first_name ASC').paginate(:per_page => 10, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
