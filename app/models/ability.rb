@@ -13,14 +13,22 @@ class Ability
       cannot :destroy, SystemConfiguration
       cannot :edit, MassiveLoad
       cannot :update, MassiveLoad
-    elsif @user && !@user.role.is_super_admin
+    elsif @user && @user.role.is_admin
       @models = Dir['app/models/*.rb'].map { |f| File.basename(f, '.*').camelize.constantize.name }
-      @models -= %w{Ability Nip Schedule Hour AttendeeWorkshop AttendeeExposition Rating Role}
+      @models -= %w{Ability Nip Schedule AttendeeWorkshop AttendeeExposition Rating Role}
       @models.each do |m|
-        if m == "User"
+        if %{Event}.include? m
+          can :manage, eval(m) do |object|
+            object.branch_id == @user.role.branch_id
+          end
+        elsif %w{Activity Conference Diary Exhibitor Exposition FaceToFace Group Hour Offert MassiveLoad Room Sponsor SystemConfiguration Workshop}.include? m
+          can :manage, eval(m) do |object|
+            object.event.branch_id == @user.role.branch_id
+          end
+        elsif m == "User"
           can :edit, User, :id => @user.id
           can :update, User, :id => @user.id
-          can :show, User, :id => @user.id
+          can :read, User, :id => @user.id
           can :delete, User, :id => @user.id
           can :destroy, User, :id => @user.id
         else

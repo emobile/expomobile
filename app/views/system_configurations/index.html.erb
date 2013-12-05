@@ -9,6 +9,18 @@
               </tr>
 
     </thead>
+    
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <%#*<div class="bulk-actions align-left">%>
+            <%#= render "layouts/select_action" %>
+          <%#*</div>%>
+          <%= render "layouts/pagination" %>
+          <div class="clear"></div>
+        </td>
+      </tr>
+    </tfoot>
 
     <tbody>
       <% @system_configurations.each do |system_configuration| %>
