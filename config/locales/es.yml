@@ -333,7 +333,7 @@ es:
   face_to_faces: "Cara a cara"
   fair_total: "Total de regulares"
   false_value: "No"
-    
+  gafete_note: "Los gafetes salen a una medida de 8.5cm x 12cm"
   general_info: "INFORMACIÓN GENERAL"
   generate_diary: "Generar agenda"
   generate_report: "Generar reporte"
@@ -382,6 +382,7 @@ es:
   no_comments_available: "No hay comentarios disponibles"
   no_visits: "No hay ninguna visita registrada."
   not_registered: "No registrado(a)"
+  note: "NOTA"
   of: de
   
   offert:
