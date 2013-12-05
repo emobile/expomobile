@@ -35,9 +35,9 @@ en:
         e_tradename: "TRADENAME"
         e_zip_code: "ZIP CODE"
       conference:
-        conferencist: "Conferencist"
+        conferencist: "Speaker name"
         end_date: "End date"
-        name: "Name"
+        name: "Conference name"
         place: "Place"
         start_date: "Start date"
       diary:
@@ -234,10 +234,11 @@ en:
   comments: "Comments"
   
   conference:
-    conferencist: "Conferencist"
+    conferencist: "Speaker name"
     end_date: "End date"
-    name: "Name"
+    name: "Conference name"
     observations: "Observations"
+    photo: "Speaker photo"
     place: "Place"
     start_date: "Start date"
   

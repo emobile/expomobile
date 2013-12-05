@@ -8,6 +8,11 @@
         </td>
       </tr>
           <tr>
+        <td style="text-align: center;">
+          <%= image_tag @conference.photo.url(:thumb) %>
+        </td>
+      </tr>
+          <tr>
         <td>
           <b><%= t'conference.conferencist' %>:<%= @conference.conferencist %>
         </td>

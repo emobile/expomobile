@@ -35,9 +35,9 @@ es:
         e_tradename: "NOMBRE COMERCIAL"
         e_zip_code: "C. P."
       conference:
-        conferencist: "Conferencista"
+        conferencist: "Nombre del conferencista"
         end_date: "Fecha final"
-        name: "Nombre"
+        name: "Nombre de la conferencia"
         place: "Lugar"
         start_date: "Fecha inicial"
       diary:
@@ -234,10 +234,11 @@ es:
   comments: "Comentarios"
   
   conference:
-    conferencist: "Conferencista"
+    conferencist: "Nombre del conferencista"
     end_date: "Fecha final"
-    name: "Nombre"
+    name: "Nombre de la conferencia"
     observations: "Observaciones"
+    photo: "Foto del conferencista"
     place: "Lugar"
     start_date: "Fecha inicial"
   

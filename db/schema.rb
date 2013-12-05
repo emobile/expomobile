@@ -80,14 +80,18 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
   add_index "attendees", ["subgroup_id"], :name => "attendees_subgroup_id_fk"
 
   create_table "conferences", :force => true do |t|
-    t.string   "name",         :null => false
-    t.string   "conferencist", :null => false
-    t.datetime "start_date",   :null => false
-    t.datetime "end_date",     :null => false
-    t.string   "place",        :null => false
+    t.string   "name",               :null => false
+    t.string   "conferencist",       :null => false
+    t.datetime "start_date",         :null => false
+    t.datetime "end_date",           :null => false
+    t.string   "place",              :null => false
     t.text     "observations"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "diaries", :force => true do |t|
@@ -105,16 +109,16 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
     t.string   "exposition_key",     :null => false
     t.string   "social_reason",      :null => false
     t.string   "contact",            :null => false
-    t.string   "job"
+    t.string   "job",                :null => false
     t.string   "stand_location"
     t.string   "stand_size"
     t.string   "phone",              :null => false
     t.string   "email",              :null => false
-    t.string   "web_page"
     t.string   "work_street"
     t.string   "work_street_number"
     t.string   "work_colony"
     t.string   "work_zip"
+    t.string   "web_page"
     t.string   "twitter"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
@@ -240,15 +244,15 @@ ActiveRecord::Schema.define(:version => 20131112202019) do
   create_table "sponsors", :force => true do |t|
     t.string   "name",               :null => false
     t.string   "contact",            :null => false
-    t.string   "social_reason",      :null => false
-    t.string   "phone",              :null => false
-    t.string   "email",              :null => false
     t.string   "job"
+    t.string   "social_reason",      :null => false
     t.string   "web_page"
     t.string   "work_street"
     t.string   "work_street_number"
     t.string   "work_colony"
     t.string   "work_zip"
+    t.string   "phone",              :null => false
+    t.string   "email",              :null => false
     t.string   "twitter"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

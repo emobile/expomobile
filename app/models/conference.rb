@@ -1,6 +1,11 @@
 class Conference < ActiveRecord::Base
-  attr_accessible :conferencist, :end_date, :name, :observations, :place, :start_date
-  
+  attr_accessible :conferencist, :end_date, :name, :observations, :place, :start_date, :photo
+  has_attached_file :photo,
+    :styles => {:medium => "x300",
+    :thumb => "x100",
+    :mobile => "x60" },
+    :convert_options => { :all => "-colorspace Gray" },
+    :default_url => "/assets/missing.jpg"
   validates :name, :conferencist, :end_date, :start_date, :place, :presence => true
   validates_datetime :end_date, :if => :end_date?
   validates_datetime :start_date, :if => :start_date?

@@ -18,10 +18,13 @@
   </ul>
 </div>
 <% end %>
-
   <p class="field">
     <%= f.label t("conference.name") %>
     <%= f.text_field :name, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+  </p>
+  <p class="field">
+    <%= f.label t("conference.photo") %>
+    <%= f.file_field :photo %>
   </p>
   <p class="field">
     <%= f.label t("conference.conferencist") %>
