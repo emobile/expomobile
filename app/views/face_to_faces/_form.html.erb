@@ -21,12 +21,12 @@
   <fieldset class="column-left">
     <h3 style="text-align: center;"><%= t(:applicant) %></h3><br/>
     <p class="field">
-      <%= label_tag t(:type_attendee_id), nil, :style => "font-size: 14px;" %>
-      <%= text_field_tag "app_id", nil, :class=>"text-input small-input" %>
+      <%= f.label t(:type_attendee_name), nil, :style => "font-size: 14px;" %>
+      <%= text_field_tag "app_name", nil, :class =>"text-input medium-input" %>
     </p>
     <p class="field">
-      <%= f.label t("face_to_face.app_name") %>
-      <%= text_field_tag "app_name", nil, :readonly => true, :class =>"text-input medium-input" %>
+      <%= label_tag t("face_to_face.app_attendee_id") %>
+      <%= text_field_tag "app_attendee_id", nil, :readonly => true, :class=>"text-input small-input" %>
     </p>
     <p class="field">
       <%= label_tag t("face_to_face.app_enterprise") %>
@@ -47,7 +47,7 @@
     <p class="field">
       <%= f.label t("face_to_face.int_name") %>
       <% @interviewees = Sponsor.all.map { |s| [s.name, s.name] } + Exhibitor.all.map { |e| [e.name, e.name] } %>
-      <% @interviewees = @interviewees.group_by{ |i| i[0] }.sort %>
+      <% @interviewees.uniq!.sort! %>
       <%= f.select :int_name, @interviewees, :prompt => t(:please_select) %><span class="required">*</span>
     </p>
     <p class="field">

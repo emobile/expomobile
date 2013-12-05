@@ -210,6 +210,12 @@ class AttendeesController < ApplicationController
     render json: @attendee
   end
   
+  def get_attendee_by_name
+    @attendee = Attendee.where(:a_name => params[:a_name].upcase).select([:id, :attendee_id, :e_name, :a_email, :e_phone]).first
+    
+    render json: @attendee
+  end
+  
   def get_all_attendee_names
     @attendees = Attendee.uniq.pluck(:a_name)
     

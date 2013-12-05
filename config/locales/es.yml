@@ -319,6 +319,7 @@ es:
     workshop_not_assigned: "Taller no asignado"
   
   face_to_face:
+    app_attendee_id: "A. ID de registro"
     app_email: "S. Email"
     app_enterprise: "S. Empresa"
     app_name: "S. Nombre"
@@ -473,7 +474,7 @@ es:
   tolerance_not_set: "Error, la tolerancia no pudo ser establecida"
   tolerance_set_successfully: "La tolerancia fue establecida exitosamente"
   true_value: "Si"
-  type_attendee_id: "Introduce el ID del asistente:"
+  type_attendee_name: "Introduce el nombre del asistente:"
   unhappy: "¿No estas contento?"
   unlock_instructions: "¿No haz recibido las instrucciones de desbloqueo?"
   users: "Usuarios"

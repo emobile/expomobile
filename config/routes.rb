@@ -88,6 +88,7 @@ Expomobile::Application.routes.draw do
   
   get "attendees/generate_gafete"
   get "attendees/get_all_attendee_names"
+  get "attendees/get_attendee_by_name"
   get "attendees/get_attendee"
   resources :attendees
 
