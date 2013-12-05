@@ -45,17 +45,18 @@
   <fieldset class="column-right">
     <h3 style="text-align: center;"><%= t(:interviewee) %></h3><br/>
     <p class="field">
+      <%= f.label t("face_to_face.int_name") %>
+      <% @interviewees = Sponsor.all.map { |s| [s.name, s.name] } + Exhibitor.all.map { |e| [e.name, e.name] } %>
+      <% @interviewees = @interviewees.group_by{ |i| i[0] }.sort %>
+      <%= f.select :int_name, @interviewees, :prompt => t(:please_select) %><span class="required">*</span>
+    </p>
+    <p class="field">
       <%= f.label t("face_to_face.int_contact") %>
-      <% @interviewees = Sponsor.all.map { |s| [s.contact, s.contact] } + Exhibitor.all.map { |e| [e.contact, e.contact] } %>
-      <%= f.select :int_contact, @interviewees, :prompt => t(:please_select) %><span class="required">*</span>
+      <%= f.text_field :int_contact, :readonly => true, :class=>"text-input small-input" %><span class="required">*</span>
     </p>
     <p class="field">
       <%= f.label t("face_to_face.int_job") %>
       <%= f.text_field :int_job, :readonly => true, :class=>"text-input small-input" %><span class="required">*</span>
-    </p>
-    <p class="field">
-      <%= f.label t("face_to_face.int_name") %>
-      <%= f.text_field :int_name, :readonly => true, :class=>"text-input small-input" %><span class="required">*</span>
     </p>
   </fieldset>
   <div class="clear"></div>

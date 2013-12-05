@@ -46,17 +46,17 @@ $(function() {
         }
     });
 
-    $("#face_to_face_int_contact").change(function() {
+    $("#face_to_face_int_name").change(function() {
         $.getJSON(
                 "/face_to_faces/get_interviewee",
-                {contact: $(this).val()},
+                {name: $(this).val()},
         function(json) {
             if(json) {
-                $("#face_to_face_int_name").val(json.name);
+                $("#face_to_face_int_contact").val(json.contact);
                 $("#face_to_face_int_job").val(json.job);
             }
             else {
-                $("#face_to_face_int_name").val("");
+                $("#face_to_face_int_contact").val("");
                 $("#face_to_face_int_job").val("");
             }
         });
