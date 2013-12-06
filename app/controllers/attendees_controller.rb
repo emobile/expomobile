@@ -224,7 +224,7 @@ class AttendeesController < ApplicationController
   
   def generate_gafete
     @a_name = params[:a_name]
-    @conferences = Conference.limit(5)
+    @conferences = Conference.order(:start_date).limit(5)
     @e_tradename = params[:e_tradename]
     @system_configuration = SystemConfiguration.first
   end
