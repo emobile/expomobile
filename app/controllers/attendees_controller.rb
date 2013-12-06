@@ -224,18 +224,24 @@ class AttendeesController < ApplicationController
   
   def generate_gafete
     @a_name = params[:a_name]
+    @conferences = Conference.limit(5)
     @e_tradename = params[:e_tradename]
+    @system_configuration = SystemConfiguration.first
   end
   
   def print_gafete_a
     @a_name = params[:a_name]
     @e_tradename = params[:e_tradename]
     @with_logos = params[:with_logos]
-    
+    @system_configuration = SystemConfiguration.first
     render layout: false
   end
   
   def print_gafete_b
+    @offset = params[:offset]
+    @conferences = Conference.limit(5).offset(@offset)
+    @with_logos = params[:with_logos]
+    @system_configuration = SystemConfiguration.first
     render layout: false
   end  
 
