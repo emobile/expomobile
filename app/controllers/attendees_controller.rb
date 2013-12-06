@@ -225,10 +225,18 @@ class AttendeesController < ApplicationController
   def generate_gafete
     @a_name = params[:a_name]
     @e_tradename = params[:e_tradename]
-    @layout = params[:layout]
-    @with_logos = params[:with_logos]
-
-    render layout: false if params[:layout] == "false"
   end
+  
+  def print_gafete_a
+    @a_name = params[:a_name]
+    @e_tradename = params[:e_tradename]
+    @with_logos = params[:with_logos]
+    
+    render layout: false
+  end
+  
+  def print_gafete_b
+    render layout: false
+  end  
 
 end

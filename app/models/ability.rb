@@ -13,7 +13,7 @@ class Ability
       cannot :destroy, SystemConfiguration
       cannot :edit, MassiveLoad
       cannot :update, MassiveLoad
-    elsif @user && @user.role.is_admin
+    elsif @user && !@user.role.is_super_admin
       @models = Dir['app/models/*.rb'].map { |f| File.basename(f, '.*').camelize.constantize.name }
       @models -= %w{Ability Nip Schedule AttendeeWorkshop AttendeeExposition Rating Role}
       @models.each do |m|
