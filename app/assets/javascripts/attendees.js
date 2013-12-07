@@ -69,4 +69,11 @@ $(function() {
                 });
             }
     );
+
+    $(".field_with_errors").children("select, textarea, input:not(.other)").css({border: "3px solid #ffb7b7"});
+    $(".field_with_errors").children("input[type='checkbox'], input[type='radio']").css({outline: "3px solid #ffb7b7"});
+    $(".field_with_errors").each(function() {
+        $(this).after($(this).html());
+    });
+    $(".field_with_errors").remove();
 });

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class AttendeesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:register, :register_attendee]
 
   def index
     if params[:search].blank?
@@ -243,6 +243,33 @@ class AttendeesController < ApplicationController
     @with_logos = params[:with_logos]
     @system_configuration = SystemConfiguration.first
     render layout: false
-  end  
+  end
+  
+  def register
+    @attendee = Attendee.new
+    render layout: "register_attendee"
+  end
+  
+  def register_attendee
+    unless params[:attendee][:e_city].blank?
+      params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
+      while !Attendee.find_by_attendee_id(params[:attendee][:attendee_id]).nil?
+        params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
+      end
+    end
+    params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
+    params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
+    @attendee = Attendee.new(params[:attendee])
+
+    respond_to do |format|
+      if @attendee.save
+        format.html { redirect_to "/register", notice: t(:successfully_created) }
+        format.json { render json: @attendee, status: :created, location: @attendee }
+      else
+        format.html { render action: "register", layout: "register_attendee" }
+        format.json { render json: @attendee.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
 end

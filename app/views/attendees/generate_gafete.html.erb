@@ -63,13 +63,14 @@
           <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @conferences.each do |conference| %>
-          <div class="conference" style="padding: 10px 0px; border-bottom: 1px solid #aaa;">
+          <div class="conference" style="padding: 10px 0px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
+            <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
             <div class="conferencist-photo" style="width: 40px; display: inline-block;">
               <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
                 <%= image_tag conference.photo.url(:thumb), :width => 40, :style => "width: 40px; -ms-interpolation-mode: bicubic;" %>
               <% end %>
             </div>
-            <div class="conference-details" style="width: 220px; padding-left: 10px; vertical-align: top; display: inline-block;">
+            <div class="conference-details" style="width: 150px; padding-left: 10px; display: inline-block;">
               <span style="font-weight: bold;"><%= conference.name %></span><br/>
               <span style="color: #c00205;"><%= conference.conferencist %></span>
             </div>
