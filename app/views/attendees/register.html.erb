@@ -64,7 +64,7 @@
   <fieldset class="column-right">
     <p class="field">
       <%= f.label :e_city, t("atten.enter.city") %>
-      <%= f.text_field :e_city, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_city, :class=>"text-input medium-input", :required => true, :pattern => "[1-9][0-9]{0,4}" %><span class="required">*</span>
     </p>
     <p class="field">
       <%= f.label :e_state, t("atten.enter.state") %>
