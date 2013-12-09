@@ -213,9 +213,11 @@ es:
     generate_gafete: "Generar"
     id_ok: "Haz proporcionado tu ID correctamente"
     mail:
-      nip_subject: "NIP para ingresar a la aplicación de ANADIC"
+      attendee_id_subject: "Tu ID de registro"
+      nip_subject: "NIP para ingresar a la aplicación"
     nip_sended: "Tu NIP fue enviado a %{email}, Por favor verifica tu email"
     print_gafete: "Imprimir gafete"
+    registration_ok: "Tu registro ha sido realizado con éxito, tu ID de registro es:"
     thanks_for_joining: "¡Gracias por unirte, disfruta de un excelente día!"
     type_nip: "Ahora puedes ingresar a la aplicación, solo escribe este NIP:"
     with_logos: "Con logotipos"

@@ -263,15 +263,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.save
-        while @nip.nil?
-          random_value = Array.new(4) {[*'0'..'9', *'a'..'z'].sample}.join
-          @exists = Nip.find_by_nip(random_value)
-        
-          if @exists.nil?
-            @nip = Nip.create(:nip => random_value, :attendee_id => @attendee_id)
-          end
-        end
-        AttendeeMailer.send_nip(@attendee, @nip).deliver!
+        AttendeeMailer.send_attendee_id(@attendee, params[:attendee][:attendee_id]).deliver!
         format.html { redirect_to "/register", notice: t(:successfully_created) }
         format.json { render json: @attendee, status: :created, location: @attendee }
       else
