@@ -88,6 +88,7 @@ Expomobile::Application.routes.draw do
   
   match "register" => "attendees#register"
   match "register_attendee" => "attendees#register_attendee"
+  get "attendees/print_gafete_c"
   get "attendees/print_gafete_b"
   get "attendees/print_gafete_a"
   get "attendees/generate_gafete"

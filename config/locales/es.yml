@@ -220,6 +220,8 @@ es:
     registration_ok: "Tu registro ha sido realizado con éxito, tu ID de registro es:"
     thanks_for_joining: "¡Gracias por unirte, disfruta de un excelente día!"
     type_nip: "Ahora puedes ingresar a la aplicación, solo escribe este NIP:"
+    with_conferences: "Con conferencias"
+    with_diary: "Con agenda"
     with_logos: "Con logotipos"
     
   attendance: "Lista de asistencia"

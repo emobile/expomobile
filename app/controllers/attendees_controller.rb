@@ -223,8 +223,10 @@ class AttendeesController < ApplicationController
   end
   
   def generate_gafete
+    @attendee_id = params[:attendee_id]
     @a_name = params[:a_name]
     @conferences = Conference.order(:start_date).limit(5)
+    @diaries = Diary.order(:event_date).limit(5)
     @e_tradename = params[:e_tradename]
     @system_configuration = SystemConfiguration.first
   end
@@ -239,7 +241,15 @@ class AttendeesController < ApplicationController
   
   def print_gafete_b
     @offset = params[:offset]
-    @conferences = Conference.limit(5).offset(@offset)
+    @conferences = Conference.order(:start_date).limit(5).offset(@offset)
+    @with_logos = params[:with_logos]
+    @system_configuration = SystemConfiguration.first
+    render layout: false
+  end
+  
+  def print_gafete_c
+    @offset = params[:offset]
+    @diaries = Diary.order(:event_date).limit(5).offset(@offset)
     @with_logos = params[:with_logos]
     @system_configuration = SystemConfiguration.first
     render layout: false
