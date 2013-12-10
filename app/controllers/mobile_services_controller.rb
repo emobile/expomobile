@@ -163,7 +163,9 @@ class MobileServicesController < ApplicationController
       
       unless @attendee.nil?
         @conferences = Conference.order("start_date DESC").select {|c| c.start_date.strftime('%d/%m/%Y') == params[:day]}
-        @conferences.each {|c| c[:mobile_photo_url] = c.photo.url(:mobile)}
+        @conferences.each do |c|
+          c[:mobile_photo_url] = (c.photo.url(:mobile) == "/assets/missing.jpg")? "": c.photo.url(:mobile)
+        end
         
         render json: @conferences
       end
@@ -176,7 +178,7 @@ class MobileServicesController < ApplicationController
     
     if !session[:attendee_id].blank?
       @conference = Conference.find_by_id(params[:conference_id])
-      @conference[:mobile_photo_url] = @conference.photo.url(:mobile)
+      @conference[:mobile_photo_url] = (@conference.photo.url(:mobile) == "/assets/missing.jpg")? "": @conference.photo.url(:mobile)
       
       render json: @conference
     end

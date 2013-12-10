@@ -112,11 +112,11 @@
           </ul>
         </li>
         <li>     
-          <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": ""), :id => "9main" %>
+          <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": ""), :id => "8main" %>
         </li>
         <% if current_user.role.is_super_admin %>
           <li>
-            <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "users" %>" id="10main"> <!-- Add the class "current" to current menu item -->
+            <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "users" %>" id="9main"> <!-- Add the class "current" to current menu item -->
               <%= t(:users) %>
             </a>
             <ul>
