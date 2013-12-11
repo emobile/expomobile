@@ -23,10 +23,10 @@ class CreateAttendees < ActiveRecord::Migration
       t.string :a_radio_nextel
       t.boolean :a_is_director,          :null => false, :default => false
       t.string :a_platform,              :null => false
-      t.string :e_main_line,             :null => false
-      t.string :a_sec_line,              :null => false
+      t.string :e_main_line
+      t.string :a_sec_line
       t.integer :a_num_employees,        :null => false
-      t.string :a_other_line,            :null => false
+      t.string :a_other_line
       t.string :a_web
       t.string :a_market_segment,        :null => false
       t.references :subgroup,            :null => false

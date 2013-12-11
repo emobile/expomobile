@@ -56,8 +56,12 @@
           <td><%= attendee.e_tradename %></td>                      
 
           <td><%= attendee.a_name %></td>
-          
-          <td><%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(:attendee_id => attendee.attendee_id, :a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :layout => "true"), :class => "button" %>
+
+          <td><%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(
+              :attendee_id => attendee.attendee_id, :a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :e_phone => attendee.e_phone, 
+              :a_email => attendee.a_email, :e_address => "#{attendee.e_street} #{attendee.e_ext_number}, #{attendee.e_colony}", 
+              :a_web => attendee.a_web, :layout => "true"
+              ), :class => "button" %></td>
 
           <td><%= attendee.a_email %></td>            
 

@@ -228,12 +228,20 @@ class AttendeesController < ApplicationController
     @conferences = Conference.order(:start_date).limit(5)
     @diaries = Diary.order(:event_date).limit(5)
     @e_tradename = params[:e_tradename]
+    @e_phone = params[:e_phone]
+    @a_email = params[:a_email]
+    @e_address = params[:e_address]
+    @a_web = params[:a_web]
     @system_configuration = SystemConfiguration.first
   end
   
   def print_gafete_a
     @a_name = params[:a_name]
     @e_tradename = params[:e_tradename]
+    @e_phone = params[:e_phone]
+    @a_email = params[:a_email]
+    @e_address = params[:e_address]
+    @a_web = params[:a_web]
     @with_logos = params[:with_logos]
     @system_configuration = SystemConfiguration.first
     render layout: false

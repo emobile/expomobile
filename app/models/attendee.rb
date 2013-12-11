@@ -6,7 +6,7 @@ class Attendee < ActiveRecord::Base
   has_many :hours, :through => :schedules
   has_many :workshops, :through => :schedules
   
-  validates :a_cellphone, :a_email, :a_market_segment, :a_name, :a_num_employees, :a_other_line, :a_platform, :a_sec_line, :e_city, :e_colony, :e_ext_number, :e_lada, :e_main_line, :e_municipality, :e_name, :e_phone, :e_rfc, :e_state, :e_street, :e_tradename, :e_zip_code, :presence => true
+  validates :a_cellphone, :a_email, :a_market_segment, :a_name, :a_num_employees, :a_platform, :e_city, :e_colony, :e_ext_number, :e_lada, :e_municipality, :e_name, :e_phone, :e_rfc, :e_state, :e_street, :e_tradename, :e_zip_code, :presence => true
   validates_numericality_of :a_num_employees, :if => :a_num_employees
   validates_numericality_of :e_ext_number, :if => :e_ext_number
   validates_numericality_of :e_zip_code, :if => :e_zip_code
