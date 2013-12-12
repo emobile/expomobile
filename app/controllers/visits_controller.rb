@@ -19,7 +19,7 @@ class VisitsController < ApplicationController
       .where("attendees.subgroup_id = ? AND a.workshop_id = ?", params[:subgroup_id], params[:workshop_id])
     end
     @attendees.each do |a|
-      a[:register_date] = AttendeeWorkshop.find_by_attendee_id(a.id).created_at
+      a[:register_date] = AttendeeWorkshop.find_by_attendee_id_and_workshop_id(a.id, params[:workshop_id]).created_at
       subgroup_name = a.subgroup.name
       if @subgroups.has_key?(subgroup_name)
         @subgroups[subgroup_name] << a
@@ -66,7 +66,7 @@ class VisitsController < ApplicationController
     end
     
     @attendees.each do |a|
-      a[:register_date] = AttendeeExposition.find_by_attendee_id(a.id).created_at
+      a[:register_date] = AttendeeExposition.find_by_attendee_id_and_exhibitor_id(a.id, params[:exhibitor_id]).created_at
       subgroup_name = a.subgroup.name
       
       if @subgroups.has_key?(subgroup_name)
