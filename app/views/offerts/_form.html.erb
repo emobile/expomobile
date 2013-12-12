@@ -21,7 +21,7 @@
 
   <p class="field">
     <%= f.label t("offert.exhibitor_name") %>
-    <%= f.collection_select :exhibitor_id, Exhibitor.order(:contact), :id ,:contact %>
+    <%= f.collection_select :exhibitor_id, Exhibitor.order(:name), :id ,:name %>
   </p>
   <p class="field">
     <%= f.label t("offert.description") %>
