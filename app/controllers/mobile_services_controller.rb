@@ -448,7 +448,8 @@ class MobileServicesController < ApplicationController
   end
   
   def register_visit_to_workshop
-    current_time = Time.now - 6.hour
+    Time.zone = "Chihuahua"
+    current_time = Time.zone.now.time
     
     if !session[:attendee_id].blank?
 
@@ -463,7 +464,6 @@ class MobileServicesController < ApplicationController
           @visit_registered = AttendeeWorkshop.find_by_attendee_id_and_workshop_id(session[:attendee_id], @workshop.id)
           
           if @visit_registered.nil?
-            
             if current_time >= @hour.start_date && current_time < (@hour.end_date + SystemConfiguration.first.workshop_tolerance.minutes + 1.minutes)
               AttendeeWorkshop.create(attendee_id: session[:attendee_id], workshop_id: @workshop.id)
               @msg = { success: "yes", msg: t(:visit_registered_to_workshop, :workshop_name => @workshop.name ) }
