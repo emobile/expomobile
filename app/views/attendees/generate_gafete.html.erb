@@ -51,13 +51,13 @@
 <% @logo_url = @system_configuration.logo.url %>
 <% @banner_url = @system_configuration.banner.url %>
 <div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px; border: 1px solid #000; color: #000;">
-  <%#*<div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: visible;">%>
-    <%#= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;" %>
+  <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: visible;">
+    <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;" %>
     <%#= image_tag "https://chart.googleapis.com/chart?cht=qr&chs=#{85}x#{85}&chl=[#{@a_name},#{@e_tradename},WORK:#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :style => "margin: 0px; float: right;" %>    
-  <%#*</div>%>
-  <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: visible;">
-    <%= image_tag @banner_url, :height => 125, :width => 295, :style => "height: 125px; width: 290px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
   </div>
+  <%#*<div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: visible;">%>
+    <%#= image_tag @banner_url, :height => 125, :width => 295, :style => "height: 125px; width: 290px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+  <%#*</div>%>
   <div id="gafete-text" style="height: 115px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 20px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
     <span style="font-weight: bold; font-size: 16px; top: 15px; position: relative; display: block; height: 40px; margin: 0px 10px;"><%= @a_name %></span>
     <span style="font-size: 16px; top: 20px; position: relative; margin: 0px 10px;"><%= @e_tradename %></span>
