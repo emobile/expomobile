@@ -946,7 +946,7 @@ SystemConfiguration.create([
 
 
 
-SystemConfigurations.create([
+SystemConfiguration.create([
     { :token => "emobile", :workshop_tolerance => 15, :exposition_tolerance => 15, :created_at => "2013-11-14 01:28:41", :updated_at => "2013-11-14 01:28:41", :logo_file_name => "anadic.png", :logo_content_type => "image/png", :logo_file_size => 16156, :logo_updated_at => "2013-11-14 01:28:41", :banner_file_name => "congreso.png", :banner_content_type => "image/png", :banner_file_size => 21147, :banner_updated_at => "2013-11-14 01:28:41" }
   ], :without_protection => true )
 
