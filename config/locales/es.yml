@@ -212,6 +212,7 @@ es:
     gafete: "Gafete"
     generate_gafete: "Generar"
     id_ok: "Haz proporcionado tu ID correctamente"
+    images_size: "Las imagenes deben ser de las siguientes medidas:"
     mail:
       attendee_id_subject: "Tu ID de registro"
       nip_subject: "NIP para ingresar a la aplicación"
