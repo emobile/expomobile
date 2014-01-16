@@ -4,33 +4,40 @@
 
 <%= render "layouts/first_tab" %>
 <%= form_for(@system_configuration) do |f| %>
-<% if @system_configuration.errors.any? %>
-<div id="error_explanation">
+  <% if @system_configuration.errors.any? %>
+    <div id="error_explanation">
       <% if @system_configuration.errors.count == 1 %>
         <h2><%= t('activerecord.errors.template.header.one', :model => t("activerecord.models.system_configuration")) %></h2>
       <% else %>
         <h2><%= t('activerecord.errors.template.header.other', :model => t("activerecord.models.system_configuration"), :count => @system_configuration.errors.count) %></h2>
       <% end %>
-  <ul>
-    <% @system_configuration.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+      <ul>
+        <% @system_configuration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <%#*<p class="field">%>
-    <%#= f.label t("system_configuration.token") %>
-    <%#= f.text_field :token, :class=>"text-input small-input" %>
+  <%#= f.label t("system_configuration.token") %>
+  <%#= f.text_field :token, :class=>"text-input small-input" %>
   <%#*</p>%>
   <%#*<p class="field">%>
-    <%#= f.label t("system_configuration.workshop_tolerance") %>
-    <%#= f.text_field :workshop_tolerance, :class=>"text-input small-input" %>
+  <%#= f.label t("system_configuration.workshop_tolerance") %>
+  <%#= f.text_field :workshop_tolerance, :class=>"text-input small-input" %>
   <%#*</p>%>
   <%#*<p class="field">%>
-    <%#= f.label t("system_configuration.exposition_tolerance") %>
-    <%#= f.text_field :exposition_tolerance, :class=>"text-input small-input" %>
+  <%#= f.label t("system_configuration.exposition_tolerance") %>
+  <%#= f.text_field :exposition_tolerance, :class=>"text-input small-input" %>
   <%#*</p>%>
+  <div style="font-size: 14px;">
+    <span style="color: #c33; font-weight: bold;"><%= t("atten.images_size") %></span>
+    <div style="margin: 20px; color: #000;">
+      <p>Logo - 273px x60px</p>
+      <p>Banner - 351px x 146px</p>
+    </div>
+  </div>
   <p class="field">
     <%= f.label t("system_configuration.logo") %>
     <%= f.file_field :logo %>
@@ -40,8 +47,8 @@
     <%= f.file_field :banner %>
   </p>
 
-<div class="form-actions">
-  <%= f.submit nil, :class => 'button' %>
-</div>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'button' %>
+  </div>
 
 <% end %>

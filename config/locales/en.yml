@@ -212,6 +212,7 @@ en:
     gafete: "Gafete"
     generate_gafete: "Generate"
     id_ok: "You have provided your ID correctly"
+    images_size: "Images must be of the following sizes:"
     mail:
       attendee_id_subject: "Your registration ID"
       nip_subject: "PIN to access to the application"
