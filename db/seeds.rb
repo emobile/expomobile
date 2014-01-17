@@ -958,3 +958,35 @@ User.create([
 
 
 
+# encoding: utf-8
+
+AttendeeExposition.create([
+  { :attendee_id => 1, :exhibitor_id => 1, :created_at => "2014-01-14 22:44:02", :updated_at => "2014-01-14 22:44:02" },
+  { :attendee_id => 1, :exhibitor_id => 2, :created_at => "2014-01-14 22:45:44", :updated_at => "2014-01-14 22:45:44" },
+  { :attendee_id => 2, :exhibitor_id => 2, :created_at => "2014-01-14 22:45:50", :updated_at => "2014-01-14 22:45:50" },
+  { :attendee_id => 3, :exhibitor_id => 1, :created_at => "2014-01-14 22:51:31", :updated_at => "2014-01-14 22:51:31" },
+  { :attendee_id => 4, :exhibitor_id => 1, :created_at => "2014-01-14 22:51:37", :updated_at => "2014-01-14 22:51:37" },
+  { :attendee_id => 5, :exhibitor_id => 1, :created_at => "2014-01-14 22:51:44", :updated_at => "2014-01-14 22:51:44" }
+], :without_protection => true )
+
+
+
+AttendeeWorkshop.create([
+  { :attendee_id => 400, :workshop_id => 12, :created_at => "2013-11-15 19:21:45", :updated_at => "2013-11-15 19:21:45" }
+], :without_protection => true )
+
+
+
+FaceToFace.create([
+  { :attendee_id => 189, :int_contact => "Microsoft de México", :int_job => "Soporte", :int_name => "MICROSOFT", :subject => "Cita", :start_date => "2014-01-16 16:13:00", :end_date => "2014-01-16 17:13:00", :created_at => "2014-01-16 23:14:05", :updated_at => "2014-01-16 23:14:05" },
+  { :attendee_id => 399, :int_contact => "Oficina México, Distrito Federal", :int_job => "Ventas", :int_name => "CISCO", :subject => "Cita", :start_date => "2014-01-16 16:14:00", :end_date => "2014-01-16 17:14:00", :created_at => "2014-01-16 23:14:28", :updated_at => "2014-01-16 23:14:28" }
+], :without_protection => true )
+
+
+
+Offert.create([
+  { :exhibitor_id => 1, :description => "Venta de equipo de cómputo", :price => 8000.0, :start_date => "2014-01-16 16:15:00", :end_date => "2014-01-18 16:15:00", :location => "Stand 15", :created_at => "2014-01-16 23:16:14", :updated_at => "2014-01-16 23:16:14" },
+  { :exhibitor_id => 1, :description => "Venta de servidor DELL", :price => 25000.0, :start_date => "2014-01-16 16:17:00", :end_date => "2014-01-18 16:17:00", :location => "Stand 15", :created_at => "2014-01-16 23:17:23", :updated_at => "2014-01-16 23:17:23" }
+], :without_protection => true )
+
+
